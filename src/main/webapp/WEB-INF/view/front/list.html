@@ -1,0 +1,892 @@
+
+<!doctype html>
+<!--[if lt IE 7 ]><html lang="ko" class="ie6"><![endif]-->
+<!--[if IE 7 ]>   <html lang="ko" class="ie7"><![endif]-->
+<!--[if IE 8 ]>   <html lang="ko" class="ie8"><![endif]-->
+<!--[if IE 9 ]>   <html lang="ko" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="ko" class=""><!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<title>만다린 전화화상중국어 관리자 모드</title>
+		<meta name="author" content="Hom2Box">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<!--[if IEMobile]>
+			<meta http-equiv="cleartype" content="on" />
+		<![endif]-->
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="shortcut icon" href="../../img/logomark.ico">
+		<link rel="apple-touch-icon" href="../img/logomark.svg">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+		<meta name="keywords" content="만다린 전화화상중국어, 전화화상중국어, 화상중국어" />
+		<meta name="description" content="만다린 전화화상중국어 관리자 모드" />
+		<meta property="fb:app_id" content="만다린 전화화상중국어" />
+		<meta property="og:type" content="website">
+		<meta property="og:title"  content="만다린 전화화상중국어" />
+		<meta property="og:description" content="만다린 전화화상중국어 관리자 모드">
+		<meta property="og:image"  content="../img/mandarin.svg" />
+		<meta property="og:url"    content="www.mandarin9.com" />
+		<meta property="al:web:url" content="www.mandarin9.com">
+		<link rel="canonical" href="www.mandarin9.com">
+		<meta name="twitter:card" content="mobile">
+		<meta name="twitter:url" content="www.mandarin9.com" />
+		<meta name="twitter:title"  content="만다린 전화화상중국어" />
+		<meta name="twitter:description" content="만다린 전화화상중국어 관리자 모드">
+		<meta name="twitter:image"  content="../img/mandarin.svg" />
+		<meta name="twitter:domain"    content="만다린 전화화상중국어" />
+
+		<!-- 절대 수정하지마세요. -->
+		<link href="../css/animate.min.css" rel="stylesheet">
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+		<link href="../css/common.css" rel="stylesheet">
+		<link href="../css/common.responsive.css" rel="stylesheet">
+		<link href="../css/c3.min.css" rel="stylesheet">
+		<link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="../css/themify.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/themify-icons/1.0.1/css/themify-icons.css" rel="stylesheet">
+		<link href="../css/NotoSansCJKkr.css" rel="stylesheet">
+		<link href="../css/NotoSansCJKjp.css" rel="stylesheet">
+		<link href="../css/NotoSansCJKsc.css" rel="stylesheet">
+		<link href="../css/NotoSansCJKtc.css" rel="stylesheet">
+		<!-- //절대 수정하지마세요. -->
+		<link href="././css/theme.css" rel="stylesheet">
+
+		<!--[if lt IE 9]>
+			<script src="../../js/html5shiv.min.js"></script>
+		<![endif]-->
+
+		<!--[if lt IE 10]>
+			<script src="../../js/media.match.min.js"></script>
+			<script src="../../js/respond.min.js"></script>
+		<![endif]-->
+
+		<!-- Scripts -->
+		<script src="../../js/modernizr.min.js"></script>
+		<script src="../../js/jquery.min.js"></script>
+		<script src="../../js/moment.js"></script>
+	</head>
+	<body class="admin">
+
+		<!-- Admin Wrapper -->
+		<div id="ubhome-wrapper">
+			<!-- Sidebar Wrapper -->
+			
+	<div id="ubhome-sidebar-wrapper" >
+		<ul class="ubhome-sidebar">
+			<li class="ubhome-sidebar-main">
+				<a href="../dashboard.php" class="logo">
+					<img src="../img/mandarin-white.svg" alt="mandarin" />
+				</a>
+				<i class="menu-icon fa fa-exchange ubhome-toggle" id="ubhome-toggle"></i>
+				<i class="menu-icon fa fa-exchange ubhome-toggle-mobile" id="ubhome-toggle-mobile"></i>
+			</li>
+
+			<li class="ubhome-sidebar-user">
+				<div class="media">
+					<div class="media-left media-middle">
+						<img class="media-object" src="../data/admin-sample.jpg" alt="..." />
+					</div>
+					<div class="media-body media-middle">
+						<h6>환영합니다.</h6>
+						<h5>관리자님 <a href="javascript:void(0);"><i class="ti-power-off"></i></a></h5>
+					</div>
+				</div>
+			</li>
+
+			<!-- 환경설정 -->
+			<li class="ubhome-sidebar-list">
+				<a href="javascript:void(0);" class="ubhome-sidebar-title"><i class="menu-icon fa fa-cogs"></i> 환경설정</a>
+				<ul class="ubhome-sidebar-sub">
+					<li><a href="../code_manager_list.php">코드관리</a></li>
+					<li><a href="../base_config_edit.php">기초환경설정</a></li>
+					<li><a href="../policy_edit.php">회원정책</a></li>
+					<li><a href="../admin_list.php">관리자 관리</a></li>
+					<li><a href="../holiday_list.php">휴일관리</a></li>
+					<li><a href="../payment_edit.php">결제관리</a></li>
+					<li><a href="../category_list.php">강좌분류관리</a></li>
+					<li><a href="../level_grade_list.php">레벨분류관리</a></li>
+					<li><a href="../popup_list.php">팝업관리</a></li>
+					<li><a href="../menu_list.php">관리자메뉴관리</a></li>
+					<li><a href="javascript:void(0);">사이트메뉴관리</a></li>
+					<li><a href="javascript:void(0);">사이트페이지 관리</a></li>
+					<li><a href="javascript:void(0);">스킨관리</a></li>
+					<li><a href="../discount_config_edit.php">할인율 설정</a></li>
+					<li><a href="../board_list.php">게시판 관리</a></li>
+				</ul>
+			</li>
+			<!-- //환경설정 -->
+
+			<!-- 회원관리 -->
+			<li class="ubhome-sidebar-list">
+				<a href="javascript:void(0);" class="ubhome-sidebar-title"><i class="menu-icon fa fa-user-circle-o"></i> 회원관리</a>
+				<ul class="ubhome-sidebar-sub">
+					<li><a href="../member/company_list.php">기업정보관리</a></li>
+					<li><a href="../member/member_csv_upload.php">기업회원 일괄등록</a></li>
+					<li><a href="../member/member_list.php">회원종합관리</a></li>
+					<li><a href="../member/point_list.php">포인트 관리</a></li>
+					<li><a href="../member/coupon_list.php">쿠폰관리</a></li>
+					<li><a href="../member/coupon_detail_list.php">쿠폰사용내역</a></li>
+				</ul>
+			</li>
+			<!-- //회원관리 -->
+
+			<!-- 강사관리 -->
+			<li class="ubhome-sidebar-list">
+				<a href="javascript:void(0);" class="ubhome-sidebar-title"><i class="menu-icon fa fa-graduation-cap"></i> 강사관리</a>
+				<ul class="ubhome-sidebar-sub">
+					<li><a href="../teacher/teacher_list.php">강사관리</a></li>
+					<li><a href="../teacher/teacher_time_edit.php">강사시간관리</a></li>
+					<li><a href="../teacher/teachergroup_list.php">강사그룹설정</a></li>
+					<li><a href="../teacher/teachersurvey_list.php">강사평가</a></li>
+				</ul>
+			</li>
+			<!-- //강사관리 -->
+
+			<!-- 강좌관리 -->
+			<li class="ubhome-sidebar-list">
+				<a href="javascript:void(0);" class="ubhome-sidebar-title"><i class="menu-icon fa fa-university"></i> 강좌관리</a>
+				<ul class="ubhome-sidebar-sub">
+					<li><a href="../class/class_list.php">강좌관리</a></li>
+					<li><a href="../class/book_list.php">교재관리</a></li>
+					<li><a href="javascript:void(0);">중국어신문관리</a></li>
+				</ul>
+			</li>
+			<!-- //강좌관리 -->
+
+			<!-- 주문관리 -->
+			<li class="ubhome-sidebar-list">
+				<a href="javascript:void(0);" class="ubhome-sidebar-title"><i class="menu-icon fa fa-laptop"></i> 주문관리</a>
+				<ul class="ubhome-sidebar-sub">
+					<li><a href="../order/class_order_list.php">주문관리</a></li>
+					<li><a href="javascript:void(0);">레벨테스트관리</a></li>
+					<li><a href="javascript:void(0);">재주문관리</a></li>
+				</ul>
+			</li>
+			<!-- //주문관리 -->
+
+			<!-- 수업관리 -->
+			<li class="ubhome-sidebar-list">
+				<a href="javascript:void(0);" class="ubhome-sidebar-title"><i class="menu-icon fa fa-book"></i> 수업관리</a>
+				<ul class="ubhome-sidebar-sub">
+					<li><a href="../schedule/full_calendar.php">수업캘린더관리</a></li>
+					<li><a href="javascript:void(0);">수업관리</a></li>
+					<li><a href="javascript:void(0);">장기연기관리</a></li>
+					<li><a href="javascript:void(0);">결석관리</a></li>
+					<li><a href="javascript:void(0);">수업변경로그</a></li>
+					<li><a href="javascript:void(0);">영작교정</a></li>
+					<li><a href="javascript:void(0);">월평가설정</a></li>
+					<li><a href="javascript:void(0);">월평가관리</a></li>
+					<li><a href="javascript:void(0);">기간별 출석(기업)</a></li>
+				</ul>
+			</li>
+			<!-- //수업관리 -->
+
+			<!-- 고객센터 -->
+			<li class="ubhome-sidebar-list">
+				<a href="javascript:void(0);" class="ubhome-sidebar-title"><i class="menu-icon fa fa-comments-o"></i> 고객센터</a>
+				<ul class="ubhome-sidebar-sub">
+					<li><a href="../board/index.php?board_id=notice&action=list&page=1">공지사항</a></li>
+					<li><a href="javascript:void(0);">1:1 고객센터</a></li>
+					<li><a href="javascript:void(0);">강사 1:1 게시판</a></li>
+					<li><a href="../customer/company_proposal_list.php">기업제안신청</a></li>
+					<li><a href="javascript:void(0);">직원게시판</a></li>
+					<li><a href="javascript:void(0);">학습자료실</a></li>
+					<li><a href="javascript:void(0);">매일회화표현</a></li>
+					<li><a href="javascript:void(0);">FAQ</a></li>
+				</ul>
+			</li>
+			<!-- //고객센터 -->
+
+			<!-- 통계관리 -->
+			<li class="ubhome-sidebar-list">
+				<a href="javascript:void(0);" class="ubhome-sidebar-title"><i class="menu-icon fa fa-pie-chart"></i> 통계관리</a>
+				<ul class="ubhome-sidebar-sub">
+					<li><a href="javascript:void(0);">접속통계</a></li>
+					<li><a href="javascript:void(0);">회원가입통계</a></li>
+					<li><a href="javascript:void(0);">레벨테스트통계</a></li>
+					<li><a href="javascript:void(0);">수업신청통계</a></li>
+					<li><a href="javascript:void(0);">일별매출통계</a></li>
+					<li><a href="javascript:void(0);">월별매출통계</a></li>
+				</ul>
+			</li>
+			<!-- //통계관리 -->
+
+			<!-- 언어선택 -->
+			<li class="ubhome-sidebar-lang">
+				<a href="javascript:void(0);" class="btn btn-block btn-default" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">한국어 <span class="num-webfont">(KOR)</span> <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+					<li class="active"><a href="#">한국어 <span class="num-webfont">(KOR)</span></a></li>
+					<li><a href="#">영어 <span class="num-webfont">(ENG)</span></a></li>
+					<li><a href="#">중국어 <span class="num-webfont">(CHN)</span></a></li>
+					<li><a href="#">일본어 <span class="num-webfont">(JPN)</span></a></li>
+				</ul>
+			</li>
+			<!-- //언어선택 -->
+		</ul>
+
+		<!-- LMS 환경설정 -->
+		<div class="row ubhome-sidebar-footer">
+			<div class="col-xs-12">
+				<a href="javascript:void(0);">
+					<i class="fa fa-cog"></i> <span>LMS 환경설정</span>
+				</a>
+			</div>
+		</div>
+		<!-- //LMS 환경설정 -->
+	</div>
+	<div class="mask-win"></div>			<!-- //Sidebar Wrapper -->
+
+			<!-- Page Content -->
+			<div id="content-wrapper">
+				<!-- Quick Bar -->
+								<div class="contents-header">
+					<button type="button" id="meta-toggle" class="top-quick-left btn hidden-sm hidden-md hidden-lg">
+						<i class="fa fa-bars"></i>
+					</button>
+					<a href="../dashboard.php" class="logo hidden-sm hidden-md hidden-lg">
+						<img src="../img/mandarin-white.svg" alt="mandarin" class="mobile-logo" />
+					</a>
+					<button type="button" id="quick-toggle" class="top-quick-right btn hidden-sm hidden-md hidden-lg">
+						<i class="fa fa-sort-amount-desc"></i>
+					</button>
+					<div class="quick-navi-wrap">
+						<div class="quick-navi">
+							<div class="row">
+								<div class="col-xs-6 col-sm-4 col-lg-2 md-mb10 m-mb10 xs-mb10 add-col">
+									<a href="#"><img src="../img/quick-01.svg" class="img" alt="quick-01" />목록1</a>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-lg-2 md-mb10 m-mb10 xs-mb10 add-col last-col-xs">
+									<a href="#"><img src="../img/quick-02.svg" class="img" alt="quick-02" />목록2</a>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-lg-2 md-mb10 m-mb10 xs-mb10 last-col-sm add-col add-col-xs">
+									<a href="#"><img src="../img/quick-03.svg" class="img" alt="quick-03" />목록3</a>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-lg-2 xs-mb10 odd-col last-col-xs">
+									<a href="#"><img src="../img/quick-04.svg" class="img" alt="quick-04" />목록4</a>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-lg-2 odd-col">
+									<a href="#"><img src="../img/quick-05.svg" class="img" alt="quick-05" />목록5</a>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-lg-2 last-col odd-col">
+									<a href="#"><img src="../img/quick-06.svg" class="img" alt="quick-06" />목록6</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>				
+        <!-- //Quick Bar -->
+
+				<!-- Main Content -->
+				<div class="main-content">
+					<!-- 콘테이너 -->
+					<div id="container">
+						<div class="dashboard">
+							<!-- 페이지 명 -->
+							<div class="row form-inline mb10">
+								<div class="col-sm-6">
+									<h3 class="text-info mt5">리스트</h3>
+								</div>
+								<div class="col-sm-6 text-right">
+									<select id="schConvert" name="schConvert" class="form-control input-sm form-control-inline">
+										<option  value="S"  selected=selected>검색 자료</option>
+										<option  value="C">선택 자료</option>
+									</select>
+									<button type="button" class="btn btn-sm btn-outline"><i class="fa fa-file-excel-o text-success" aria-hidden="true"></i> 다운로드</button>
+								</div>
+							</div>
+							<!-- //페이지 명 -->
+							<!-- 목록 -->
+							<form Method="Post" id="teacher_list" name="teacher_list">
+								<input type="hidden" id="schIcon" name="schIcon" value="schIcon" />
+								<input type="hidden" id="sel" name="sel" />
+								<fieldset>
+									<!-- 목록 검색 -->
+									<div class="panel panel-default text-center">
+										<div class="panel-body">
+											<!-- Basic Data -->
+											<div class="row">
+												<div class="col-sm-4 col-lg-5">
+													<div class="row mb10">
+														<div class="col-sm-3 text-left hidden-xs hidden-sm hidden-md">
+															<div class="mt5">
+																Basic Data
+															</div>
+														</div>
+														<div class="col-xs-6 col-lg-4">
+															<select id="schpageTemp" name="schpageTemp" class="form-control">
+																<option  value="10">10개 Print</option>
+																<option  value="20"  selected=selected>20개 Print</option>
+																<option  value="50">50개 Print</option>
+																<option  value="100">100개 Print</option>
+																<option  value="200">200개 Print</option>
+															</select>
+														</div>
+														<div class="col-xs-6 col-lg-5">
+															<select id="schStatus"  name="schStatus" class="form-control">
+																<option  value="T">Teacher Status</option>
+																<option value="Y">Yes</option>
+																<option value="N">No</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="col-sm-8 col-lg-7">
+													<div class="row mb10">
+														<div class="col-xs-6 col-sm-3 xs-mb10">
+															<select id="schDisplayYN"  name="schDisplayYN" class="form-control">
+																<option  >Homepage Display</option>
+																<option value="Y">Display</option>
+																<option value="N">Hidden</option>
+															</select>
+														</div>
+														<div class="col-xs-6 col-sm-3 xs-mb10">
+															<select id="schDate"  name="schDate" class="form-control">
+																<option  value="R">Register Date</option>
+															</select>
+														</div>
+														<div class="col-xs-6 col-sm-3">
+															<input type="text" name="Date1" id="KeyDate1" class="form-control datetimepicker" value="" />
+														</div>
+														<div class="col-xs-6 col-sm-3">
+															<input type="text" name="Date2" id="KeyDate2" class="form-control datetimepicker" value="" />
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- //Basic Data -->
+
+											<!-- Teacher Info -->
+											<div class="row">
+												<div class="col-sm-4 col-lg-5 xs-mb10">
+													<div class="row">
+														<div class="col-sm-3 text-left hidden-xs hidden-sm hidden-md">
+															<div class="mt5">
+																Teacher Info
+															</div>
+														</div>
+														<div class="col-xs-6 col-lg-4">
+															<select id="schGender"  name="schGender" class="form-control">
+																<option >Gender</option>
+																<option  value="M">Male</option>
+																<option  value="F">Female</option>
+															</select>
+														</div>
+														<div class="col-xs-6 col-lg-5">
+															<select name="schGubun" class="form-control">
+																<option>Search&nbsp;Item</option>
+																<option value="schGubun_ID">ID</option>
+																<option value="schGubun_SkypeID">SkypeID </option>
+																<option value="schGubun_MemName">Name</option>
+																<option value="schGubun_Email">e-Mail(@앞)</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="col-sm-8 col-lg-7">
+													<div class="row">
+														<div class="col-xs-8 col-sm-4">
+															<input type="text" id="schText" class="form-control" placeholder="키워드입력" />
+														</div>
+														<div class="col-xs-4 col-sm-2">
+															<button type="submit" class="btn btn-block btn-default">검색</button>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- //Teacher Info -->
+										</div>
+									</div>
+									<!-- //목록 검색 -->
+
+									<!-- 총 게시물 수 -->
+									<div class="pagetotal">
+										교사 검색 <strong class="text-primary">3</strong> [ <span class="mr5">남 1</span> 여 2 ]
+									</div>
+									<!-- //총 게시물 수 -->
+
+									<!-- 게시물 -->
+									<table class="table text-center table-hover">
+										<colgroup>
+											<col style="width:4%;">
+											<col style="width:9%;" class="hidden-xs">
+											<col style="width:6%;" class="hidden-xs">
+											<col style="width:10%;" class="hidden-xs">
+											<col style="width:9%;" class="hidden-xs hidden-sm">
+											<col>
+											<col style="width:6%;" class="hidden-xs hidden-sm">
+											<col style="width:9%;" class="hidden-xs">
+											<col style="width:6%;" class="hidden-xs">
+											<col style="width:6%;" class="hidden-xs">
+											<col style="width:8%;" class="hidden-xs">
+											<col style="width:15%;" class="hidden-xs">
+										</colgroup>
+										<thead class="hidden-xs">
+											<tr>
+												<th scope="col" class="all-check">
+													<label for="LCheckALL_List" class="checkbox-inline">
+														<input type="checkbox" id="LCheckALL_List" name="LCheckALL_List" />
+													</label>
+												</th>
+												<th scope="col" class="hidden-xs">등록날짜</th>
+												<th scope="col" class="hidden-xs">상태</th>
+												<th scope="col" class="hidden-xs">홈페이지<span class="hidden-xs hidden-sm hidden-md"> 표시</span></th>
+												<th scope="col" class="hidden-xs hidden-sm">사진</th>
+												<th scope="col" class="hidden-xs">아이디<span class="hidden-md hidden-lg">(성별)</span>/이름</th>
+												<th scope="col" class="hidden-xs hidden-sm">성별</th>
+												<th scope="col" class="hidden-xs">수업단가</th>
+												<th scope="col" class="hidden-xs">메모</th>
+												<th scope="col" class="hidden-xs">이력</th>
+												<th scope="col" class="hidden-xs">현재 수업</th>
+												<th scope="col" class="hidden-xs">수정/삭제</th>
+											</tr>
+										</thead>
+										<tbody>
+											<!-- Loop -->
+											<tr>
+												<td class="check">
+													<label for="LCheck_List03" class="checkbox-inline">
+														<input value="03" type="checkbox" id="LCheck_List03" name="LCheck_List03" />
+													</label>
+												</td>
+												<td class="hidden-xs num-webfont">2018<span class="hidden-sm hidden-md">-</span><br class="hidden-lg" />10-27</td>
+												<td class="hidden-xs">가입</td>
+												<td class="hidden-xs">표시</td>
+												<td class="hidden-xs hidden-sm"><img src="../data/picture-sample02.png" class="img-responsive img-centered img-thumbnail" alt="thacher3" style="max-width:100px;" /></td>
+												<td class="xs-text-left">
+													<span class="text-info mr5">thacher3<span class="hidden-md hidden-lg"> (남)</span></span>
+													<br class="hidden-xs" />
+													Liah (Liah T. Tucker)
+													<div class="hidden-sm hidden-md hidden-lg">
+														<ul class="list-icon mb5">
+															<li><span class="text-info">등록날짜</span> : 2018 10-27</li>
+															<li><span class="text-info">상태</span> : 가입</li>
+															<li><span class="text-info">홈페이지 표시</span> : 표시</li>
+															<li><span class="text-info">수업단가</span> : 10</li>
+														</ul>
+														<button type="button" class="btn btn-xs btn-black"><i class="fa fa-external-link" aria-hidden="true"></i> 수업</button>
+														<a href="../teacher/teacher_write.php" class="btn btn-xs btn-info" >수정</a>
+														<button type="button" class="btn btn-xs btn-danger">삭제</button>
+														<button type="button" class="btn btn-xs btn-outline" data-container="body" data-toggle="popover" data-placement="top" data-content="퀄리티가 높은 강사"><i class="fa fa-file-text-o" aria-hidden="true"></i></button>
+														<button type="button" class="btn btn-xs btn-outline" data-toggle="modal" data-target="#teacherHistoryModal"><i class="fa fa-clone" aria-hidden="true"></i></button>
+													</div>
+												</td>
+												<td class="hidden-xs hidden-sm">남</td>
+												<td class="hidden-xs num-webfont">10</td>
+												<td class="hidden-xs">
+													<button type="button" class="btn btn-xs btn-outline" data-container="body" data-toggle="popover" data-placement="top" data-content="퀄리티가 높은 강사"><i class="fa fa-file-text-o" aria-hidden="true"></i></button>
+												</td>
+												<td class="hidden-xs">
+													<button type="button" class="btn btn-xs btn-outline" data-toggle="modal" data-target="#teacherHistoryModal"><i class="fa fa-clone" aria-hidden="true"></i></button>
+												</td>
+												<td class="hidden-xs">
+													<button type="button" class="btn btn-xs btn-black"><i class="fa fa-external-link" aria-hidden="true"></i> 수업</button>
+												</td>
+												<td class="hidden-xs">
+													<a href="../teacher/teacher_write.php" class="btn btn-xs btn-info" >수정</a>
+													<button type="button" class="btn btn-xs btn-danger">삭제</button>
+												</td>
+											</tr>
+											<!-- //Loop -->
+
+											<!-- Loop -->
+											<tr>
+												<td class="check">
+													<label for="LCheck_List02" class="checkbox-inline">
+														<input value="02" type="checkbox" id="LCheck_List02" name="LCheck_List02" />
+													</label>
+												</td>
+												<td class="hidden-xs num-webfont">2018<span class="hidden-sm hidden-md">-</span><br class="hidden-lg" />10-27</td>
+												<td class="hidden-xs">가입</td>
+												<td class="hidden-xs">표시</td>
+												<td class="hidden-xs hidden-sm"><img src="../data/picture-sample01.png" class="img-responsive img-centered img-thumbnail" alt="thacher2" style="max-width:100px;" /></td>
+												<td class="xs-text-left">
+													<span class="text-info mr5">thacher2<span class="hidden-md hidden-lg"> (여)</span></span>
+													<br class="hidden-xs" />
+													Jane (Maryjane Ann E. Lobos)
+													<div class="hidden-sm hidden-md hidden-lg">
+														<ul class="list-icon mb5">
+															<li><span class="text-info">등록날짜</span> : 2018 10-27</li>
+															<li><span class="text-info">상태</span> : 가입</li>
+															<li><span class="text-info">홈페이지 표시</span> : 표시</li>
+															<li><span class="text-info">수업단가</span> : 20</li>
+														</ul>
+														<button type="button" class="btn btn-xs btn-black"><i class="fa fa-external-link" aria-hidden="true"></i> 수업</button>
+														<a href="../teacher/teacher_write.php" class="btn btn-xs btn-info" >수정</a>
+														<button type="button" class="btn btn-xs btn-danger">삭제</button>
+														<button type="button" class="btn btn-xs btn-outline" data-container="body" data-toggle="popover" data-placement="top" data-content="퀄리티가 높은 강사"><i class="fa fa-file-text-o" aria-hidden="true"></i></button>
+														<button type="button" class="btn btn-xs btn-outline" data-toggle="modal" data-target="#teacherHistoryModal"><i class="fa fa-clone" aria-hidden="true"></i></button>
+													</div>
+												</td>
+												<td class="hidden-xs hidden-sm">여</td>
+												<td class="hidden-xs num-webfont">20</td>
+												<td class="hidden-xs">
+													<button type="button" class="btn btn-xs btn-outline" data-container="body" data-toggle="popover" data-placement="top" data-content="퀄리티가 높은 강사"><i class="fa fa-file-text-o" aria-hidden="true"></i></button>
+												</td>
+												<td class="hidden-xs">
+													<button type="button" class="btn btn-xs btn-outline" data-toggle="modal" data-target="#teacherHistoryModal"><i class="fa fa-clone" aria-hidden="true"></i></button>
+												</td>
+												<td class="hidden-xs">
+													<button type="button" class="btn btn-xs btn-black"><i class="fa fa-external-link" aria-hidden="true"></i> 수업</button>
+												</td>
+												<td class="hidden-xs">
+													<a href="../teacher/teacher_write.php" class="btn btn-xs btn-info" >수정</a>
+													<button type="button" class="btn btn-xs btn-danger">삭제</button>
+												</td>
+											</tr>
+											<!-- //Loop -->
+
+											<!-- Loop -->
+											<tr>
+												<td class="check">
+													<label for="LCheck_List01" class="checkbox-inline">
+														<input value="01" type="checkbox" id="LCheck_List01" name="LCheck_List01" />
+													</label>
+												</td>
+												<td class="hidden-xs num-webfont">2018<span class="hidden-sm hidden-md">-</span><br class="hidden-lg" />10-27</td>
+												<td class="hidden-xs">가입</td>
+												<td class="hidden-xs">표시</td>
+												<td class="hidden-xs hidden-sm"><img src="../data/picture-sample01.png" class="img-responsive img-centered img-thumbnail" alt="thacher1" style="max-width:100px;" /></td>
+												<td class="xs-text-left">
+													<span class="text-info mr5">thacher1<span class="hidden-md hidden-lg"> (여)</span></span>
+													<br class="hidden-xs" />
+													Nina (Monina Marie Adela)
+													<div class="hidden-sm hidden-md hidden-lg">
+														<ul class="list-icon mb5">
+															<li><span class="text-info">등록날짜</span> : 2018 10-27</li>
+															<li><span class="text-info">상태</span> : 가입</li>
+															<li><span class="text-info">홈페이지 표시</span> : 표시</li>
+															<li><span class="text-info">수업단가</span> : 30</li>
+														</ul>
+														<button type="button" class="btn btn-xs btn-black"><i class="fa fa-external-link" aria-hidden="true"></i> 수업</button>
+														<a href="../teacher/teacher_write.php" class="btn btn-xs btn-info" >수정</a>
+														<button type="button" class="btn btn-xs btn-danger">삭제</button>
+														<button type="button" class="btn btn-xs btn-outline" data-container="body" data-toggle="popover" data-placement="top" data-content="퀄리티가 높은 강사"><i class="fa fa-file-text-o" aria-hidden="true"></i></button>
+														<button type="button" class="btn btn-xs btn-outline" data-toggle="modal" data-target="#teacherHistoryModal"><i class="fa fa-clone" aria-hidden="true"></i></button>
+													</div>
+												</td>
+												<td class="hidden-xs hidden-sm">여</td>
+												<td class="hidden-xs num-webfont">30</td>
+												<td class="hidden-xs">
+													<button type="button" class="btn btn-xs btn-outline" data-container="body" data-toggle="popover" data-placement="top" data-content="퀄리티가 높은 강사"><i class="fa fa-file-text-o" aria-hidden="true"></i></button>
+												</td>
+												<td class="hidden-xs">
+													<button type="button" class="btn btn-xs btn-outline" data-toggle="modal" data-target="#teacherHistoryModal"><i class="fa fa-clone" aria-hidden="true"></i></button>
+												</td>
+												<td class="hidden-xs">
+													<button type="button" class="btn btn-xs btn-black"><i class="fa fa-external-link" aria-hidden="true"></i> 수업</button>
+												</td>
+												<td class="hidden-xs">
+													<a href="../teacher/teacher_write.php" class="btn btn-xs btn-info" >수정</a>
+													<button type="button" class="btn btn-xs btn-danger">삭제</button>
+												</td>
+											</tr>
+											<!-- //Loop -->
+
+
+											<!-- Loop -->
+											<tr>
+												<td class="check">
+													<label for="LCheck_List03" class="checkbox-inline">
+														<input value="03" type="checkbox" id="LCheck_List03" name="LCheck_List03" />
+													</label>
+												</td>
+												<td class="hidden-xs num-webfont">2018<span class="hidden-sm hidden-md">-</span><br class="hidden-lg" />10-27</td>
+												<td class="hidden-xs">가입</td>
+												<td class="hidden-xs">표시</td>
+												<td class="hidden-xs hidden-sm"><img src="../data/picture-sample02.png" class="img-responsive img-centered img-thumbnail" alt="thacher3" style="max-width:100px;" /></td>
+												<td class="xs-text-left">
+													<span class="text-info mr5">thacher3<span class="hidden-md hidden-lg"> (남)</span></span>
+													<br class="hidden-xs" />
+													Liah (Liah T. Tucker)
+													<div class="hidden-sm hidden-md hidden-lg">
+														<ul class="list-icon mb5">
+															<li><span class="text-info">등록날짜</span> : 2018 10-27</li>
+															<li><span class="text-info">상태</span> : 가입</li>
+															<li><span class="text-info">홈페이지 표시</span> : 표시</li>
+															<li><span class="text-info">수업단가</span> : 10</li>
+														</ul>
+														<button type="button" class="btn btn-xs btn-black"><i class="fa fa-external-link" aria-hidden="true"></i> 수업</button>
+														<a href="../teacher/teacher_write.php" class="btn btn-xs btn-info" >수정</a>
+														<button type="button" class="btn btn-xs btn-danger">삭제</button>
+														<button type="button" class="btn btn-xs btn-outline" data-container="body" data-toggle="popover" data-placement="top" data-content="퀄리티가 높은 강사"><i class="fa fa-file-text-o" aria-hidden="true"></i></button>
+														<button type="button" class="btn btn-xs btn-outline" data-toggle="modal" data-target="#teacherHistoryModal"><i class="fa fa-clone" aria-hidden="true"></i></button>
+													</div>
+												</td>
+												<td class="hidden-xs hidden-sm">남</td>
+												<td class="hidden-xs num-webfont">10</td>
+												<td class="hidden-xs">
+													<button type="button" class="btn btn-xs btn-outline" data-container="body" data-toggle="popover" data-placement="top" data-content="퀄리티가 높은 강사"><i class="fa fa-file-text-o" aria-hidden="true"></i></button>
+												</td>
+												<td class="hidden-xs">
+													<button type="button" class="btn btn-xs btn-outline" data-toggle="modal" data-target="#teacherHistoryModal"><i class="fa fa-clone" aria-hidden="true"></i></button>
+												</td>
+												<td class="hidden-xs">
+													<button type="button" class="btn btn-xs btn-black"><i class="fa fa-external-link" aria-hidden="true"></i> 수업</button>
+												</td>
+												<td class="hidden-xs">
+													<a href="../teacher/teacher_write.php" class="btn btn-xs btn-info" >수정</a>
+													<button type="button" class="btn btn-xs btn-danger">삭제</button>
+												</td>
+											</tr>
+											<!-- //Loop -->
+
+											<!-- Loop -->
+											<tr>
+												<td class="check">
+													<label for="LCheck_List02" class="checkbox-inline">
+														<input value="02" type="checkbox" id="LCheck_List02" name="LCheck_List02" />
+													</label>
+												</td>
+												<td class="hidden-xs num-webfont">2018<span class="hidden-sm hidden-md">-</span><br class="hidden-lg" />10-27</td>
+												<td class="hidden-xs">가입</td>
+												<td class="hidden-xs">표시</td>
+												<td class="hidden-xs hidden-sm"><img src="../data/picture-sample01.png" class="img-responsive img-centered img-thumbnail" alt="thacher2" style="max-width:100px;" /></td>
+												<td class="xs-text-left">
+													<span class="text-info mr5">thacher2<span class="hidden-md hidden-lg"> (여)</span></span>
+													<br class="hidden-xs" />
+													Jane (Maryjane Ann E. Lobos)
+													<div class="hidden-sm hidden-md hidden-lg">
+														<ul class="list-icon mb5">
+															<li><span class="text-info">등록날짜</span> : 2018 10-27</li>
+															<li><span class="text-info">상태</span> : 가입</li>
+															<li><span class="text-info">홈페이지 표시</span> : 표시</li>
+															<li><span class="text-info">수업단가</span> : 20</li>
+														</ul>
+														<button type="button" class="btn btn-xs btn-black"><i class="fa fa-external-link" aria-hidden="true"></i> 수업</button>
+														<a href="../teacher/teacher_write.php" class="btn btn-xs btn-info" >수정</a>
+														<button type="button" class="btn btn-xs btn-danger">삭제</button>
+														<button type="button" class="btn btn-xs btn-outline" data-container="body" data-toggle="popover" data-placement="top" data-content="퀄리티가 높은 강사"><i class="fa fa-file-text-o" aria-hidden="true"></i></button>
+														<button type="button" class="btn btn-xs btn-outline" data-toggle="modal" data-target="#teacherHistoryModal"><i class="fa fa-clone" aria-hidden="true"></i></button>
+													</div>
+												</td>
+												<td class="hidden-xs hidden-sm">여</td>
+												<td class="hidden-xs num-webfont">20</td>
+												<td class="hidden-xs">
+													<button type="button" class="btn btn-xs btn-outline" data-container="body" data-toggle="popover" data-placement="top" data-content="퀄리티가 높은 강사"><i class="fa fa-file-text-o" aria-hidden="true"></i></button>
+												</td>
+												<td class="hidden-xs">
+													<button type="button" class="btn btn-xs btn-outline" data-toggle="modal" data-target="#teacherHistoryModal"><i class="fa fa-clone" aria-hidden="true"></i></button>
+												</td>
+												<td class="hidden-xs">
+													<button type="button" class="btn btn-xs btn-black"><i class="fa fa-external-link" aria-hidden="true"></i> 수업</button>
+												</td>
+												<td class="hidden-xs">
+													<a href="../teacher/teacher_write.php" class="btn btn-xs btn-info" >수정</a>
+													<button type="button" class="btn btn-xs btn-danger">삭제</button>
+												</td>
+											</tr>
+											<!-- //Loop -->
+
+											<!-- Loop -->
+											<tr>
+												<td class="check">
+													<label for="LCheck_List01" class="checkbox-inline">
+														<input value="01" type="checkbox" id="LCheck_List01" name="LCheck_List01" />
+													</label>
+												</td>
+												<td class="hidden-xs num-webfont">2018<span class="hidden-sm hidden-md">-</span><br class="hidden-lg" />10-27</td>
+												<td class="hidden-xs">가입</td>
+												<td class="hidden-xs">표시</td>
+												<td class="hidden-xs hidden-sm"><img src="../data/picture-sample01.png" class="img-responsive img-centered img-thumbnail" alt="thacher1" style="max-width:100px;" /></td>
+												<td class="xs-text-left">
+													<span class="text-info mr5">thacher1<span class="hidden-md hidden-lg"> (여)</span></span>
+													<br class="hidden-xs" />
+													Nina (Monina Marie Adela)
+													<div class="hidden-sm hidden-md hidden-lg">
+														<ul class="list-icon mb5">
+															<li><span class="text-info">등록날짜</span> : 2018 10-27</li>
+															<li><span class="text-info">상태</span> : 가입</li>
+															<li><span class="text-info">홈페이지 표시</span> : 표시</li>
+															<li><span class="text-info">수업단가</span> : 30</li>
+														</ul>
+														<button type="button" class="btn btn-xs btn-black"><i class="fa fa-external-link" aria-hidden="true"></i> 수업</button>
+														<a href="../teacher/teacher_write.php" class="btn btn-xs btn-info" >수정</a>
+														<button type="button" class="btn btn-xs btn-danger">삭제</button>
+														<button type="button" class="btn btn-xs btn-outline" data-container="body" data-toggle="popover" data-placement="top" data-content="퀄리티가 높은 강사"><i class="fa fa-file-text-o" aria-hidden="true"></i></button>
+														<button type="button" class="btn btn-xs btn-outline" data-toggle="modal" data-target="#teacherHistoryModal"><i class="fa fa-clone" aria-hidden="true"></i></button>
+													</div>
+												</td>
+												<td class="hidden-xs hidden-sm">여</td>
+												<td class="hidden-xs num-webfont">30</td>
+												<td class="hidden-xs">
+													<button type="button" class="btn btn-xs btn-outline" data-container="body" data-toggle="popover" data-placement="top" data-content="퀄리티가 높은 강사"><i class="fa fa-file-text-o" aria-hidden="true"></i></button>
+												</td>
+												<td class="hidden-xs">
+													<button type="button" class="btn btn-xs btn-outline" data-toggle="modal" data-target="#teacherHistoryModal"><i class="fa fa-clone" aria-hidden="true"></i></button>
+												</td>
+												<td class="hidden-xs">
+													<button type="button" class="btn btn-xs btn-black"><i class="fa fa-external-link" aria-hidden="true"></i> 수업</button>
+												</td>
+												<td class="hidden-xs">
+													<a href="../teacher/teacher_write.php" class="btn btn-xs btn-info" >수정</a>
+													<button type="button" class="btn btn-xs btn-danger">삭제</button>
+												</td>
+											</tr>
+											<!-- //Loop -->
+										</tbody>
+									</table>
+									<!-- //게시물 -->
+
+									<!-- 버튼 -->
+									<div class="row">
+										<div class="col-sm-6 col-sm-offset-3">
+											<!-- 페이징 -->
+											<nav class="text-center">
+												<ul class="pagination pagination-sm num-webfont">
+													<li>
+														<a href="#" aria-label="Previous" title="처음">
+															<span aria-hidden="true"><i class="fa fa-angle-double-left" aria-hidden="true"></i></span>
+														</a>
+													</li>
+													<li>
+														<a href="#" aria-label="Previous" title="이전">
+															<span aria-hidden="true"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
+														</a>
+													</li>
+													<li class="active"><a href="#">1</a></li>
+													<li><a href="#">2</a></li>
+													<li><a href="#">3</a></li>
+													<li><a href="#">4</a></li>
+													<li><a href="#">5</a></li>
+													<li>
+														<a href="#" aria-label="Next" title="다음">
+															<span aria-hidden="true"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
+														</a>
+													</li>
+													<li>
+														<a href="#" aria-label="Next" title="마지막">
+															<span aria-hidden="true"><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
+														</a>
+													</li>
+												</ul>
+											</nav>
+											<!-- //페이징 -->
+										</div>
+										<div class="col-sm-3 text-right xs-mt10">
+											<a href="../teacher/teacher_write.php" class="btn btn-primary">강사 등록</a>
+										</div>
+									</div>
+									<!-- //버튼 -->
+								</fieldset>
+							</form>
+							<!-- //목록 -->
+						</div>
+					</div>
+					<!-- //콘테이너 -->
+				</div>
+				<!-- //Main Content -->
+			</div>
+			<!-- //Page Content -->
+		</div>
+		<!-- //Admin Wrapper -->
+
+		<!--  이력 모달 -->
+		<div class="modal fade" id="teacherHistoryModal" tabindex="-1" role="dialog" aria-labelledby="teacherHistoryModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close" title="창닫기"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="teacherHistoryModalLabel"><strong>
+              이력</strong></h4>
+					</div>
+					<div class="modal-body">
+						<!-- 게시물 -->
+						<table class="table text-center">
+							<colgroup>
+								<col style="width:10%;" class="hidden-xs">
+								<col style="width:14%;" class="hidden-xs">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="hidden-xs">번호</th>
+									<th scope="col" class="hidden-xs">날짜</th>
+									<th scope="col"><span class="hidden-sm hidden-md hidden-lg">날짜/</span>이력</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- Nothing Data -->
+								<!--tr>
+									<td class="text-center" colspan="3">데이터 없음. [더 많은 데이터를 검색 할 수 있습니다.]</td>
+								</tr-->
+								<!-- //Nothing Data -->
+
+								<!-- Loop -->
+								<tr>
+									<td class="hidden-xs num-webfont">214</td>
+									<td class="hidden-xs num-webfont">2018-10-27</td>
+									<td class="text-left">
+										<div class="text-info mb5 hidden-sm hidden-md hidden-lg num-webfont">2018-10-27</div>
+										신 HSK 시험 대비반 및 구어 과정, 비즈니스 중국어 과정등을 기본 과정으로 하고 전문가 과정으로 통역병 과정, 한중 번역 과정, 기업 교육 과정등의 수업이 개설 되어 있습니다. 중국 문화 수업으로 고급 발음 수업, 서예 수업 , 수묵화 수업, 차(茶) 수업 등이 있습니다.
+									</td>
+								</tr>
+								<!-- //Loop -->
+
+								<!-- Loop -->
+								<tr>
+									<td class="hidden-xs num-webfont">213</td>
+									<td class="hidden-xs num-webfont">2018-10-25</td>
+									<td class="text-left">
+										<div class="text-info mb5 hidden-sm hidden-md hidden-lg num-webfont">2018-10-25</div>
+										중국 문화 수업으로 고급 발음 수업, 서예 수업 , 수묵화 수업, 차(茶) 수업 등이 있습니다. 신 HSK 시험 대비반 및 구어 과정, 비즈니스 중국어 과정등을 기본 과정으로 하고 전문가 과정으로 통역병 과정, 한중 번역 과정, 기업 교육 과정등의 수업이 개설 되어 있습니다.
+									</td>
+								</tr>
+								<!-- //Loop -->
+							</tbody>
+						</table>
+						<!-- //게시물 -->
+
+						<!-- 페이징 -->
+						<nav class="text-center">
+							<ul class="pagination pagination-sm num-webfont">
+								<li>
+									<a href="#" aria-label="Previous" title="처음">
+										<span aria-hidden="true"><i class="fa fa-angle-double-left" aria-hidden="true"></i></span>
+									</a>
+								</li>
+								<li>
+									<a href="#" aria-label="Previous" title="이전">
+										<span aria-hidden="true"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
+									</a>
+								</li>
+								<li class="active"><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">5</a></li>
+								<li>
+									<a href="#" aria-label="Next" title="다음">
+										<span aria-hidden="true"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
+									</a>
+								</li>
+								<li>
+									<a href="#" aria-label="Next" title="마지막">
+										<span aria-hidden="true"><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
+									</a>
+								</li>
+							</ul>
+						</nav>
+						<!-- //페이징 -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">창닫기</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //이력 모달 -->
+
+
+		<script src="../js/animate-plus.min.js"></script>
+		<script src="../js/jquery-ui.min.js" title="제이쿼리 UI"></script>
+		<script src="../js/jquery-migrate-git.min.js" title="제이쿼리 하위버전 호환 플로그인"></script>
+		<script src="../js/jquery.easing.js" title="이징"></script>
+		<script src="../js/bootstrap.min.js" title="부트스트랩"></script>
+		<script src="../js/bootstrap-switch.min.js" title="부트스트랩 switch"></script>
+		<script src="../js/bootstrap-datetimepicker.min.js" title="부트스트랩 DateTimePicker"></script>
+		<script src="././js/customer.script.js" title="사용자 선언"></script>		<script src="../js/c3.min.js" title="차트 api"></script>
+  	</body>
+</html>

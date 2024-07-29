@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="standardhompage.comnUtil.ComnUtilMapper">
+	<select id="selectExistCompanySeq" parameterType="map" resultType="Integer">
+	SELECT
+		count(*)
+	FROM
+		${tableNm}
+	WHERE
+		company_seq= #{companySeq}
+	</select>
+	
+	<insert id="insertUploadFileData" parameterType="uploadFileReq">
+	INSERT INTO	edt_file_mng
+	(
+		file_name
+		, file_dir
+		, file_ext
+		, file_size
+		, original_name
+		, check_id
+		, board_seq
+		, down_num
+		, write_time
+		, write_ip
+		, file_type
+	)
+	VALUES
+	( 
+		#{file_name}
+		, #{file_dir}
+		, #{file_ext}
+		, #{file_size}
+		, #{original_name}
+		, #{check_id}
+		, #{board_seq}
+		, #{down_num}
+		, CURRENT_TIME
+		, #{write_ip}
+		, #{file_type}
+	)
+	</insert>
+</mapper>

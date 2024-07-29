@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="standardhompage.admin.login.mapper.AdminLoginMapper">
+	<select id="getAdminByReq" parameterType="adminInfoReq"
+		resultType="adminInfoRes">
+		select
+		    a.*,
+		    b.company_id,
+			b.company_name
+		from
+		    edt_admin as a
+		join
+		    edt_company as b
+		on
+		    a.company_seq = b.company_seq
+		where
+		    id = #{id}
+	</select>
+
+	<select id="getAdminById" parameterType="customUserReq" resultType="adminInfoRes">
+		SELECT
+			a.*,
+			b.company_id,
+			b.company_name
+		FROM
+			edt_admin AS a
+				JOIN
+			edt_company AS b
+			ON
+				a.company_seq = b.company_seq
+		WHERE
+			a.id     = #{id}
+	</select>
+</mapper>

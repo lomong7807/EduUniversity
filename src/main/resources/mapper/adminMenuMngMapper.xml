@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="standardhompage.admin.adminmenuMng.mapper.AdminMenuMapper">
+
+	<select id="getAllAdminMenus" resultType="adminMenuRes">
+		select * from
+		edt_admin_menu
+		order by order_num asc
+	</select>
+
+	<select id="getAdminMenuByMenuId" resultType="adminMenuRes"
+		parameterType="int">
+		select * from
+		edt_admin_menu where menu_seq =
+		#{menu_seq}
+	</select>
+
+	<insert id="registerAdminMenu" parameterType="adminMenuReq">
+		insert into
+		edt_admin_menu
+		(
+		p_menu_seq, title, dir,
+		file_name,url,auth_level,write_id, order_num,
+		icon_class, company_seq
+		)
+		values
+		(
+		#{p_menu_seq}, #{title}, #{dir},
+		#{file_name},#{url},#{auth_level},#{write_id}, #{order_num},
+		#{icon_class}, #{company_seq}
+		)
+	</insert>
+
+	<update id="updateAdminMenu" parameterType="adminMenuReq">
+		UPDATE
+		edt_admin_menu
+		SET
+		p_menu_seq = #{p_menu_seq}, title = #{title},
+		dir =
+		#{dir},
+		file_name=#{file_name},url=#{url},auth_level=#{auth_level},write_id=#{write_id},
+		order_num=#{order_num},
+		icon_class=#{icon_class},
+		company_seq=#{company_seq},
+		new_window = #{new_window},
+		visible =
+		#{visible}
+		where menu_seq = #{menu_seq}
+	</update>
+
+	<delete id="deleteAdminMenu">
+		delete form edt_admin_menu where menu_seq
+		=
+		#{menu_seq}
+	</delete>
+
+	<select id="getAdminMenuList" resultType="adminMenuRes">
+		SELECT
+		a.*,
+		(SELECT COUNT(*) FROM edt_admin_menu b WHERE b.p_menu_seq =
+		a.menu_seq) AS
+		childMenuCnt
+		FROM
+		edt_admin_menu a
+		<where>
+			a.p_menu_seq = #{p_menu_seq}
+			<if test="keyword != '' and keyword != null">
+				and title LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+		</where>
+		order by
+		order_num DESC,
+		write_time DESC
+		LIMIT
+		#{pageSize}
+		OFFSET
+		#{offset}
+	</select>
+
+
+	<select id="getAdminMenuListCnt" resultType="int">
+		SELECT
+		COUNT(*)
+		FROM
+		edt_admin_menu
+		where p_menu_seq = #{p_menu_seq}
+		<if test="keyword != '' and keyword != null">
+			and title LIKE CONCAT('%', #{keyword}, '%')
+		</if>
+	</select>
+
+	<select id="getParentMenus" resultType="adminMenuRes">
+		SELECT
+		*
+		FROM
+		edt_admin_menu
+		where p_menu_seq = 0
+	</select>
+
+</mapper>

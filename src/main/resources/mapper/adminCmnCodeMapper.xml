@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="standardhompage.admin.commoncd.mapper.ComnCdMapper">
+
+	<select id="getComnCds" resultType="comnCdRes">
+		select * from edt_comncd
+	</select>
+
+	<select id="getComnCdByCdSeq" parameterType="int"
+		resultType="comnCdRes">
+		select * from edt_comncd where code_seq = #{cdSeq}
+	</select>
+
+	<insert id="registerCmnCd" parameterType="comnCdReq">
+		insert into edt_comncd
+		(upper_cd, common_cd, cd_value, sort_no) values
+		(#{upper_cd},#{common_cd},#{cd_value},#{sort_no})
+	</insert>
+
+	<insert id="updateCmnCd" parameterType="comnCdReq">
+		update edt_comncd
+		(upper_cd, common_cd, cd_value, sort_no) set
+		(#{upper_cd},#{common_cd},#{cd_value},#{sort_no})
+	</insert>
+
+	<select id="getComnCdList" resultType="comnCdRes">
+		SELECT
+		*
+		FROM
+		edt_comncd
+		<if test="searchCate != '' and searchCate != null">
+			<include refid="searchKeyword"></include>
+		</if>
+		order by
+		sort_no
+		asc
+		LIMIT
+		#{pageSize}
+		OFFSET
+		#{offset}
+	</select>
+
+	<select id="getComnCdListCnt">
+		SELECT
+		COUNT(*)
+		FROM
+		edt_comncd
+		<if test="searchCate != '' and searchCate != null">
+			<include refid="searchKeyword"></include>
+		</if>
+	</select>
+
+	<sql id="searchKeyword">
+		WHERE
+		<choose>
+			<when test="searchCate == 'code_type'">
+				cd_value LIKE CONCAT('%', #{keyword}, '%')
+			</when>
+			<when test="searchCate == 'title'">
+				common_cd LIKE CONCAT('%', #{keyword}, '%')
+			</when>
+		</choose>
+	</sql>
+
+
+
+</mapper>

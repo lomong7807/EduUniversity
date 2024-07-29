@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="standardhompage.user.userLog.mapper.UserLogMapper">
+    <insert id="insertUserLog" parameterType="userLogReq">
+        INSERT
+        INTO
+            edt_user_log
+        SET
+            job_name		= #{job_name},
+            write_id		= #{write_id},
+            write_ip		= #{write_ip},
+            write_time		= #{write_time},
+            session_id      = #{session_id},
+            user_agent      = #{user_agent},
+            job_url			= #{job_url},
+            form_value		= #{form_value}
+    </insert>
+
+
+</mapper>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="standardhompage.admin.boardcategory.mapper.BoardCategoryMapper">
+
+	<select id="getAllBoardCate" resultType="boardCategoryRes">
+		select * from
+		edt_board_category
+		where is_deleted != 'Y'
+	</select>
+
+	<select id="getCategoryList" resultType="boardCategoryRes">
+		select a.*, c.title as config_title from
+		edt_board_category a
+		left join
+		edt_board_config b on a.config_seq = b.config_seq
+		left join
+		edt_site_menu c on b.menu_seq = c.menu_seq
+		where a.is_deleted != 'Y'
+		<if test="searchCate != '' and searchCate != null">
+			and config_seq = #{searchCate}
+		</if>
+		limit #{pageSize}
+		offset #{offset}
+	</select>
+
+	<select id="getCategoryListCnt" resultType="int">
+		select count(*) from
+		edt_board_category
+		where is_deleted != 'Y'
+		<if test="searchCate != '' and searchCate != null">
+			and config_seq = #{searchCate}
+		</if>
+	</select>
+
+	<select id="getAllBoardConfig">
+		select * from edt_board_config
+		where is_deleted != 'Y'
+	</select>
+
+
+	<select id="getCateDetail" resultType="boardCategoryRes">
+		select * from
+		edt_board_category where is_deleted != 'Y' and category_seq =
+		#{cate_seq}
+	</select>
+
+	<insert id="regBoardCate" parameterType="boardCategoryReq">
+		insert into
+		edt_board_category
+		(
+		config_seq, title,
+		is_open
+		) values
+		(
+		#{config_seq},
+		#{title}, #{is_open}
+		)
+	</insert>
+
+	<update id="updateCategory" parameterType="boardCategoryReq">
+		update
+		edt_board_category
+		set
+		title = #{title},
+		is_open = #{is_open}
+		where
+		category_seq = #{category_seq}
+	</update>
+
+	<select id="getConfigByConfigSeq">
+		select a.*, b.title as board_name from edt_board_config a join edt_site_menu b on a.menu_seq = b.menu_seq
+		 where config_seq =	#{config_seq} and a.is_deleted != 'Y'
+	</select>
+
+	<select id="getAllCateList" parameterType="Integer"
+		resultType="boardCategoryRes">
+		SELECT
+		*
+		FROM
+		edt_board_category
+		WHERE
+		config_seq = #{config_seq}
+		AND
+		is_deleted != 'Y'
+	</select>
+
+	<update id="deleteCategory">
+		update edt_board_category set is_deleted = 'Y' where
+		category_seq = #{seq}
+	</update>
+
+	<update id="deleteCategoryByConfigSeq">
+		update edt_board_category set is_deleted = 'Y' where
+		config_seq = #{seq}
+	</update>
+
+</mapper>

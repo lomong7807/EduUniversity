@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="standardhompage.admin.bannermng.mapper.BannerMngMapper">
+
+	<sql id="searchKeyword">
+		WHERE
+		<choose>
+			<when test="searchCate == 'write_id'">
+				write_id = #{keyword}
+			</when>
+		</choose>
+	</sql>
+	
+	<insert id="insertBannerMngData" parameterType="bannerMngReq">
+		INSERT INTO
+			edt_banner
+		(
+		banner_image_url
+		, banner_text
+		, banner_small_text
+		, banner_link_text
+		, banner_link_url
+		, write_id
+		, write_time
+		)
+		VALUES
+		(
+		#{banner_image_url}
+		, #{banner_small_text}
+		, #{banner_link_text}
+		, #{banner_link_text}
+		, #{banner_link_url}
+		, #{write_id}
+		, CURRENT_TIME
+		)
+	</insert>
+	
+	<select id="getBannerList" resultType="bannerMngRes">
+		SELECT
+			*
+		FROM
+			edt_banner
+		<if test="banner_seq != null and banner_seq != ''">
+		WHERE
+        	banner_seq = #{banner_seq} 
+        </if>	
+		<if test="searchCate != '' and searchCate != null">
+            <include refid="searchKeyword"></include>
+        </if>
+		order by
+			banner_seq DESC
+		LIMIT
+			#{pageSize}
+		OFFSET
+			#{offset}
+	</select>
+
+	<select id="getBannerListCnt" resultType="int">
+		SELECT
+		COUNT(*)
+		FROM
+		edt_banner
+		<if test="searchCate != '' and searchCate != null">
+            <include refid="searchKeyword"></include>
+        </if>
+	</select>
+	
+		<delete id="deleteBannerData" parameterType="int">
+        DELETE
+        FROM
+            edt_banner
+        WHERE
+            banner_seq = #{banner_seq};
+    </delete>
+</mapper>

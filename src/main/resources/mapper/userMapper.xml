@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="standardhompage.admin.userMng.mapper.UserMngMapper">
+    <select id="getUserListPage" parameterType="userReq" resultType="userRes">
+        SELECT
+            a.*,
+            b.company_id,
+            b.company_name
+        FROM
+            edt_user AS a
+        JOIN
+            edt_company AS b
+        ON a.company_seq = b.company_seq
+        <if test="searchCate != '' and searchCate != null">
+            <include refid="searchKeyword"></include>
+        </if>
+        order by
+            a.write_time
+        desc
+        LIMIT
+            #{pageSize}
+        OFFSET
+            #{offset}
+    </select>
+
+    <select id="getUserList" parameterType="userReq" resultType="userRes">
+        SELECT
+            a.*,
+            b.company_id,
+            b.company_name
+        FROM
+            edt_user AS a
+        JOIN
+            edt_company AS b
+        ON
+            a.company_seq = b.company_seq
+        <if test="searchCate != '' and searchCate != null">
+            <include refid="searchKeyword"></include>
+        </if>
+        <if test="startDate != '' and endDate != ''">
+            <include refid="searchDate"></include>
+        </if>
+        order by
+            a.write_time
+        desc
+    </select>
+
+    <select id="selectUserBySeq" parameterType="userReq" resultType="userRes">
+        SELECT
+            *
+        FROM
+            edt_user
+        WHERE
+            user_seq = #{user_seq}
+    </select>
+
+    <select id="getUserListPageCount" parameterType="userReq" resultType="int">
+        SELECT
+        COUNT(*)
+        FROM
+        edt_user AS a
+        <if test="searchCate != '' and searchCate != null">
+            <include refid="searchKeyword"></include>
+        </if>
+    </select>
+
+    <select id="getUserListCount" parameterType="userReq" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            edt_user AS a
+        <if test="searchCate != '' and searchCate != null">
+            <include refid="searchKeyword"></include>
+        </if>
+        <if test="startDate != '' and endDate != ''">
+            <include refid="searchDate"></include>
+        </if>
+    </select>
+
+    <select id="getUserCountById" parameterType="String" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            edt_user
+        WHERE
+            user_id = #{user_id}
+    </select>
+
+    <select id="getUserCountByHp" parameterType="String" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            edt_user
+        WHERE
+            user_hp = #{user_hp}
+    </select>
+
+    <!-- SEARCH USER SQL -->
+    <sql id="searchKeyword">
+        WHERE
+        <choose>
+            <when test="searchCate == 'name'">
+                a.user_name LIKE CONCAT('%', #{keyword}, '%')
+            </when>
+            <when test="searchCate == 'id'">
+                a.user_id LIKE CONCAT('%', #{keyword}, '%')
+            </when>
+        </choose>
+    </sql>
+
+    <!-- SEARCH USER DATE SQL -->
+    <sql id="searchDate">
+        <choose>
+            <when test="searchCate == 'name' or searchCate == 'id'">
+                AND
+            </when>
+            <otherwise>
+                WHERE
+            </otherwise>
+        </choose>
+            <![CDATA[  a.write_time >= #{startDate} AND a.write_time <= #{endDate}  ]]>
+    </sql>
+
+    <insert id="insertUser" parameterType="userReq">
+        INSERT
+        INTO
+            edt_user
+        SET
+            company_seq     = #{company_seq},
+            role_seq        = #{role_seq}
+            user_id         = #{user_id},
+            user_pw         = #{user_pw},
+            user_hp         = #{user_hp},
+            user_name       = #{user_name},
+            sex             = #{sex},
+            zip_code        = #{zip_code},
+            addr1           = #{addr1},
+            addr2           = #{addr2},
+            email           = #{email},
+            birth           = #{birth},
+            write_time      = #{write_time},
+            update_time     = #{update_time},
+            register_ip     = #{register_ip},
+            email_ok        = #{email_ok},
+            sms_ok          = #{sms_ok},
+            is_out          = #{is_out};
+    </insert>
+
+    <update id="updateUser" parameterType="userReq">
+        UPDATE
+            edt_user
+        SET
+            company_seq     = #{company_seq},
+            role_seq        = #{role_seq},
+            user_id         = #{user_id},
+            user_pw         = #{user_pw},
+            user_hp         = #{user_hp},
+            user_name       = #{user_name},
+            sex             = #{sex},
+            zip_code        = #{zip_code},
+            addr1           = #{addr1},
+            addr2           = #{addr2},
+            email           = #{email},
+            birth           = #{birth},
+            update_time     = #{update_time},
+            email_ok        = #{email_ok},
+            sms_ok          = #{sms_ok}
+        WHERE
+            user_seq        = #{user_seq}
+    </update>
+
+    <delete id="deleteUserBySeq" parameterType="userReq">
+        DELETE
+        FROM
+            edt_user
+        WHERE
+            user_seq = #{user_seq};
+    </delete>
+</mapper>

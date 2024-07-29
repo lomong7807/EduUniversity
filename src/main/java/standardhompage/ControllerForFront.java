@@ -1,0 +1,153 @@
+package standardhompage;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+@Controller
+public class ControllerForFront {
+
+   @GetMapping("/v/{num}")
+   public String getView(@PathVariable("num") int num) {
+
+      switch (num) {
+      case 1:
+         return "/admin/adminMain";
+      case 2:
+         return "/front/UserRegis";
+      case 3:
+         return "/front/SitePolicy";
+      case 4:
+         return "/front/adminMenuManage";
+      case 5:
+         return "/front/adminMenuRegis";
+      case 6:
+         return "/front/SiteManage";
+      case 7:
+         return "/front/SiteRegis";
+      case 8:
+         return "/front/adminManage";
+      case 9:
+         return "/front/adminManageRegis";
+      case 10:
+         return "/front/UserManage";
+      case 11:
+         return "/front/UserRegis";
+      case 12:
+         return "/front/SmsLog";
+      case 13:
+         return "/front/SmsManage";
+      case 14:
+         return "/front/SmsPrefer";
+      case 15:
+         return "/front/EmailLog";
+      case 16:
+         return "/front/EmailManage";
+      case 17:
+         return "/front/EmailPrefer";
+      case 18:
+         return "/front/CodeManage";
+      case 19:
+         return "/front/CodeRegis";
+      case 20:
+         return "/user/attached_school/attached_han";
+      case 21:
+         return "/user/attached_school/attached_hwa";
+      case 22:
+         return "/user/attached_school/attached_kid";
+      case 23:
+         return "/user/attached_school/attached_swschool";
+      case 24:
+         return "/user/board/board_block";
+      case 25:
+         return "/user/board/board_blog_1";
+      case 26:
+         return "/user/board/board_blog_2";
+      case 27:
+         return "/user/board/board_common";
+      case 28:
+         return "/user/board/board_consulting";
+      case 29:
+         return "/user/board/board_event";
+      case 30:
+         return "/user/board/board_gallery";
+      case 31:
+         return "/user/board/board_movie";
+      case 32:
+         return "/user/board/board_notice_admin";
+      case 33:
+         return "/user/board/board_notice";
+      case 34:
+         return "/user/board/board_portfolio";
+      case 35:
+         return "/user/board/board_question";
+      case 36:
+         return "/user/board/board_survey";
+      case 37:
+         return "/user/board/board_webzin";
+      case 38:
+         return "/user/company_directors/company_chairman_admin";
+      case 39:
+         return "/user/company_directors/company_chairman";
+      case 40:
+         return "/user/company_directors/company_dir_schedule";
+      case 41:
+         return "/user/company_directors/company_executive_status";
+      case 42:
+         return "/user/company_directors/company_founding_officers";
+      case 43:
+         return "/user/company_directors/company_organization";
+      case 44:
+         return "/user/company_directors/company_proceed_admin";
+      case 45:
+         return "/user/company_directors/company_proceed";
+      case 46:
+         return "/user/company_directors/company_schedule";
+      case 47:
+         return "/user/school/school_greetings";
+      case 48:
+         return "/user/school/school_history";
+      case 49:
+         return "/user/school/school_intro";
+      case 50:
+         return "/user/school/school_organization";
+      case 51:
+         return "/user/school/school_philosophy";
+      case 52:
+         return "/user/school/school_rule_admin";
+      case 53:
+         return "/user/school/school_rule";
+      case 54:
+         return "/user/other/other_agree";
+      case 55:
+         return "/user/other/other_class";
+      case 56:
+         return "/user/other/other_idpwfind";
+      case 57:
+         return "/user/other/other_login";
+      case 58:
+         return "/user/other/other_modal";
+      case 59:
+         return "/user/other/other_modify";
+      case 60:
+         return "/user/other/other_regist";
+      case 61:
+         return "/user/other/index";
+      case 62:
+          return "/user/board/board_content";
+      case 63:
+          return "/user/board/board_portfolio_write";
+      case 64:
+          return "/user/board/board_question_write";
+      case 65:
+          return "/front/UserStatis";
+      case 66:
+          return "/user/other/index";
+      case 67:
+          return "/front/adminMain";
+      case 68:
+          return "/front/Statis";
+      }
+      return "";
+   }
+}

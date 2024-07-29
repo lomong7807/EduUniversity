@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="standardhompage.admin.siteMenuMng.mapper.SiteMenuMapper">
+
+	<select id="getAllSiteMenus" resultType="siteMenuRes">
+		select * from
+		edt_site_menu
+		where is_deleted != 'Y'
+	</select>
+
+	<select id="getSiteMenuByMenuId" resultType="siteMenuRes"
+		parameterType="int">
+		select * from
+		edt_site_menu where menu_seq =
+		#{menu_seq}
+		and is_deleted != 'Y'
+	</select>
+
+	<insert id="registerSiteMenu" parameterType="siteMenuReq">
+		insert into
+		edt_site_menu
+		(
+		company_seq, title, url, depth, p_menu_seq, order_num,
+		is_open, menu_type, write_id,write_time
+		)
+		values
+		(
+		#{company_seq},
+		#{title},#{url},#{depth},#{p_menu_seq},#{order_num},#{is_open},#{menu_type},#{write_id},now()
+		)
+	</insert>
+
+	<update id="updateSiteMenu" parameterType="siteMenuReq">
+		UPDATE
+		edt_site_menu
+		SET
+		company_seq = #{company_seq}, title = #{title},
+		url =
+		#{url},
+		depth=#{depth},p_menu_seq=#{p_menu_seq},order_num=#{order_num},is_open=#{is_open},
+		menu_type=#{menu_type}
+		where menu_seq = #{menu_seq}
+	</update>
+
+	<update id="deleteSiteMenu">
+		update edt_site_menu set is_deleted = 'Y'
+		where
+		menu_seq
+		=
+		#{menu_seq}
+	</update>
+
+	<select id="getSiteMenuList" resultType="siteMenuRes">
+		SELECT
+		a.*,
+		(SELECT COUNT(*) FROM edt_site_menu b WHERE b.p_menu_seq =
+		a.menu_seq and b.is_deleted != 'Y') AS
+		childMenuCnt
+		FROM
+		edt_site_menu a
+		<where>
+			a.p_menu_seq = #{p_menu_seq}
+			<if test="keyword != '' and keyword != null">
+				and title LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+			and a.is_deleted != 'Y'
+		</where>
+		order by
+		order_num DESC,
+		write_time DESC
+		LIMIT
+		#{pageSize}
+		OFFSET
+		#{offset}
+	</select>
+
+
+	<select id="getSiteMenuListCnt" resultType="int">
+		SELECT
+		COUNT(*)
+		FROM
+		edt_site_menu
+		where p_menu_seq = #{p_menu_seq}
+		and
+		is_deleted != 'Y'
+		<if test="keyword != '' and keyword != null">
+			and title LIKE CONCAT('%', #{keyword}, '%')
+		</if>
+	</select>
+
+	<select id="getParentMenus" resultType="siteMenuRes">
+		SELECT
+		*
+		FROM
+		edt_site_menu
+		where p_menu_seq = 0
+		and is_deleted != 'Y'
+	</select>
+
+	<select id="getChildMenus" resultType="siteMenuRes">
+		select * from
+		edt_site_menu where p_menu_seq != 0
+		and is_deleted != 'Y'
+	</select>
+
+	<select id="getParentMenu" parameterType="Integer"
+		resultType="siteMenuRes">
+		select * from
+		edt_site_menu where menu_seq = #{seq}
+		and
+		is_deleted != 'Y'
+	</select>
+
+	<select id="getMenusByPSeq" parameterType="Integer"
+		resultType="siteMenuRes">
+		select * from
+		edt_site_menu where p_menu_seq = #{seq}
+		and
+		is_deleted != 'Y'
+	</select>
+
+	<select id="getConfigSeq" resultType="Integer">
+		SELECT
+		config_seq
+		FROM
+		edt_board_config
+		WHERE
+		menu_seq = #{seq}
+		and is_deleted != 'Y'
+	</select>
+
+	<select id="getMenuSeq" resultType="Integer">
+		SELECT
+		menu_seq
+		FROM
+		edt_board_config
+		WHERE
+		config_seq = #{seq}
+		and is_deleted != 'Y'
+	</select>
+
+	<select id="getConfigSeqFromBoard" resultType="Integer">
+		SELECT
+		config_seq
+		FROM
+		edt_board
+		WHERE
+		board_seq = #{seq}
+		and is_deleted != 'Y'
+	</select>
+
+	<update id="updateMenuName" parameterType="boardConfigReq">
+		update edt_site_menu
+		set
+		title = #{board_name}
+		where menu_seq = #{menu_seq}
+	</update>
+	
+	<select id = "getLastInsertedMenuSeq" resultType = "int">
+		select max(menu_seq) from edt_site_menu
+	</select>
+
+</mapper>

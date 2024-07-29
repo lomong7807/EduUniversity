@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="standardhompage.admin.smsConfig.mapper.SmsConfigMapper">
+    <select id="getSmsConfig" parameterType="smsConfigReq" resultType="smsConfigRes">
+        SELECT
+            *
+        FROM
+            edt_sms_config
+    </select>
+
+    <insert id="insertSmsConfig" parameterType="smsConfigReq">
+        INSERT
+        INTO
+            edt_sms_config
+        SET
+            sms_key         = #{sms_key},
+            api_secret      = #{api_secret},
+            sms_id          = #{sms_id},
+            send_number     = #{send_number},
+            use_sms         = #{use_sms},
+            company_seq     = #{company_seq},
+            write_time      = #{write_time};
+    </insert>
+
+    <update id="updateSmsConfig" parameterType="smsConfigReq">
+        UPDATE
+            edt_sms_config
+        SET
+            sms_key         = #{sms_key},
+            api_secret      = #{api_secret},
+            sms_id          = #{sms_id},
+            send_number     = #{send_number},
+            use_sms         = #{use_sms},
+            company_seq     = #{company_seq}
+        WHERE
+            sms_config_seq  = #{sms_config_seq};
+    </update>
+
+</mapper>

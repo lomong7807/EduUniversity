@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- Type Aliases 설정 -->
+	<typeAliases>
+		<typeAlias type="standardhompage.dto.admin.AdminInfoReq"
+			alias="adminInfoReq" />
+		<typeAlias type="standardhompage.dto.admin.AdminInfoRes"
+			alias="adminInfoRes" />
+		<typeAlias type="standardhompage.dto.commoncd.ComnCdReq"
+			alias="comnCdReq" />
+		<typeAlias type="standardhompage.dto.commoncd.ComnCdRes"
+			alias="comnCdRes" />
+		<typeAlias type="standardhompage.dto.adminMenu.AdminMenuReq"
+			alias="adminMenuReq" />
+		<typeAlias type="standardhompage.dto.adminMenu.AdminMenuRes"
+			alias="adminMenuRes" />
+		<typeAlias type="standardhompage.dto.sitemenu.SiteMenuReq"
+			alias="SiteMenuReq" />
+		<typeAlias type="standardhompage.dto.sitemenu.SiteMenuRes"
+			alias="SiteMenuRes" />
+		<typeAlias type="standardhompage.dto.user.UserReq"
+			alias="userReq" />
+		<typeAlias type="standardhompage.dto.user.UserRes"
+			alias="userRes" />
+		<typeAlias type="standardhompage.dto.popup.PopupReq"
+			alias="popupReq" />
+		<typeAlias type="standardhompage.dto.popup.PopupRes"
+			alias="popupRes" />
+		<typeAlias
+			type="standardhompage.dto.boardConfig.BoardConfigReq"
+			alias="boardConfigReq" />
+		<typeAlias
+			type="standardhompage.dto.boardConfig.BoardConfigRes"
+			alias="boardConfigRes" />
+		<typeAlias type="standardhompage.dto.company.CompanyReq"
+			alias="companyReq" />
+		<typeAlias type="standardhompage.dto.company.CompanyRes"
+			alias="companyRes" />
+		<typeAlias type="standardhompage.dto.smsConfig.SmsConfigReq"
+			alias="smsConfigReq" />
+		<typeAlias type="standardhompage.dto.smsConfig.SmsConfigRes"
+			alias="smsConfigRes" />
+		<typeAlias
+			type="standardhompage.dto.smsTemplate.SmsTemplateReq"
+			alias="smsTemplateReq" />
+		<typeAlias
+			type="standardhompage.dto.smsTemplate.SmsTemplateRes"
+			alias="smsTemplateRes" />
+		<typeAlias
+			type="standardhompage.dto.uploadFile.UploadFileReq"
+			alias="uploadFileReq" />
+		<typeAlias
+			type="standardhompage.dto.uploadFile.UploadFileRes"
+			alias="uploadFileRes" />
+		<typeAlias type="standardhompage.dto.banner.BannerMngReq"
+			alias="bannerMngReq" />
+		<typeAlias type="standardhompage.dto.banner.BannerMngRes"
+			alias="bannerMngRes" />
+		<typeAlias
+			type="standardhompage.dto.boardConfig.BoardTypeRes"
+			alias="boardTypeRes" />
+		<typeAlias
+			type="standardhompage.dto.boardCategory.BoardCategoryReq"
+			alias="boardCategoryReq" />
+		<typeAlias
+			type="standardhompage.dto.boardCategory.BoardCategoryRes"
+			alias="boardCategoryRes" />
+		<typeAlias type="standardhompage.dto.board.BoardReq"
+			alias="boardReq" />
+		<typeAlias type="standardhompage.dto.board.BoardRes"
+			alias="boardRes" />
+		<typeAlias type="standardhompage.dto.adminLog.AdminLogReq"
+			alias="adminLogReq" />
+		<typeAlias type="standardhompage.dto.adminLog.AdminLogRes"
+				   alias="adminLogRes" />
+		<typeAlias type="standardhompage.dto.userLog.UserLogReq"
+				   alias="userLogReq" />
+		<typeAlias type="standardhompage.dto.userLog.UserLogRes"
+				   alias="userLogRes" />
+		<typeAlias type="standardhompage.dto.smsLog.SmsLogReq"
+				   alias="smsLogReq" />
+		<typeAlias type="standardhompage.dto.smsLog.SmsLogRes"
+				   alias="smsLogRes" />
+		<typeAlias type="standardhompage.dto.policy.PolicyReq"
+			alias="PolicyReq" />
+		<typeAlias type="standardhompage.dto.policy.PolicyRes"
+			alias="PolicyRes" />
+		<typeAlias type="standardhompage.dto.customUser.CustomUserReq"
+				   alias="customUserReq" />
+		<typeAlias type="standardhompage.dto.customUser.CustomUserRes"
+				   alias="customUserRes" />
+		<typeAlias type="standardhompage.dto.refreshToken.RefreshTokenReq"
+				   alias="refreshTokenReq" />
+		<typeAlias type="standardhompage.dto.refreshToken.RefreshTokenRes"
+				   alias="refreshTokenRes" />
+		<typeAlias type="standardhompage.dto.dashboard.VisitorRatioReq"
+				   alias="visitorsRatioReq" />
+		<typeAlias type="standardhompage.dto.dashboard.RegUserCountReq"
+				   alias="regUserCountReq" />
+		<typeAlias type="standardhompage.dto.dashboard.RegUserCountWeeklyReq"
+				   alias="regUserCountWeeklyReq" />
+		<typeAlias type="standardhompage.dto.dashboard.VisitorByBrowserReq"
+				   alias="visitorByBrowserReq" />
+		<typeAlias type="standardhompage.dto.dashboard.VisitorByDeviceReq"
+				   alias="visitorByDeviceReq" />
+		<typeAlias type="standardhompage.dto.dashboard.VisitorByDeviceDailyReq"
+				   alias="visitorByDeviceDailyReq" />
+		<typeAlias type="standardhompage.dto.dashboard.VisitorByHourlyReq"
+				   alias="visitorByHourlyReq" />
+	</typeAliases>
+</configuration>
+
+

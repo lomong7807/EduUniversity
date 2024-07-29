@@ -1,0 +1,1301 @@
+<!doctype html>
+<!--[if lt IE 7 ]><html lang="ko" class="ie6"><![endif]-->
+<!--[if IE 7 ]>   <html lang="ko" class="ie7"><![endif]-->
+<!--[if IE 8 ]>   <html lang="ko" class="ie8"><![endif]-->
+<!--[if IE 9 ]>   <html lang="ko" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="ko" class=""><!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<title>만다린 전화화상중국어 관리자 모드</title>
+		<meta name="author" content="Hom2Box">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<!--[if IEMobile]>
+			<meta http-equiv="cleartype" content="on" />
+		<![endif]-->
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="shortcut icon" href="../img/logomark.ico">
+		<link rel="apple-touch-icon" href="././img/logomark.svg">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+		<meta name="keywords" content="만다린 전화화상중국어, 전화화상중국어, 화상중국어" />
+		<meta name="description" content="만다린 전화화상중국어 관리자 모드" />
+		<meta property="fb:app_id" content="만다린 전화화상중국어" />
+		<meta property="og:type" content="website">
+		<meta property="og:title"  content="만다린 전화화상중국어" />
+		<meta property="og:description" content="만다린 전화화상중국어 관리자 모드">
+		<meta property="og:image"  content="././img/mandarin.svg" />
+		<meta property="og:url"    content="www.mandarin9.com" />
+		<meta property="al:web:url" content="www.mandarin9.com">
+		<link rel="canonical" href="www.mandarin9.com">
+		<meta name="twitter:card" content="mobile">
+		<meta name="twitter:url" content="www.mandarin9.com" />
+		<meta name="twitter:title"  content="만다린 전화화상중국어" />
+		<meta name="twitter:description" content="만다린 전화화상중국어 관리자 모드">
+		<meta name="twitter:image"  content="././img/mandarin.svg" />
+		<meta name="twitter:domain"    content="만다린 전화화상중국어" />
+
+		<!-- Stylesheets -->
+		<!-- 절대 수정하지마세요. -->
+		<link href="../css/animate.min.css" rel="stylesheet">
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+		<link href="../css/common.css" rel="stylesheet">
+		<link href="../css/common.responsive.css" rel="stylesheet">
+		<link href="../css/c3.min.css" rel="stylesheet">
+		<link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="../css/themify.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/themify-icons/1.0.1/css/themify-icons.css" rel="stylesheet">
+		<link href="../css/NotoSansCJKkr.css" rel="stylesheet">
+		<link href="../css/NotoSansCJKjp.css" rel="stylesheet">
+		<link href="../css/NotoSansCJKsc.css" rel="stylesheet">
+		<link href="../css/NotoSansCJKtc.css" rel="stylesheet">
+		<!-- //절대 수정하지마세요. -->
+		<link href="././css/theme.css" rel="stylesheet">
+
+		<!--[if lt IE 9]>
+			<script src="../js/html5shiv.min.js"></script>
+		<![endif]-->
+
+		<!--[if lt IE 10]>
+			<script src="../js/media.match.min.js"></script>
+			<script src="../js/respond.min.js"></script>
+		<![endif]-->
+
+		<!-- Scripts -->
+		<script src="../js/modernizr.min.js"></script>
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/moment.js"></script>
+	</head>
+    <style>
+        .table .sms_scode {
+            width:100%;
+            border-top: none !important;
+        }
+        .table .sms_scode td {
+            padding:0 !important;
+            border: 1px solid #ddd !important;
+        }
+        .table .sms_scode td a {
+            display:block;
+            padding:4px 0 5px;
+        }
+        .table .sms_scode td a:hover {
+            color:#000;
+            background-color:#eee;
+        }
+    
+        .table-fixed {
+            table-layout:fixed;
+        }
+        .fixed-table-container {
+        
+        }
+        .fixed-table-body {
+            height:670px;
+        overflow-x: auto;
+        }
+        
+        .fixed-table-address-body {
+            height:600px;
+        overflow-x: auto;
+        }
+    </style>
+    <body class="admin">
+        <!-- Admin Wrapper -->
+        <div id="ubhome-wrapper">
+			<!-- Sidebar -->			
+            <div id="ubhome-sidebar-wrapper" >
+                <ul class="ubhome-sidebar">
+                    <li class="ubhome-sidebar-main">
+                        <a href="././dashboard.php" class="logo">
+                            <img src="././img/mandarin-white.svg" alt="mandarin" />
+                        </a>
+                        <i class="menu-icon fa fa-exchange ubhome-toggle" id="ubhome-toggle"></i>
+                        <i class="menu-icon fa fa-exchange ubhome-toggle-mobile" id="ubhome-toggle-mobile"></i>
+                    </li>
+
+                    <li class="ubhome-sidebar-user">
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <img class="media-object" src="././data/admin-sample.jpg" alt="..." />
+                            </div>
+                            <div class="media-body media-middle">
+                                <h6>환영합니다.</h6>
+                                <h5>관리자님 <a href="javascript:void(0);"><i class="ti-power-off"></i></a></h5>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- 환경설정 -->
+                    <li class="ubhome-sidebar-list">
+                        <a href="javascript:void(0);" class="ubhome-sidebar-title"><i class="menu-icon fa fa-cogs"></i> 환경설정</a>
+                        <ul class="ubhome-sidebar-sub">
+                            <li><a href="././code_manager_list.php">코드관리</a></li>
+                            <li><a href="././base_config_edit.php">기초환경설정</a></li>
+                            <li><a href="././policy_edit.php">회원정책</a></li>
+                            <li><a href="././admin_list.php">관리자 관리</a></li>
+                            <li><a href="././holiday_list.php">휴일관리</a></li>
+                            <li><a href="././payment_edit.php">결제관리</a></li>
+                            <li><a href="././category_list.php">강좌분류관리</a></li>
+                            <li><a href="././level_grade_list.php">레벨분류관리</a></li>
+                            <li><a href="././popup_list.php">팝업관리</a></li>
+                            <li><a href="././menu_list.php">관리자메뉴관리</a></li>
+                            <li><a href="javascript:void(0);">사이트메뉴관리</a></li>
+                            <li><a href="javascript:void(0);">사이트페이지 관리</a></li>
+                            <li><a href="javascript:void(0);">스킨관리</a></li>
+                            <li><a href="././discount_config_edit.php">할인율 설정</a></li>
+                            <li><a href="././board_list.php">게시판 관리</a></li>
+                        </ul>
+                    </li>
+                    <!-- //환경설정 -->
+
+                    <!-- 회원관리 -->
+                    <li class="ubhome-sidebar-list">
+                        <a href="javascript:void(0);" class="ubhome-sidebar-title"><i class="menu-icon fa fa-user-circle-o"></i> 회원관리</a>
+                        <ul class="ubhome-sidebar-sub">
+                            <li><a href="././member/company_list.php">기업정보관리</a></li>
+                            <li><a href="././member/member_csv_upload.php">기업회원 일괄등록</a></li>
+                            <li><a href="././member/member_list.php">회원종합관리</a></li>
+                            <li><a href="././member/point_list.php">포인트 관리</a></li>
+                            <li><a href="././member/coupon_list.php">쿠폰관리</a></li>
+                            <li><a href="././member/coupon_detail_list.php">쿠폰사용내역</a></li>
+                        </ul>
+                    </li>
+                    <!-- //회원관리 -->
+
+                    <!-- 강사관리 -->
+                    <li class="ubhome-sidebar-list">
+                        <a href="javascript:void(0);" class="ubhome-sidebar-title"><i class="menu-icon fa fa-graduation-cap"></i> 강사관리</a>
+                        <ul class="ubhome-sidebar-sub">
+                            <li><a href="././teacher/teacher_list.php">강사관리</a></li>
+                            <li><a href="././teacher/teacher_time_edit.php">강사시간관리</a></li>
+                            <li><a href="././teacher/teachergroup_list.php">강사그룹설정</a></li>
+                            <li><a href="././teacher/teachersurvey_list.php">강사평가</a></li>
+                        </ul>
+                    </li>
+                    <!-- //강사관리 -->
+
+                    <!-- 강좌관리 -->
+                    <li class="ubhome-sidebar-list">
+                        <a href="javascript:void(0);" class="ubhome-sidebar-title"><i class="menu-icon fa fa-university"></i> 강좌관리</a>
+                        <ul class="ubhome-sidebar-sub">
+                            <li><a href="././class/class_list.php">강좌관리</a></li>
+                            <li><a href="././class/book_list.php">교재관리</a></li>
+                            <li><a href="javascript:void(0);">중국어신문관리</a></li>
+                        </ul>
+                    </li>
+                    <!-- //강좌관리 -->
+
+                    <!-- 주문관리 -->
+                    <li class="ubhome-sidebar-list">
+                        <a href="javascript:void(0);" class="ubhome-sidebar-title"><i class="menu-icon fa fa-laptop"></i> 주문관리</a>
+                        <ul class="ubhome-sidebar-sub">
+                            <li><a href="././order/class_order_list.php">주문관리</a></li>
+                            <li><a href="javascript:void(0);">레벨테스트관리</a></li>
+                            <li><a href="javascript:void(0);">재주문관리</a></li>
+                        </ul>
+                    </li>
+                    <!-- //주문관리 -->
+
+                    <!-- 수업관리 -->
+                    <li class="ubhome-sidebar-list">
+                        <a href="javascript:void(0);" class="ubhome-sidebar-title"><i class="menu-icon fa fa-book"></i> 수업관리</a>
+                        <ul class="ubhome-sidebar-sub">
+                            <li><a href="././schedule/full_calendar.php">수업캘린더관리</a></li>
+                            <li><a href="javascript:void(0);">수업관리</a></li>
+                            <li><a href="javascript:void(0);">장기연기관리</a></li>
+                            <li><a href="javascript:void(0);">결석관리</a></li>
+                            <li><a href="javascript:void(0);">수업변경로그</a></li>
+                            <li><a href="javascript:void(0);">영작교정</a></li>
+                            <li><a href="javascript:void(0);">월평가설정</a></li>
+                            <li><a href="javascript:void(0);">월평가관리</a></li>
+                            <li><a href="javascript:void(0);">기간별 출석(기업)</a></li>
+                        </ul>
+                    </li>
+                    <!-- //수업관리 -->
+
+                    <!-- 고객센터 -->
+                    <li class="ubhome-sidebar-list">
+                        <a href="javascript:void(0);" class="ubhome-sidebar-title"><i class="menu-icon fa fa-comments-o"></i> 고객센터</a>
+                        <ul class="ubhome-sidebar-sub">
+                            <li><a href="././board/index.php?board_id=notice&action=list&page=1">공지사항</a></li>
+                            <li><a href="javascript:void(0);">1:1 고객센터</a></li>
+                            <li><a href="javascript:void(0);">강사 1:1 게시판</a></li>
+                            <li><a href="././customer/company_proposal_list.php">기업제안신청</a></li>
+                            <li><a href="javascript:void(0);">직원게시판</a></li>
+                            <li><a href="javascript:void(0);">학습자료실</a></li>
+                            <li><a href="javascript:void(0);">매일회화표현</a></li>
+                            <li><a href="javascript:void(0);">FAQ</a></li>
+                        </ul>
+                    </li>
+                    <!-- //고객센터 -->
+
+                    <!-- 통계관리 -->
+                    <li class="ubhome-sidebar-list">
+                        <a href="javascript:void(0);" class="ubhome-sidebar-title"><i class="menu-icon fa fa-pie-chart"></i> 통계관리</a>
+                        <ul class="ubhome-sidebar-sub">
+                            <li><a href="javascript:void(0);">접속통계</a></li>
+                            <li><a href="javascript:void(0);">회원가입통계</a></li>
+                            <li><a href="javascript:void(0);">레벨테스트통계</a></li>
+                            <li><a href="javascript:void(0);">수업신청통계</a></li>
+                            <li><a href="javascript:void(0);">일별매출통계</a></li>
+                            <li><a href="javascript:void(0);">월별매출통계</a></li>
+                        </ul>
+                    </li>
+                    <!-- //통계관리 -->
+
+                    <!-- 언어선택 -->
+                    <li class="ubhome-sidebar-lang">
+                        <a href="javascript:void(0);" class="btn btn-block btn-default" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">한국어 <span class="num-webfont">(KOR)</span> <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="active"><a href="#">한국어 <span class="num-webfont">(KOR)</span></a></li>
+                            <li><a href="#">영어 <span class="num-webfont">(ENG)</span></a></li>
+                            <li><a href="#">중국어 <span class="num-webfont">(CHN)</span></a></li>
+                            <li><a href="#">일본어 <span class="num-webfont">(JPN)</span></a></li>
+                        </ul>
+                    </li>
+                    <!-- //언어선택 -->
+                </ul>
+
+                <!-- LMS 환경설정 -->
+                <div class="row ubhome-sidebar-footer">
+                    <div class="col-xs-12">
+                        <a href="javascript:void(0);">
+                            <i class="fa fa-cog"></i> <span>LMS 환경설정</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- //LMS 환경설정 -->
+            </div>
+	        <div class="mask-win"></div>
+            <!-- //Sidebar -->
+			<!-- Page Content -->
+			<div id="content-wrapper" class="">
+				<!-- Quick Bar -->
+				<div class="contents-header">
+					<button type="button" id="meta-toggle" class="top-quick-left btn hidden-sm hidden-md hidden-lg">
+						<i class="fa fa-bars"></i>
+					</button>
+					<a href="././dashboard.php" class="logo hidden-sm hidden-md hidden-lg">
+						<img src="././img/mandarin-white.svg" alt="mandarin" class="mobile-logo" />
+					</a>
+					<button type="button" id="quick-toggle" class="top-quick-right btn hidden-sm hidden-md hidden-lg">
+						<i class="fa fa-sort-amount-desc"></i>
+					</button>
+					<div class="quick-navi-wrap">
+						<div class="quick-navi">
+							<div class="row">
+								<div class="col-xs-6 col-sm-4 col-lg-2 md-mb10 m-mb10 xs-mb10 add-col">
+									<a href="#"><img src="././img/quick-01.svg" class="img" alt="quick-01" />오늘의 수업스케쥴</a>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-lg-2 md-mb10 m-mb10 xs-mb10 add-col last-col-xs">
+									<a href="#"><img src="././img/quick-02.svg" class="img" alt="quick-02" />수강신청현황 수업등록</a>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-lg-2 md-mb10 m-mb10 xs-mb10 last-col-sm add-col add-col-xs">
+									<a href="#"><img src="././img/quick-03.svg" class="img" alt="quick-03" />레벨테스트 신청/결과</a>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-lg-2 xs-mb10 odd-col last-col-xs">
+									<a href="#"><img src="././img/quick-04.svg" class="img" alt="quick-04" />학생별 수업스케쥴</a>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-lg-2 odd-col">
+									<a href="#"><img src="././img/quick-05.svg" class="img" alt="quick-05" />강사별 수업 스케쥴</a>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-lg-2 last-col odd-col">
+									<a href="#"><img src="././img/quick-06.svg" class="img" alt="quick-06" />수업/강사별 출석통계</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+                <!-- //Quick Bar -->
+
+				<!-- Main Content -->
+				<div class="main-content">
+					<!-- 콘테이너 -->
+					<div id="container">
+                        <!-- 페이지 명 -->
+                        <div class="row form-inline mb10">
+                            <div class="col-sm-6">
+                                <h3 class="text-info mt5">SMS 발송관리</h3>
+                            </div>
+                            <div class="col-sm-6 text-right">
+
+                            </div>
+                        </div>
+                        <!-- //페이지 명 -->
+            
+                        <div class="row">
+                            <div>
+                                <div class="customer_container dashboard">
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li role="presentation" class="active"><a href="#sms_tab1">SMS 보내기</a></li>
+                                        <li role="presentation"><a href="smslog_list.html" >발송내역</a></li>
+                                    </ul>
+                                    <div class="tab-content pt20">
+                                        <div role="tabpanel" class="tab-pane active" id="sms_tab1">
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                <!-- SMS 대상검색 -->
+                                                    
+                                                    <!-- 검색옵션 -->
+                                                    <form class="panel panel-default search_wrap mb15" name="searchform" action="sms_edit.html">
+                                                        <div class="panel-body p10">
+                
+                                                            <div class="row mb5">
+                
+                                                                <div class="col-md-3 col-lg-3">
+                                                                    <select id="period_type" name="period_type" class="form-control">
+                                                                        <!--<option value=""  selected >기간구분</option>-->
+                                                                        <option value="J" >가입일시</option>
+                                                                    </select>
+                                                                </div>
+                                                                
+                                                                <div class="col-md-4 col-lg-4">
+                                                                    <div class='input-group date'      id='sday'  >
+                                                                        <input type='text' name='sday' class='form-control' value=''  data-inputmask="'mask': '9999-99-99'"     />
+                                                                        <span class='input-group-addon'>
+                                                                        <span class='glyphicon glyphicon-calendar'></span>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-1">
+                                                                ~
+                                                                </div>
+                                                                <div class="col-md-4 col-lg-4">
+                                                                    <div class='input-group date'      id='eday'  >
+                                                                        <input type='text' name='eday' class='form-control' value=''  data-inputmask="'mask': '9999-99-99'"     />
+                                                                        <span class='input-group-addon'>
+                                                                        <span class='glyphicon glyphicon-calendar'></span>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                
+                                                            </div>
+                
+                
+                                                            <div class="row">
+                                                                <div class="col-md-5 col-lg-12">
+                                                                    <div class="row mb5">
+                                                                        <div class="col-xs-4">
+                                                                            <select id="member_type" name="member_type" class="form-control">
+                                                                                <option value=""  selected >신청구분</option>
+                                                                                <option value="C" >컨텐츠</option>
+                                                                                <option value="O" >오프라인교육</option>
+                                                                                <option value="M" >인강</option>
+                
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-xs-5">
+                                                                        
+                                                                            <input type="text" class="form-control" id="search_keyword" name="search_keyword" value=""  placeholder="키워드" />
+                                                                        </div>
+                                                                        <div class="col-xs-3">
+                                                                                <button type="submit" class="btn btn-block btn-black">검색</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                        
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    <!-- //검색옵션 -->
+                                                    
+                                                    <div class="mb5 write_loop">
+                                                        <div class="checkbox-inline">
+                                                            <label for="sms_c_all">
+                                                                <input type="checkbox" name="sms_c_all" id="sms_c_all" value="" onclick="checkAll(this.checked);" />전체
+                                                            </label>
+                                                        </div>
+                                                        <div class="row text-right mr5">Total : <strong class="num_eng text-primary ">588</strong>
+                                                        </div>                                                    
+                                                    </div>
+                                                    
+                                                    <form class="table_write" name="sms_form" action="sms_proc.html"  method="post" enctype="multipart/form-data" >
+                                                    <!-- 전체학생목록 -->
+                                                        <div class="table_section">
+                                                            <div class="table_container table_container_h fixed-table-address-body">
+                                                                <table class="table table-bordered text-center table-hover table-fixed display"  id="all_table" width="100%" cellspacing="0">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th width="10%" scope="col">
+                                                                                선택
+                                                                            </th>
+                                                                            <th scope="col"><strong>성명</strong></th>
+                                                                            <th scope="21%"><strong>이메일</strong></th>
+                                                                            <th width="31%" scope="col"><strong>휴대전화</strong></th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <!-- Loop -->
+                                                                        <tr >
+                                                                            <td>
+                                                                                <input type="checkbox" id="hptraver9044gmailcom" name="hp[]" value="010-8576-8166" data-user_name="박준우" data-member_type=""  />
+                                                                                <input type="hidden" name="user_name[]" value="010-8576-8166|박준우" />
+                                                                            </td>
+                                                                            <td onclick="javascript:setClick('hptraver9044gmailcom');" style="cursor:pointer;">박준우</td>
+                                                                            <td onclick="javascript:setClick('hptraver9044gmailcom');" style="cursor:pointer;">traver9044@gmail.com</td>
+                                                                            <td onclick="javascript:setClick('hptraver9044gmailcom');" style="cursor:pointer;">010-8576-8166</td>
+                                                                        </tr>
+                                                                        <!-- //Loop -->
+                                                                        <!-- Loop -->
+                                                                        <tr >
+                                                                            <td>
+                                                                                <input type="checkbox" id="hpdanika6navercom" name="hp[]" value="010-4487-0750" data-user_name="박주영" data-member_type=""  />
+                                                                                <input type="hidden" name="user_name[]" value="010-4487-0750|박주영" />
+                                                                            </td>
+                                                                            <td onclick="javascript:setClick('hpdanika6navercom');" style="cursor:pointer;">박주영</td>
+                                                                            <td onclick="javascript:setClick('hpdanika6navercom');" style="cursor:pointer;">danika6@naver.com</td>
+                                                                            <td onclick="javascript:setClick('hpdanika6navercom');" style="cursor:pointer;">010-4487-0750</td>
+                                                                        </tr>
+                                                                        <!-- //Loop -->
+                                                                        <!-- Loop -->
+                                                                        <tr >
+                                                                            <td>
+                                                                                <input type="checkbox" id="hpchildhongnavercom" name="hp[]" value="010-6767-6408" data-user_name="홍지원" data-member_type=""  />
+                                                                                <input type="hidden" name="user_name[]" value="010-6767-6408|홍지원" />
+                                                                            </td>
+                                                                            <td onclick="javascript:setClick('hpchildhongnavercom');" style="cursor:pointer;">홍지원</td>
+                                                                            <td onclick="javascript:setClick('hpchildhongnavercom');" style="cursor:pointer;">childhong@naver.com</td>
+                                                                            <td onclick="javascript:setClick('hpchildhongnavercom');" style="cursor:pointer;">010-6767-6408</td>
+                                                                        </tr>
+                                                                        <!-- //Loop -->
+                                                                        <!-- Loop -->
+                                                                        <tr >
+                                                                            <td>
+                                                                                <input type="checkbox" id="hpmindpainterm2mglobalcokr" name="hp[]" value="010-6250-1126" data-user_name="유준희" data-member_type=""  />
+                                                                                <input type="hidden" name="user_name[]" value="010-6250-1126|유준희" />
+                                                                            </td>
+                                                                            <td onclick="javascript:setClick('hpmindpainterm2mglobalcokr');" style="cursor:pointer;">유준희</td>
+                                                                            <td onclick="javascript:setClick('hpmindpainterm2mglobalcokr');" style="cursor:pointer;">mindpainter@m2mglobal.co.kr</td>
+                                                                            <td onclick="javascript:setClick('hpmindpainterm2mglobalcokr');" style="cursor:pointer;">010-6250-1126</td>
+                                                                        </tr>
+                                                                        <!-- //Loop -->
+                                                                        <!-- Loop -->
+                                                                        <tr >
+                                                                            <td>
+                                                                                <input type="checkbox" id="hpduq0216natecom" name="hp[]" value="010-9480-6669" data-user_name="이제엽" data-member_type=""  />
+                                                                                <input type="hidden" name="user_name[]" value="010-9480-6669|이제엽" />
+                                                                            </td>
+                                                                            <td onclick="javascript:setClick('hpduq0216natecom');" style="cursor:pointer;">이제엽</td>
+                                                                            <td onclick="javascript:setClick('hpduq0216natecom');" style="cursor:pointer;">duq0216@nate.com</td>
+                                                                            <td onclick="javascript:setClick('hpduq0216natecom');" style="cursor:pointer;">010-9480-6669</td>
+                                                                        </tr>
+                                                                        <!-- //Loop -->
+                                                                        <!-- Loop -->
+                                                                        <tr >
+                                                                            <td>
+                                                                                <input type="checkbox" id="hpname1navercom" name="hp[]" value="010-9100-8999" data-user_name="오흥택" data-member_type=""  />
+                                                                                <input type="hidden" name="user_name[]" value="010-9100-8999|오흥택" />
+                                                                            </td>
+                                                                            <td onclick="javascript:setClick('hpname1navercom');" style="cursor:pointer;">오흥택</td>
+                                                                            <td onclick="javascript:setClick('hpname1navercom');" style="cursor:pointer;">name1@naver.com</td>
+                                                                            <td onclick="javascript:setClick('hpname1navercom');" style="cursor:pointer;">010-9100-8999</td>
+                                                                        </tr>
+                                                                        <!-- //Loop -->
+                                                                        <!-- Loop -->
+                                                                        <tr >
+                                                                            <td>
+                                                                                <input type="checkbox" id="hphypsprep" name="hp[]" value="010-5306-5391" data-user_name="test" data-member_type=""  />
+                                                                                <input type="hidden" name="user_name[]" value="010-5306-5391|test" />
+                                                                            </td>
+                                                                            <td onclick="javascript:setClick('hphypsprep');" style="cursor:pointer;">test</td>
+                                                                            <td onclick="javascript:setClick('hphypsprep');" style="cursor:pointer;"></td>
+                                                                            <td onclick="javascript:setClick('hphypsprep');" style="cursor:pointer;">010-5306-5391</td>
+                                                                        </tr>
+                                                                        <!-- //Loop -->
+                                                                                                                        <!-- Loop -->
+                                                                        <tr >
+                                                                            <td>
+                                                                                <input type="checkbox" id="hpycw7701navercom" name="hp[]" value="010-5474-2935" data-user_name="유창우" data-member_type=""  />
+                                                                                <input type="hidden" name="user_name[]" value="010-5474-2935|유창우" />
+                                                                            </td>
+                                                                            <td onclick="javascript:setClick('hpycw7701navercom');" style="cursor:pointer;">유창우</td>
+                                                                            <td onclick="javascript:setClick('hpycw7701navercom');" style="cursor:pointer;">ycw7702@naver.com</td>
+                                                                            <td onclick="javascript:setClick('hpycw7701navercom');" style="cursor:pointer;">010-5474-2935</td>
+                                                                        </tr>
+                                                                        <!-- //Loop -->
+                                                                                                                        <!-- Loop -->
+                                                                        <tr >
+                                                                            <td>
+                                                                                <input type="checkbox" id="hpsetonlyonegmailcom" name="hp[]" value="010-3853-0073" data-user_name="박세원" data-member_type=""  />
+                                                                                <input type="hidden" name="user_name[]" value="010-3853-0073|박세원" />
+                                                                            </td>
+                                                                            <td onclick="javascript:setClick('hpsetonlyonegmailcom');" style="cursor:pointer;">박세원</td>
+                                                                            <td onclick="javascript:setClick('hpsetonlyonegmailcom');" style="cursor:pointer;">setonlyone@gmail.com</td>
+                                                                            <td onclick="javascript:setClick('hpsetonlyonegmailcom');" style="cursor:pointer;">010-3853-0073</td>
+                                                                        </tr>
+                                                                        <!-- //Loop -->
+                                                                                                                        <!-- Loop -->
+                                                                        <tr >
+                                                                            <td>
+                                                                                <input type="checkbox" id="hpbora114711daumnet" name="hp[]" value="010-2752-1994" data-user_name="정혜민" data-member_type=""  />
+                                                                                <input type="hidden" name="user_name[]" value="010-2752-1994|정혜민" />
+                                                                            </td>
+                                                                            <td onclick="javascript:setClick('hpbora114711daumnet');" style="cursor:pointer;">정혜민</td>
+                                                                            <td onclick="javascript:setClick('hpbora114711daumnet');" style="cursor:pointer;">bora114711@daum.net</td>
+                                                                            <td onclick="javascript:setClick('hpbora114711daumnet');" style="cursor:pointer;">010-2752-1994</td>
+                                                                        </tr>
+                                                                        <!-- //Loop -->
+                                                                                                                        <!-- Loop -->
+                                                                        <tr >
+                                                                            <td>
+                                                                                <input type="checkbox" id="hpbrandfly100gmailcom" name="hp[]" value="010-8952-9613" data-user_name="백진충" data-member_type=""  />
+                                                                                <input type="hidden" name="user_name[]" value="010-8952-9613|백진충" />
+                                                                            </td>
+                                                                            <td onclick="javascript:setClick('hpbrandfly100gmailcom');" style="cursor:pointer;">백진충</td>
+                                                                            <td onclick="javascript:setClick('hpbrandfly100gmailcom');" style="cursor:pointer;">brandfly100@gmail.com</td>
+                                                                            <td onclick="javascript:setClick('hpbrandfly100gmailcom');" style="cursor:pointer;">010-8952-9613</td>
+                                                                        </tr>
+                                                                        <!-- //Loop -->
+                                                                                                                        <!-- Loop -->
+                                                                        <tr >
+                                                                            <td>
+                                                                                <input type="checkbox" id="hpkth17dguackr" name="hp[]" value="010-4004-3973" data-user_name="김태환" data-member_type=""  />
+                                                                                <input type="hidden" name="user_name[]" value="010-4004-3973|김태환" />
+                                                                            </td>
+                                                                            <td onclick="javascript:setClick('hpkth17dguackr');" style="cursor:pointer;">김태환</td>
+                                                                            <td onclick="javascript:setClick('hpkth17dguackr');" style="cursor:pointer;">kth17@dgu.ac.kr</td>
+                                                                            <td onclick="javascript:setClick('hpkth17dguackr');" style="cursor:pointer;">010-4004-3973</td>
+                                                                        </tr>
+                                                                        <!-- //Loop -->
+                                                                                                                        <!-- Loop -->
+                                                                        <tr >
+                                                                            <td>
+                                                                                <input type="checkbox" id="hpcompany3" name="hp[]" value="010-1111-1111" data-user_name="박연구" data-member_type=""  />
+                                                                                <input type="hidden" name="user_name[]" value="010-1111-1111|박연구" />
+                                                                            </td>
+                                                                            <td onclick="javascript:setClick('hpcompany3');" style="cursor:pointer;">박연구</td>
+                                                                            <td onclick="javascript:setClick('hpcompany3');" style="cursor:pointer;">test3@naver.com</td>
+                                                                            <td onclick="javascript:setClick('hpcompany3');" style="cursor:pointer;">010-1111-1111</td>
+                                                                        </tr>
+                                                                        <!-- //Loop -->
+                                                                                                                        <!-- Loop -->
+                                                                        <tr >
+                                                                            <td>
+                                                                                <input type="checkbox" id="hpcompany2" name="hp[]" value="010-1111-1111" data-user_name="이개발" data-member_type=""  />
+                                                                                <input type="hidden" name="user_name[]" value="010-1111-1111|이개발" />
+                                                                            </td>
+                                                                            <td onclick="javascript:setClick('hpcompany2');" style="cursor:pointer;">이개발</td>
+                                                                            <td onclick="javascript:setClick('hpcompany2');" style="cursor:pointer;">test2@naver.com</td>
+                                                                            <td onclick="javascript:setClick('hpcompany2');" style="cursor:pointer;">010-1111-1111</td>
+                                                                        </tr>
+                                                                        <!-- //Loop -->
+                                                                                                                        <!-- Loop -->
+                                                                        <tr >
+                                                                            <td>
+                                                                                <input type="checkbox" id="hpcompany1" name="hp[]" value="010-1111-1111" data-user_name="김생산" data-member_type=""  />
+                                                                                <input type="hidden" name="user_name[]" value="010-1111-1111|김생산" />
+                                                                            </td>
+                                                                            <td onclick="javascript:setClick('hpcompany1');" style="cursor:pointer;">김생산</td>
+                                                                            <td onclick="javascript:setClick('hpcompany1');" style="cursor:pointer;">test1@naver.com</td>
+                                                                            <td onclick="javascript:setClick('hpcompany1');" style="cursor:pointer;">010-1111-1111</td>
+                                                                        </tr>
+                                                                        <!-- //Loop -->
+                                                                                                                        <!-- Loop -->
+                                                                        <tr >
+                                                                            <td>
+                                                                                <input type="checkbox" id="hptest3" name="hp[]" value="01033333333" data-user_name="이하진" data-member_type=""  />
+                                                                                <input type="hidden" name="user_name[]" value="01033333333|이하진" />
+                                                                            </td>
+                                                                            <td onclick="javascript:setClick('hptest3');" style="cursor:pointer;">이하진</td>
+                                                                            <td onclick="javascript:setClick('hptest3');" style="cursor:pointer;">test3@naver.com</td>
+                                                                            <td onclick="javascript:setClick('hptest3');" style="cursor:pointer;">01033333333</td>
+                                                                        </tr>
+                                                                        <!-- //Loop -->
+                                                                                                                        <!-- Loop -->
+                                                                        <tr >
+                                                                            <td>
+                                                                                <input type="checkbox" id="hptest2" name="hp[]" value="01022222222" data-user_name="이민아" data-member_type=""  />
+                                                                                <input type="hidden" name="user_name[]" value="01022222222|이민아" />
+                                                                            </td>
+                                                                            <td onclick="javascript:setClick('hptest2');" style="cursor:pointer;">이민아</td>
+                                                                            <td onclick="javascript:setClick('hptest2');" style="cursor:pointer;">test2@naver.com</td>
+                                                                            <td onclick="javascript:setClick('hptest2');" style="cursor:pointer;">01022222222</td>
+                                                                        </tr>
+                                                                        <!-- //Loop -->
+                                                                                                                        <!-- Loop -->
+                                                                        <tr >
+                                                                            <td>
+                                                                                <input type="checkbox" id="hptest1" name="hp[]" value="010-1111-1111" data-user_name="김우진" data-member_type=""  />
+                                                                                <input type="hidden" name="user_name[]" value="010-1111-1111|김우진" />
+                                                                            </td>
+                                                                            <td onclick="javascript:setClick('hptest1');" style="cursor:pointer;">김우진</td>
+                                                                            <td onclick="javascript:setClick('hptest1');" style="cursor:pointer;">test1@naver.com</td>
+                                                                            <td onclick="javascript:setClick('hptest1');" style="cursor:pointer;">010-1111-1111</td>
+                                                                        </tr>
+                                                                        <!-- //Loop -->
+                                                                                                                        <!-- Loop -->
+                                                                        <tr >
+                                                                            <td>
+                                                                                <input type="checkbox" id="hp김우진" name="hp[]" value="010-1111-1111" data-user_name="admin" data-member_type=""  />
+                                                                                <input type="hidden" name="user_name[]" value="010-1111-1111|admin" />
+                                                                            </td>
+                                                                            <td onclick="javascript:setClick('hp김우진');" style="cursor:pointer;">admin</td>
+                                                                            <td onclick="javascript:setClick('hp김우진');" style="cursor:pointer;">test1@naver.com</td>
+                                                                            <td onclick="javascript:setClick('hp김우진');" style="cursor:pointer;">010-1111-1111</td>
+                                                                        </tr>
+                                                                        <!-- //Loop -->
+                                                                                                                        <!-- Loop -->
+                                                                        <tr >
+                                                                            <td>
+                                                                                <input type="checkbox" id="hpusers1navercom" name="hp[]" value="010-1234-5678" data-user_name="홍길동" data-member_type=""  />
+                                                                                <input type="hidden" name="user_name[]" value="010-1234-5678|홍길동" />
+                                                                            </td>
+                                                                            <td onclick="javascript:setClick('hpusers1navercom');" style="cursor:pointer;">홍길동</td>
+                                                                            <td onclick="javascript:setClick('hpusers1navercom');" style="cursor:pointer;">test1@naver.com</td>
+                                                                            <td onclick="javascript:setClick('hpusers1navercom');" style="cursor:pointer;">010-1234-5678</td>
+                                                                        </tr>
+                                                                        <!-- //Loop -->
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                        <!-- //전체학생목록 -->
+                                                        <!-- //SMS 대상검색 -->
+                                                        
+									                </form>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <!-- SMS 내용 -->
+                                                    <input type="hidden" name="mode" value="send" />
+                                                    <input type="hidden" name="sms_template_seq" value="" />
+                                                    
+                                                    <table class="table table-bordered text-center table-fixed mb10">
+                                                        <colgroup>
+                                                            <col style="width:35%;">
+                                                            <col>
+                                                        </colgroup>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><label for="" class="control-label control-label-ct">예약일시</label></td>
+                                                                <td><input type="text" class="form-control " id="reserve_time" name="reserve_time" value=""  />
+                                                            
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="2">
+                                                                    <textarea class="form-control form-control-sms" rows="6" maxlength="90" id="memo" name="memo" required>[:NAME:]</textarea>
+                                                                    <div class="byte mt5 mb5 text-left text-info"><span id="counter"></span></div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="2">
+                                                                    <table class="sms_scode">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td><a href="javascript:setEmoticon('♥');">♥</a></td>
+                                                                                <td><a href="javascript:setEmoticon('♡');">♡</a></td>
+                                                                                <td><a href="javascript:setEmoticon('★');">★</a></td>
+                                                                                <td><a href="javascript:setEmoticon('☆');">☆</a></td>
+                                                                                <td><a href="javascript:setEmoticon('▶');">▶</a></td>
+                                                                                <td><a href="javascript:setEmoticon('▷');">▷</a></td>
+                                                                                <td><a href="javascript:setEmoticon('◀');">◀</a></td>
+                                                                                <td><a href="javascript:setEmoticon('◁');">◁</a></td>
+                                                                                <td><a href="javascript:setEmoticon('∩');">∩</a></td>
+                                                                                <td><a href="javascript:setEmoticon('●');">●</a></td>
+                                                                                <td><a href="javascript:setEmoticon('■');">■</a></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="javascript:setEmoticon('○');">○</a></td>
+                                                                                <td><a href="javascript:setEmoticon('□');">□</a></td>
+                                                                                <td><a href="javascript:setEmoticon('▲');">▲</a></td>
+                                                                                <td><a href="javascript:setEmoticon('▼');">▼</a></td>
+                                                                                <td><a href="javascript:setEmoticon('▒');">▒</a></td>
+                                                                                <td><a href="javascript:setEmoticon('♨');">♨</a></td>
+                                                                                <td><a href="javascript:setEmoticon('※');">※</a></td>
+                                                                                <td><a href="javascript:setEmoticon('™');">™</a></td>
+                                                                                <td><a href="javascript:setEmoticon('℡');">℡</a></td>
+                                                                                <td><a href="javascript:setEmoticon('♬');">♬</a></td>
+                                                                                <td><a href="javascript:setEmoticon('♪');">♪</a></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="javascript:setEmoticon('☞');">☞</a></td>
+                                                                                <td><a href="javascript:setEmoticon('☜');">☜</a></td>
+                                                                                <td><a href="javascript:setEmoticon('♂');">♂</a></td>
+                                                                                <td><a href="javascript:setEmoticon('♀');">♀</a></td>
+                                                                                <td><a href="javascript:setEmoticon('㈜');">㈜</a></td>
+                                                                                <td><a href="javascript:setEmoticon('⊙');">⊙</a></td>
+                                                                                <td><a href="javascript:setEmoticon('◆');">◆</a></td>
+                                                                                <td><a href="javascript:setEmoticon('◇');">◇</a></td>
+                                                                                <td><a href="javascript:setEmoticon('♣');">♣</a></td>
+                                                                                <td><a href="javascript:setEmoticon('♧');">♧</a></td>
+                                                                                <td><a href="javascript:setEmoticon('☎');">☎</a></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="javascript:setEmoticon('∑');">∑</a></td>
+                                                                                <td><a href="javascript:setEmoticon('▣');">▣</a></td>
+                                                                                <td><a href="javascript:setEmoticon('㉿');">㉿</a></td>
+                                                                                <td><a href="javascript:setEmoticon('『');">『</a></td>
+                                                                                <td><a href="javascript:setEmoticon('』');">』</a></td>
+                                                                                <td><a href="javascript:setEmoticon('◐');">◐</a></td>
+                                                                                <td><a href="javascript:setEmoticon('◑');">◑</a></td>
+                                                                                <td><a href="javascript:setEmoticon('ㆀ');">ㆀ</a></td>
+                                                                                <td><a href="javascript:setEmoticon('†');">†</a></td>
+                                                                                <td><a href="javascript:setEmoticon('3');">3</a></td>
+                                                                                <td><a href="javascript:setEmoticon('▦');">▦</a></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td colspan="3"><a href="javascript:setEmoticon('☆(~.^)/');">☆(~.^)/</a></td>
+                                                                                <td colspan="4"><a href="javascript:setEmoticon('づ^0^)づ');">づ^0^)づ</a></td>
+                                                                                <td colspan="4"><a href="javascript:setEmoticon('&(☎ ☎)&');">&amp;(☎ ☎)&amp;</a></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td colspan="3"><a href="javascript:setEmoticon('(*^.^)♂');">(*^.^)♂</a></td>
+                                                                                <td colspan="3"><a href="javascript:setEmoticon('(o^^)o');">(o^^)o</a></td>
+                                                                                <td colspan="3"><a href="javascript:setEmoticon('o(^^o)');">o(^^o)</a></td>
+                                                                                <td colspan="2"><a href="javascript:setEmoticon('=◑.◐=');">=◑.◐=</a></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td colspan="4"><a href="javascript:setEmoticon('_(≥∇≤)ノ');">_(≥∇≤)ノ</a></td>
+                                                                                <td colspan="4"><a href="javascript:setEmoticon('q⊙.⊙p');">q⊙.⊙p</a></td>
+                                                                                <td colspan="3"><a href="javascript:setEmoticon('o(>_<)o');">o(&gt;_&lt;)o</a></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td colspan="2"><a href="javascript:setEmoticon('^.^');">^.^</a></td>
+                                                                                <td colspan="2"><a href="javascript:setEmoticon('(^.^)V');">(^.^)V</a></td>
+                                                                                <td colspan="2"><a href="javascript:setEmoticon('*^^*');">*^^*</a></td>
+                                                                                <td colspan="3"><a href="javascript:setEmoticon('^o^~~♬');">^o^~~♬</a></td>
+                                                                                <td colspan="2"><a href="javascript:setEmoticon('^.~');">^.~</a></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td colspan="5"><a href="javascript:setEmoticon('S(*^___^*)S');">S(*^___^*)S</a></td>
+                                                                                <td colspan="2"><a href="javascript:setEmoticon('^Δ^');">^Δ^</a></td>
+                                                                                <td colspan="4"><a href="javascript:setEmoticon('＼(*^▽^*)ノ');">＼(*^▽^*)ノ</a></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td colspan="2"><a href="javascript:setEmoticon('^L^');">^L^</a></td>
+                                                                                <td colspan="2"><a href="javascript:setEmoticon('^ε^');">^ε^</a></td>
+                                                                                <td colspan="2"><a href="javascript:setEmoticon('^_^');">^_^</a></td>
+                                                                                <td colspan="3"><a href="javascript:setEmoticon('(ノ^O^)ノ');">(ノ^O^)ノ</a></td>
+                                                                                <td colspan="2"><a href="javascript:setEmoticon('^0^');">^0^</a></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                            
+                                                            <tr>
+                                                                <td class="active"><label for="send_number" class="control-label control-label-ct">보내는 번호</label></td>
+                                                                <td><input type="text" class="form-control" id="send_number" name="send_number" value="010-5474-2935" required /></td>
+                                                            </tr>
+
+
+                                                            <tr>
+                                                                <td class="active"><label for="sms_w_r_num" class="control-label control-label-ct">받으실 분</label></td>
+                                                                <td><input type="text" class="form-control" id="receive" name="receive" value=""  /></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="2" class="text-left">
+                                                                    
+                                                                    <div class="checkbox-inline">
+                                                                        <label for="sms_w_o">
+                                                                            <input type="checkbox" name="sms_w_o" id="sms_w_o" value="Y" />동일번호에 동일한 메시지는 한번만
+                                                                        </label>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                    <div class="row mt15 mb15">
+                                                        <div class="col-xs-6">
+                                                            <a href="javascript:send();" class="btn btn-lg btn-block btn-warning" role="button">메시지 보내기</a>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <a href="javascript:save();" class="btn btn-lg btn-block btn-black" role="button">템플릿 저장</a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- SMS 내용 -->
+                                                </div>
+									            <div class="col-lg-5">
+										            <!-- SMS 템플릿 -->
+													<div class="table_section">
+                                                        <h5 class="text-info mb10"><strong>SMS 템플릿</strong></h5>
+                                                        <p>자주 이용하는 메시지를 저장할 수 있습니다. 수정 및 삭제가 가능합니다.</p>
+
+                                                        <div class="table_container table_container_h mt25">
+
+                                                            <div class="fixed-table-container">
+                                                                <div class="fixed-table-body">
+
+                                                                    <table id="sms_list" class="table text-center table-hover table-fixed  table-not-bordered ">
+                                                                        <colgroup>
+                                                                            <col style="width:11%;">
+                                                                            <col>
+                                                                            <col style="width:24%;">
+                                                                        </colgroup>
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th scope="col"><strong>선택</strong></th>
+                                                                                <th scope="col"><strong>메시지</strong></th>
+                                                                                <th scope="col"><strong>관리</strong></th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+
+                                                                        <!-- Loop -->
+                                                                            <tr>
+                                                                                <td>1</td>
+                                                                                <td class="text-left text-memo"><a href="javascript:setMemo('<학원배상책임단체보험 가입 완료 안내> 
+                                                                                    *보험시기：2021년 10월 1일 
+                                                                                    *보험종기：2022년 3월 2일 
+                                                                                    ★내년부터 3월2일자 단체보험으로 일괄가입됩니다. 
+                                                                                    *교육청신고：2021년 10월 6일 (연합회에서 신고) 
+                                                                                    *정회원은 2022.3.2.일부 자동갱신 
+                                                                                    *보험보상접수：농협손해보험(1644-9000) 
+                                                                                    *보험증권은 연합회 보관 (필요시 송부) 
+                                                                                    -경상북도학원연합회');"><학원배상책임단체보험 가입 완료 안내> 
+                                                                                    *보험시기：2021년 10월 1일 
+                                                                                    *보험종기：2022년 3월 2일 
+                                                                                    ★내년부터 3월2일자 단체보험으로 일괄가입됩니다. 
+                                                                                    *교육청신고：2021년 10월 6일 (연합회에서 신고) 
+                                                                                    *정회원은 2022.3.2.일부 자동갱신 
+                                                                                    *보험보상접수：농협손해보험(1644-9000) 
+                                                                                    *보험증권은 연합회 보관 (필요시 송부) 
+                                                                                    -경상북도학원연합회</a>
+                                                                                </td>
+                                                                                <td class="pt0 pb0">
+                                                                                    <button type="button" class="btn btn-xs btn-default btn-modify" onclick="javascript:editMemo('25','<학원배상책임단체보험 가입 완료 안내> 
+                                                                                    *보험시기：2021년 10월 1일 
+                                                                                    *보험종기：2022년 3월 2일 
+                                                                                    ★내년부터 3월2일자 단체보험으로 일괄가입됩니다. 
+                                                                                    *교육청신고：2021년 10월 6일 (연합회에서 신고) 
+                                                                                    *정회원은 2022.3.2.일부 자동갱신 
+                                                                                    *보험보상접수：농협손해보험(1644-9000) 
+                                                                                    *보험증권은 연합회 보관 (필요시 송부) 
+                                                                                    -경상북도학원연합회');">수정</button>
+                                                                                    <button type="button" class="btn btn-xs btn-danger" onclick="javascript:deleteMemo('25');" >삭제</button>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <!-- //Loop -->
+                                                                            
+                                                                            <!-- Loop -->
+                                                                            <tr>
+                                                                                <td>2</td>
+                                                                                <td class="text-left text-memo"><a href="javascript:setMemo('<학원배상책임보험 가입 신청자 안내> 
+
+                                                                                    학원배상책임보험은 정회원을 대상으로 가입합니다. 
+                                                                                    2021년 연회비를 0월00(0)까지 입금바랍니다. 
+                                                                                    가입의사가 없으신 원장님은 경상북도학원연합회로 연락바랍니다. 
+
+                                                                                    *회비 납부방법 
+                                                                                    <학원(독서실) 7만원, 교습소 5만원> 
+                                                                                    (농협) 351-0920-3717-13 
+                                                                                    예금주：경상북도학원연합회 
+                                                                                    보내는사람： 지역+이름3자리 (ex-구미홍길동) 
+
+                                                                                    -경상북도학원연합회');"><학원배상책임보험 가입 신청자 안내> 
+
+                                                                                    학원배상책임보험은 정회원을 대상으로 가입합니다. 
+                                                                                    2021년 연회비를 0월00(0)까지 입금바랍니다. 
+                                                                                    가입의사가 없으신 원장님은 경상북도학원연합회로 연락바랍니다. 
+
+                                                                                    *회비 납부방법 
+                                                                                    <학원(독서실) 7만원, 교습소 5만원> 
+                                                                                    (농협) 351-0920-3717-13 
+                                                                                    예금주：경상북도학원연합회 
+                                                                                    보내는사람： 지역+이름3자리 (ex-구미홍길동) 
+
+                                                                                    -경상북도학원연합회</a>
+                                                                                </td>
+                                                                                <td class="pt0 pb0">
+                                                                                    <button type="button" class="btn btn-xs btn-default btn-modify" onclick="javascript:editMemo('23','<학원배상책임보험 가입 신청자 안내> 
+
+                                                                                    학원배상책임보험은 정회원을 대상으로 가입합니다. 
+                                                                                    2021년 연회비를 0월00(0)까지 입금바랍니다. 
+                                                                                    가입의사가 없으신 원장님은 경상북도학원연합회로 연락바랍니다. 
+
+                                                                                    *회비 납부방법 
+                                                                                    <학원(독서실) 7만원, 교습소 5만원> 
+                                                                                    (농협) 351-0920-3717-13 
+                                                                                    예금주：경상북도학원연합회 
+                                                                                    보내는사람： 지역+이름3자리 (ex-구미홍길동) 
+
+                                                                                    -경상북도학원연합회');">수정</button>
+                                                                                    <button type="button" class="btn btn-xs btn-danger" onclick="javascript:deleteMemo('23');" >삭제</button>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <!-- //Loop -->
+                                                                            <!-- Loop -->
+                                                                            <tr>
+                                                                                <td>3</td>
+                                                                                <td class="text-left text-memo"><a href="javascript:setMemo('[학원보상책임보험 본인부담금 안내]
+                                                                                    *본인 부담금액 ：10,000원
+                                                                                    *보험 본인부담금 납부계좌
+                                                                                    - (농협)351-1060-4994-43
+                                                                                    예금주：경상북도학원연합회
+                                                                                    보내는사람： 지역+이름3자리 (ex-구미홍길동) 
+                                                                                    -경상북도학원연합회');">[학원보상책임보험 본인부담금 안내]
+                                                                                    *본인 부담금액 ：10,000원
+                                                                                    *보험 본인부담금 납부계좌
+                                                                                    - (농협)351-1060-4994-43
+                                                                                    예금주：경상북도학원연합회
+                                                                                    보내는사람： 지역+이름3자리 (ex-구미홍길동) 
+                                                                                    -경상북도학원연합회</a>
+                                                                                </td>
+                                                                                <td class="pt0 pb0">
+                                                                                    <button type="button" class="btn btn-xs btn-default btn-modify" onclick="javascript:editMemo('22','[학원보상책임보험 본인부담금 안내]
+                                                                                    *본인 부담금액 ：10,000원
+                                                                                    *보험 본인부담금 납부계좌
+                                                                                    - (농협)351-1060-4994-43
+                                                                                    예금주：경상북도학원연합회
+                                                                                    보내는사람： 지역+이름3자리 (ex-구미홍길동) 
+                                                                                    -경상북도학원연합회');">수정</button>
+                                                                                    <button type="button" class="btn btn-xs btn-danger" onclick="javascript:deleteMemo('22');" >삭제</button>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <!-- //Loop -->
+                                                                            <!-- Loop -->
+                                                                            <tr>
+                                                                                <td>4</td>
+                                                                                <td class="text-left text-memo"><a href="javascript:setMemo('づ^0^)づ=◑.◐=');">づ^0^)づ=◑.◐=</a></td>
+                                                                                <td class="pt0 pb0">
+                                                                                    <button type="button" class="btn btn-xs btn-default btn-modify" onclick="javascript:editMemo('18','づ^0^)づ=◑.◐=');">수정</button>
+                                                                                    <button type="button" class="btn btn-xs btn-danger" onclick="javascript:deleteMemo('18');" >삭제</button>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <!-- //Loop -->
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+							                        </div>										
+									            </div>
+                                                <!-- //SMS 템플릿 -->
+  
+								            </div>
+							            </div>
+							            <div role="tabpanel" class="tab-pane" id="sms_tab2">
+								            <!-- SMS 발송내역 -->
+											<form class="panel panel-default search_wrap mb15" name="searchform" action="#">
+                                                <div class="panel-body p10">
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <div class="row">
+                                                                <div class="col-xs-2">
+                                                                    <input type="tel" class="form-control datetimepicker" id="search_date_start" name="" value="" required />
+                                                                </div>
+                                                                <div class="col-xs-2">
+                                                                    <input type="tel" class="form-control datetimepicker" id="search_date_end" name="" value="" required />
+                                                                </div>
+                                                                <div class="col-xs-2">
+                                                                    <select class="form-control" id="search_option">
+                                                                        <option>선택</option>
+                                                                        <option>수신인</option>
+                                                                        <option>수신번호</option>
+                                                                        <option>학생명</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-xs-3">
+                                                                    <input type="text" class="form-control" id="search_keyword" name="" value="" required placeholder="키워드" />
+                                                                </div>
+                                                                <div class="col-xs-1">
+                                                                    <button type="submit" class="btn btn-block btn-black">검색</button>
+                                                                </div>
+                                                                <div class="col-xs-2 text-right"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+							                </form>
+
+                                            <table class="table text-center table-bordered table-striped table-fixed">
+                                                <thead>
+                                                    <tr>
+                                                        <th width="10%" scope="col"><strong>발신인</strong></th>
+                                                        <th width="8%" scope="col"><strong>수신인</strong></th>
+                                                        <th width="11%" scope="col"><strong>수신번호</strong></th>
+                                                        <th width="10%" scope="col"><strong>발신번호</strong></th>
+                                                        <th width="8%" scope="col"><strong>학생명</strong></th>
+                                                        <th width="7%" scope="col"><strong>구분</strong></th>
+                                                        <th scope="col"><strong>보낸내용</strong></th>
+                                                        <th width="8%" scope="col"><strong>결과</strong></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <!-- Loop -->
+                                                    <tr>
+                                                        <td>2018-04-08</td>
+                                                        <td>김인주</td>
+                                                        <td>01022416857</td>
+                                                        <td>0214753657</td>
+                                                        <td>강성훈</td>
+                                                        <td>LMS</td>
+                                                        <td class="text-left text-memo">이번주까지 미납된 부분을 완납하시기 바랍니다.</td>
+                                                        <td>전송성공</td>
+                                                    </tr>
+                                                    <!-- //Loop -->
+
+                                                    <!-- Loop -->
+                                                    <tr>
+                                                        <td>2018-04-08</td>
+                                                        <td>김인주</td>
+                                                        <td>01022416857</td>
+                                                        <td>0214753657</td>
+                                                        <td>강성훈</td>
+                                                        <td>SMS</td>
+                                                        <td class="text-left text-memo">이번주까지 미납된 부분을 완납하시기 바랍니다.</td>
+                                                        <td>전송성공</td>
+                                                    </tr>
+                                                    <!-- //Loop -->
+                                                </tbody>
+                                            </table>
+
+											<nav class="text-center">
+                                                <ul class="pagination pagination-sm">
+                                                    <li>
+                                                        <a href="#" aria-label="Previous" title="처음">
+                                                            <span aria-hidden="true">&lt;&lt;</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" aria-label="Previous" title="이전">
+                                                            <span aria-hidden="true">&lt;</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="active"><a href="#">1</a></li>
+                                                    <li><a href="#">2</a></li>
+                                                    <li><a href="#">3</a></li>
+                                                    <li><a href="#">4</a></li>
+                                                    <li><a href="#">5</a></li>
+                                                    <li>
+                                                        <a href="#" aria-label="Next" title="다음">
+                                                            <span aria-hidden="true">&gt;</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" aria-label="Next" title="마지막">
+                                                            <span aria-hidden="true">&gt;&gt;</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                            <!-- //SMS 발송내역 -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- //콘텐츠 customer_container-->
+                            </div>
+
+                            <div class="row pull-right">
+                            </div>
+                        </div>
+                        <!-- //row-->
+                        <script>	
+
+
+                            $(function () {
+                                $('#reserve_time').datetimepicker({
+                                    icons: {
+                                        time: "fa fa-clock-o",
+                                        date: "fa fa-calendar",
+                                        up: "fa fa-arrow-up",
+                                        down: "fa fa-arrow-down"
+                                    }
+                                });
+
+                                $('#sday').datetimepicker({
+                                    format: 'YYYY-MM-DD'
+                                });
+
+                                $('#eday').datetimepicker({
+                                    format: 'YYYY-MM-DD'
+                                });
+
+
+
+
+                            });
+
+                        function setClick(id) {
+                            var chk = $('#'+id).is(":checked"); 
+                            /*
+                            if(chk==false ) $('#'+id).prop("checked", true);
+                            else $('#'+id).prop("checked", false);	
+                            console.log(chk); 
+                            */
+                            console.log(chk); 
+                            $('#'+id).trigger('click');
+                        }
+
+                        $('input:checkbox[name="hp[]"]').change(function() {
+                            checkedUser();
+                        });
+
+                        function checkedUser() {
+                            var str = "";
+                            $('input:checkbox[name="hp[]"]').each(function() {
+
+                                    if(this.checked == true){ //값 비교
+                                        str = str + $(this).data("user_name") +',';
+                                    }		
+                                
+                            });
+                            $('#receive').val(str);
+                            
+                        }
+
+                        function checkMemberType(checked,value) {
+
+                            $('input:checkbox[name="hp[]"]').each(function() {
+                                if(checked==true) {
+                                    if($(this).data("member_type") == value){ //값 비교
+                                            this.checked = true; //checked 처리
+                                    }		
+                                } else {
+                                    this.checked = false; 
+                                }
+                            });
+                            checkedUser();	
+                        }
+
+
+
+
+
+                        function checkAll(checked) {
+                            $('input:checkbox[name="hp[]"]').each(function() {
+                                if(checked==true) {
+                                    if(this.value != ""){ //값 비교
+                                            this.checked = true; //checked 처리
+                                    }		
+                                } else {
+                                    this.checked = false; 
+                                }
+                            });
+                            checkedUser();	
+                        }
+
+                        function setEmoticon(emoticon) {
+
+                            var str = $('#memo').val() ; 
+                            insertAtCursor('memo',emoticon); 
+                                
+                        //	$('#memo').val( str + emoticon) ; 
+                        }
+
+
+                        function insertAtCursor(areaId,text) {
+                            var txtarea = document.getElementById(areaId);
+                            var scrollPos = txtarea.scrollTop;
+                            var strPos = 0;
+                            var br = ((txtarea.selectionStart || txtarea.selectionStart =='0') ?
+                                "ff" : (document.selection ? "ie" : false ) );
+                            if (br == "ie") {
+                                txtarea.focus();
+                                var range = document.selection.createRange();
+                                range.moveStart ('character', -txtarea.value.length);
+                                strPos = range.text.length;
+                            }
+                            else if (br == "ff") strPos = txtarea.selectionStart;
+                        
+                            var front = (txtarea.value).substring(0,strPos);
+                            var back = (txtarea.value).substring(strPos,txtarea.value.length);
+                            txtarea.value=front+text+back;
+                            strPos = strPos + text.length;
+                            if (br == "ie") {
+                                txtarea.focus();
+                                var range = document.selection.createRange();
+                                range.moveStart ('character', -txtarea.value.length);
+                                range.moveStart ('character', strPos);
+                                range.moveEnd ('character', 0);
+                                range.select();
+                            }
+                            else if (br == "ff") {
+                                txtarea.selectionStart = strPos;
+                                txtarea.selectionEnd = strPos;
+                                txtarea.focus();
+                            }
+                            txtarea.scrollTop = scrollPos;
+                        }
+
+
+
+
+
+                        function setMemo(memo) {
+                            $('#memo').val( memo) ; 
+                        }
+
+                        function editMemo(seq, memo) {
+
+                            $('#memo').val( memo) ; 
+                            var f = document.sms_form;
+                            f.sms_template_seq.value = seq; 
+                            f.mode.value = "update"; 
+                        }
+
+                        function deleteMemo(seq) {
+                            if(confirm('정말 삭제하시겠습니까?')==false) return; 
+                            var f = document.sms_form;
+                            f.sms_template_seq.value = seq; 	
+                            f.mode.value = "delete"; 
+                            f.submit();
+
+                        }
+
+                        // 검색하기 
+                        function searchKey() {
+                            var f2 = document.f2;
+                            f2.submit();	 
+                        }
+
+
+                        function send() {
+                            var f = document.sms_form;
+                            if(f.memo.value=="") {
+                                alert('보내실 내용이 없습니다.');
+                                f.memo.focus(); 
+                                return false; 
+                            }
+
+                                f.mode.value="send";
+
+
+                            f.submit(); 
+                        }
+
+
+                        function save() {
+                            var f = document.sms_form;
+                            if(f.memo.value=="") {
+                                alert('저장하실 내용이 없습니다.');
+                                f.memo.focus(); 
+                                return false; 
+                            }
+                            if(f.sms_template_seq.value=="")
+                                f.mode.value="save"; 
+                            else  
+                                f.mode.value="update";
+
+
+                            f.submit(); 
+                        }
+                        </script>
+					</div>
+					<!-- //콘테이너 -->
+				</div>
+				<!-- //Main Content -->
+			</div>
+			<!-- //Page Content -->
+		</div>
+		<!-- //Admin Wrapper -->
+
+
+		
+		<script src="../../js/animate-plus.min.js"></script>
+		<script src="../../js/jquery-ui.min.js" title=""></script>
+		<script src="../../js/jquery-migrate-git.min.js" title=""></script>
+		<script src="../../js/jquery.easing.js" title=""></script>
+		<script src="../../js/bootstrap.min.js" title=""></script>
+		<script src="../../js/bootstrap-switch.min.js" title=""></script>
+		<script src="../../js/bootstrap-datetimepicker.min.js" title=""></script>
+		<script src="../js/customer.script.js" title="사용자 선언"></script>
+		
+
+		
+	</body>
+</html>

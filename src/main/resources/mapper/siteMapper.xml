@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="standardhompage.user.site.SiteMapper">
+	
+    <sql id="searchKeyword">
+    	<if test="category_seq != null and category_seq != ''">
+    		AND
+    			category_seq = #{category_seq}
+    	</if>
+    	
+        <choose>
+            <when test="searchCate == 'title'">
+            AND
+                title LIKE CONCAT('%', #{keyword}, '%')
+            </when>
+            <when test="searchCate == 'content'">
+            AND
+                content LIKE CONCAT('%', #{keyword}, '%')
+            </when>
+        </choose>
+    </sql>
+	
+	
+	<select id="selectBoardTypeSeq" parameterType="Integer"
+		resultType="Integer">
+		SELECT
+		board_type_seq
+		FROM
+		edt_board_config
+		WHERE
+		config_seq = #{config_seq}
+	</select>
+
+	<select id="selectBoardType" parameterType="Integer"
+		resultType="String">
+		SELECT
+		fileName
+		FROM
+		edt_board_type
+		WHERE
+		board_type_seq = #{board_type_seq}
+	</select>
+
+	<select id="returnMenu" resultType="String">
+		select url from edt_site_menu where menu_seq = #{menu_seq}
+	</select>
+	
+	<insert id="insertBoardData" parameterType="BoardReq">
+		INSERT INTO edt_board
+		(
+			board_seq
+			, config_seq
+			, category_seq
+			, title
+			, content
+			, is_notice
+			, write_id
+			, write_ip
+			, thumb
+			, intro
+			, write_time
+			, link_url
+			, is_main_open
+			, sort_no
+			, grade
+			, company_seq
+			, is_file
+		)
+		VALUES
+		(
+			#{board_seq}
+			, #{config_seq}
+			, #{category_seq}
+			, #{title}
+			, #{content}
+			, #{is_notice}
+			, #{write_id}
+			, #{write_ip}
+			, #{thumb}
+			, #{intro}
+			, CURRENT_TIME
+			, #{link_url}
+			, #{is_main_open}
+			, #{sort_no}
+			, #{grade}
+			, #{company_seq}
+			, #{is_file} 
+		)
+	</insert>
+	
+	<update id="updateBoardData">
+		UPDATE
+			edt_board
+		SET
+			category_seq = #{category_seq}
+			, title = #{title}
+			, content = #{content}
+			, is_notice = #{is_notice}
+			, write_id = #{write_id}
+			, write_ip = #{write_ip}
+			, intro = #{intro}
+			, write_time = CURRENT_TIME
+			, link_url = #{link_url}
+			, is_main_open = #{is_main_open}
+			, sort_no = #{sort_no}
+			, grade = #{grade}
+			, company_seq = #{company_seq}
+			, is_file = #{is_file}
+		WHERE
+			board_seq = #{board_seq}
+	</update>
+	
+	
+	<select id="selectBoardSeq" parameterType="BoardReq">
+		/* 보드 SEQ 조회 */
+		SELECT
+			board_seq
+		FROM
+			edt_board
+		WHERE
+			config_seq = #{config_seq}		
+		<if test = "category_seq != null and category_seq != ''">
+			and
+				category_seq = #{category_seq}
+		</if>
+		and
+			write_id = #{write_id}
+		ORDER BY 
+			write_time DESC
+		LIMIT 1;		
+	</select>
+	
+	<select id="getBoardList" resultType="BoardRes">
+		SELECT
+			*
+		FROM
+			edt_board
+		WHERE
+        	config_seq = #{config_seq} 
+		<if test="searchCate != '' and searchCate != null">
+            <include refid="searchKeyword"></include>
+        </if>
+		order by
+			board_seq DESC
+		LIMIT
+			#{pageSize}
+		OFFSET
+			#{offset}
+	</select>
+	
+	<select id="getBoardListCnt" resultType="Integer">	
+		SELECT
+			COUNT(*)
+		FROM
+			edt_board
+		WHERE
+        	config_seq = #{config_seq} 	
+		<if test="searchCate != '' and searchCate != null">
+			<include refid="searchKeyword"></include>
+		</if>
+	</select>
+</mapper>

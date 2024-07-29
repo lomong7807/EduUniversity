@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+        namespace="standardhompage.admin.dashboard.mapper.DashboardMapper">
+    <!--  회원 비회원 방문 비율  -->
+    <select id="getVisitorRatio" resultType="visitorsRatioReq">
+        SELECT
+            COALESCE(SUM(CASE WHEN unique_visitor != 'Unknown' THEN 1 ELSE 0 END), 0) AS userCount,
+            COALESCE(SUM(CASE WHEN unique_visitor = 'Unknown' THEN 1 ELSE 0 END), 0) AS unknownCount
+        FROM (
+                 SELECT
+                     CASE
+                         WHEN write_id != 'Unknown' THEN write_id
+                         ELSE CONCAT(COALESCE(session_id, ''), COALESCE(user_agent, ''), FLOOR(UNIX_TIMESTAMP(write_time) / 1800))
+                         END AS unique_visitor,
+                     write_id,
+                     DATE(write_time) as visit_date
+            FROM
+            edt_user_log
+        WHERE
+            job_name = 'view'
+        GROUP BY
+            CASE
+            WHEN write_id != 'Unknown' THEN write_id
+            ELSE CONCAT(COALESCE(session_id, ''), COALESCE(user_agent, ''), FLOOR(UNIX_TIMESTAMP(write_time) / 1800))
+        END,
+            write_id,
+            DATE(write_time)
+    ) AS daily_visits;
+    </select>
+
+    <!--  회원 가입 수  -->
+    <select id="getRegUserCount" resultType="regUserCountReq">
+        SELECT
+            COALESCE(SUM(CASE WHEN DATE(write_time) = CURDATE() THEN 1 ELSE 0 END), 0)
+                AS today,
+            COALESCE(SUM(CASE WHEN DATE(write_time) = DATE_SUB(CURDATE(), INTERVAL 1 DAY) THEN 1 ELSE 0 END), 0)
+                AS yesterday,
+            COALESCE(SUM(CASE WHEN DATE(write_time) BETWEEN DATE_SUB(CURDATE(), INTERVAL 6 DAY) AND CURDATE() THEN 1 ELSE 0 END), 0)
+                AS lastWeek,
+            COALESCE(SUM(CASE WHEN DATE(write_time) BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE() THEN 1 ELSE 0 END), 0)
+                AS lastMonth,
+            COALESCE(SUM(CASE WHEN DATE(write_time) BETWEEN DATE_SUB(CURDATE(), INTERVAL 6 MONTH) AND CURDATE() THEN 1 ELSE 0 END), 0)
+                AS lastSixMonth,
+            COALESCE(COUNT(*), 0)
+                AS total
+        FROM
+            edt_user_log
+        WHERE
+            job_name = 'register';
+    </select>
+
+    <!--  최근 7 일 동안의 회원 가입 수  -->
+    <select id="getRegUserCountWeekly" resultType="regUserCountWeeklyReq">
+        SELECT
+            COALESCE(SUM(CASE WHEN DATE(write_time) = CURDATE() THEN 1 ELSE 0 END), 0)
+                AS today,
+            COALESCE(SUM(CASE WHEN DATE(write_time) = DATE_SUB(CURDATE(), INTERVAL 1 DAY) THEN 1 ELSE 0 END), 0)
+                AS oneDayAgo,
+            COALESCE(SUM(CASE WHEN DATE(write_time) = DATE_SUB(CURDATE(), INTERVAL 2 DAY) THEN 1 ELSE 0 END), 0)
+                AS twoDaysAgo,
+            COALESCE(SUM(CASE WHEN DATE(write_time) = DATE_SUB(CURDATE(), INTERVAL 3 DAY) THEN 1 ELSE 0 END), 0)
+                AS threeDaysAgo,
+            COALESCE(SUM(CASE WHEN DATE(write_time) = DATE_SUB(CURDATE(), INTERVAL 4 DAY) THEN 1 ELSE 0 END), 0)
+                AS fourDaysAgo,
+            COALESCE(SUM(CASE WHEN DATE(write_time) = DATE_SUB(CURDATE(), INTERVAL 5 DAY) THEN 1 ELSE 0 END), 0)
+                AS fiveDaysAgo,
+            COALESCE(SUM(CASE WHEN DATE(write_time) = DATE_SUB(CURDATE(), INTERVAL 6 DAY) THEN 1 ELSE 0 END), 0)
+                AS sixDaysAgo,
+            COALESCE(SUM(CASE WHEN DATE(write_time) = DATE_SUB(CURDATE(), INTERVAL 7 DAY) THEN 1 ELSE 0 END), 0)
+                AS sevenDaysAgo
+        FROM
+            edt_user_log
+        WHERE
+            job_name = 'register'
+          AND
+            DATE(write_time) BETWEEN DATE_SUB(CURDATE(), INTERVAL 7 DAY) AND CURDATE();
+    </select>
+
+    <!--  금일 접속한 총 방문수  -->
+    <select id="getVisitorByToday" resultType="int">
+        SELECT COALESCE(COUNT(DISTINCT
+                              CASE
+                                  WHEN write_id != 'Unknown' THEN write_id
+                                  ELSE CONCAT(COALESCE(session_id, ''), COALESCE(user_agent, ''), FLOOR(UNIX_TIMESTAMP(write_time) / 1800))
+                                  END
+                        ), 0) AS todayVisitors
+        FROM edt_user_log
+        WHERE job_name = 'view'
+          AND write_time >= DATE_SUB(CURDATE(), INTERVAL 1 DAY);
+    </select>
+
+    <!--  방문자 브라우저  -->
+    <select id="getVisitorByBrowser" resultType="visitorByBrowserReq">
+        SELECT
+            CASE
+                WHEN user_agent LIKE '%Chrome%' THEN 'Chrome'
+                WHEN user_agent LIKE '%Firefox%' THEN 'Firefox'
+                WHEN user_agent LIKE '%Safari%' THEN 'Safari'
+                WHEN user_agent LIKE '%Edge%' THEN 'Edge'
+                WHEN user_agent LIKE '%MSIE%' OR user_agent LIKE '%Trident%' THEN 'Internet Explorer'
+                ELSE 'Other'
+                END AS browser,
+            COALESCE(COUNT(*), 0) AS visitCount
+        FROM edt_user_log
+        WHERE job_name = 'view'
+        GROUP BY
+            CASE
+                WHEN user_agent LIKE '%Chrome%' THEN 'Chrome'
+                WHEN user_agent LIKE '%Firefox%' THEN 'Firefox'
+                WHEN user_agent LIKE '%Safari%' THEN 'Safari'
+                WHEN user_agent LIKE '%Edge%' THEN 'Edge'
+                WHEN user_agent LIKE '%MSIE%' OR user_agent LIKE '%Trident%' THEN 'Internet Explorer'
+                ELSE 'Other'
+                END;
+    </select>
+
+    <!--  기기장치별 방문수  -->
+    <select id="getVisitorByDevice" resultType="visitorByDeviceReq">
+        SELECT
+            CASE
+                WHEN user_agent LIKE '%Mobile%' THEN 'Mobile'
+                WHEN user_agent LIKE '%Tablet%' THEN 'Tablet'
+                WHEN user_agent LIKE '%Desktop%' THEN 'Desktop'
+                ELSE 'Other'
+                END AS deviceType,
+            COALESCE(COUNT(*), 0) AS visitCount
+        FROM edt_user_log
+        WHERE job_name = 'view'
+        GROUP BY
+            CASE
+                WHEN user_agent LIKE '%Mobile%' THEN 'Mobile'
+                WHEN user_agent LIKE '%Tablet%' THEN 'Tablet'
+                WHEN user_agent LIKE '%Desktop%' THEN 'Desktop'
+                ELSE 'Other'
+                END;
+    </select>
+
+    <!--  기기장치별 최근 방문수  -->
+    <select id="getVisitorByDeviceDaily" resultType="visitorByDeviceDailyReq">
+        SELECT
+            CASE
+                WHEN user_agent LIKE '%Mobile%' THEN 'Mobile'
+                WHEN user_agent LIKE '%Tablet%' THEN 'Tablet'
+                WHEN user_agent LIKE '%Desktop%' THEN 'Desktop'
+                ELSE 'Other'
+                END AS deviceType,
+            COALESCE(COUNT(*), 0) AS visitCount,
+            DATE(write_time) AS visitDate
+        FROM edt_user_log
+        WHERE job_name = 'view' AND write_time >= DATE_SUB(CURDATE(), INTERVAL 3 DAY)
+        GROUP BY
+            CASE
+            WHEN user_agent LIKE '%Mobile%' THEN 'Mobile'
+            WHEN user_agent LIKE '%Tablet%' THEN 'Tablet'
+            WHEN user_agent LIKE '%Desktop%' THEN 'Desktop'
+            ELSE 'Other'
+        END,
+        DATE(write_time)
+        ORDER BY
+           visitDate DESC,
+           visitCount DESC;
+    </select>
+
+    <select id="getVisitorByHourlyYesterday" resultType="visitorByHourlyReq">
+        WITH RECURSIVE
+            hours(hour)
+                AS (
+                    SELECT 0
+                    UNION ALL
+                    SELECT hour + 1 FROM hours WHERE hour lt 23
+                    )
+        SELECT
+            h.hour,
+            COALESCE(COUNT(DISTINCT
+                    CASE
+                    WHEN el.write_id != 'Unknown' THEN el.write_id
+                    ELSE CONCAT(COALESCE(el.session_id, ''), COALESCE(el.user_agent, ''), FLOOR(UNIX_TIMESTAMP(el.write_time) / 1800))
+                    END
+                    ), 0) AS visitorCount
+        FROM
+            hours h
+        LEFT JOIN
+            edt_user_log el
+        ON
+            h.hour = HOUR(el.write_time)
+        AND
+            DATE(el.write_time) = DATE_SUB(CURDATE(), INTERVAL 1 DAY)
+        AND
+            el.job_name = 'view'
+        GROUP BY
+            h.hour
+        ORDER BY
+        h.hour
+    </select>
+
+
+
+</mapper>

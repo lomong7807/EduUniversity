@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="standardhompage.admin.boardConfig.mapper.BoardConfigMapper">
+
+	<select id="getAllBoardConfig" resultType="boardConfigRes">
+		select a.*, b.title as
+		board_name from
+		edt_board_config a left join edt_site_menu b
+		on
+		a.menu_seq = b.menu_seq
+	</select>
+
+	<select id="getAllBoardConfigList" resultType="boardConfigRes">
+		select a.*,b.title
+		as board_name from
+		edt_board_config a
+		left join edt_site_menu b
+		on
+		a.menu_seq = b.menu_seq
+		limit #{pageSize}
+		offset #{offset}
+	</select>
+
+	<select id="getConfigByConfigSeq" resultType="boardConfigRes"
+		parameterType="int">
+		select * from
+		edt_board_config where config_seq =
+		#{config_seq}
+	</select>
+
+	<insert id="registerBoardConfig" parameterType="boardConfigReq">
+		insert into
+		edt_board_config
+		(
+		board_type_seq,
+		view_level, write_level,
+		write_id,
+		skin_dir,
+		header_include,
+		footer_include, is_file_use,
+		is_comment_use,
+		is_editor_use,
+		title_length,
+		max_file_size,
+		max_file_num,
+		list_num,
+		menu_seq
+		)
+		values
+		(
+		#{board_type_seq},
+		#{view_level},#{write_level},#{write_id},#{skin_dir},
+		#{header_include}, #{footer_include},
+		#{is_file_use},
+		#{is_comment_use},
+		#{is_editor_use},
+		#{title_length}, #{max_file_size},
+		#{max_file_num},
+		#{list_num},
+		#{menu_seq}
+		)
+	</insert>
+
+
+	<update id="delBoardConfig">
+		update edt_board_config
+		is_deleted = 'Y'
+		 where config_seq
+		=
+		#{config_seq}
+	</update>
+
+	<select id="getBoardConfigList" resultType="boardConfigRes">
+		SELECT
+		a.*, b.title as
+		board_name
+		from
+		edt_board_config a
+		left join edt_site_menu b
+		on a.menu_seq
+		= b.menu_seq
+		order by
+		a.order_num DESC,
+		a.write_time DESC
+		LIMIT
+		#{pageSize}
+		OFFSET
+		#{offset}
+	</select>
+
+
+	<select id="getBoardConfigCnt" resultType="int">
+		SELECT
+		COUNT(*)
+		FROM
+		edt_board_config
+	</select>
+
+	<select id="getAllBoardTypes" resultType="boardTypeRes">
+		select * from
+		edt_board_type
+	</select>
+
+	<select id="getConfigDetail" resultType="boardConfigRes">
+      select a.*, b.title as board_name
+      from edt_board_config as a
+      join
+      edt_site_menu as b on a.menu_seq = b.menu_seq
+      where a.config_seq = #{config_seq}
+			
+	</select>
+
+	<update id="configUpdate" parameterType="boardConfigReq">
+		update edt_board_config
+		set
+		list_num = #{list_num},
+		title_length =
+		#{title_length},
+		view_level = #{view_level},
+		write_level =
+		#{write_level},
+		skin_dir =
+		#{skin_dir},
+		board_type_seq =
+		#{board_type_seq},
+		header_include =
+		#{header_include},
+		footer_include =
+		#{footer_include},
+		is_file_use =
+		#{is_file_use},
+		max_file_size =
+		#{max_file_size},
+		max_file_num =
+		#{max_file_num},
+		is_editor_use =
+		#{is_editor_use},
+		is_reply_use =
+		#{is_reply_use},
+		is_comment_use =
+		#{is_comment_use}
+		where config_seq = #{config_seq}
+	</update>
+
+
+	<select id="getAllBoardConfigForSidebar"
+		resultType="BoardConfigRes">
+		SELECT
+		*
+		FROM
+		edt_board_config
+	</select>
+
+	<select id="getBoardConfigByMenuSeq" resultType="BoardConfigRes">
+		select * from
+		edt_board_config where menu_seq = #{menu_seq}
+	</select>
+	
+	<select id = "getBoardExByBoardTypeSeq" resultType="String">
+		select fileName from edt_board_type where board_type_seq = #{board_type_seq}  
+	</select>
+
+</mapper>

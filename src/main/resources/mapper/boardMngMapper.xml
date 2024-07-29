@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="standardhompage.admin.boardMng.mapper.BoardMngMapper">
+
+	<sql id="searchKeyword">
+		<choose>
+			<when test="cate == 'writer'">
+				and a.write_id like concat('%', #{keyword}, '%')
+			</when>
+			<when test="cate == 'title'">
+				and c.title like concat('%', #{keyword}, '%')
+			</when>
+		</choose>
+
+	</sql>
+
+	<select id="getBoardList" resultType="boardRes">
+		select a.*, c.title as board_name
+		from edt_board as a
+		join
+		edt_board_config as b on a.config_seq = b.config_seq
+		join edt_site_menu
+		as c on b.menu_seq = c.menu_seq
+		where a.is_deleted != 'Y'
+		<if
+			test="config_seq != null and config_seq != '0' and config_seq != 0">
+			and a.config_seq = #{config_seq}
+		</if>
+		<if test="cate == 'writer'">
+			and a.write_id like concat('%', #{keyword}, '%')
+		</if>
+		<if test="cate == 'title'">
+			and a.title like concat('%', #{keyword}, '%')
+		</if>
+		limit #{pageSize}
+		offset #{offset}
+	</select>
+
+
+	<select id="getBoardListCnt" resultType="int">
+		select count(*)
+		from edt_board as a
+		join edt_board_config as b on
+		a.config_seq = b.config_seq
+		join edt_site_menu as c on b.menu_seq =
+		c.menu_seq
+		where a.is_deleted != 'Y'
+		<if
+			test="config_seq != null and config_seq != '0' and config_seq != 0">
+			and a.config_seq = #{config_seq}
+		</if>
+		<if test="cate == 'writer'">
+			and a.write_id like concat('%', #{keyword}, '%')
+		</if>
+		<if test="cate == 'title'">
+			and a.title like concat('%', #{keyword}, '%')
+		</if>
+	</select>
+
+	<select id="getBoardDetail" resultType="BoardRes">
+		select * from edt_board
+		where board_seq = #{board_seq}
+	</select>
+
+	<update id="boardDelete">
+		update edt_board set
+		is_deleted = 'Y'
+		where board_seq =
+		#{board_seq}
+	</update>
+
+</mapper>

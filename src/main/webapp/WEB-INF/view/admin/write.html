@@ -1,0 +1,755 @@
+
+<!doctype html>
+<!--[if lt IE 7 ]><html lang="ko" class="ie6"><![endif]-->
+<!--[if IE 7 ]>   <html lang="ko" class="ie7"><![endif]-->
+<!--[if IE 8 ]>   <html lang="ko" class="ie8"><![endif]-->
+<!--[if IE 9 ]>   <html lang="ko" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="ko" class=""><!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<title>만다린 전화화상중국어 관리자 모드</title>
+		<meta name="author" content="Hom2Box">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<!--[if IEMobile]>
+			<meta http-equiv="cleartype" content="on" />
+		<![endif]-->
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="shortcut icon" href="../../img/logomark.ico">
+		<link rel="apple-touch-icon" href="../img/logomark.svg">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+		<meta name="keywords" content="만다린 전화화상중국어, 전화화상중국어, 화상중국어" />
+		<meta name="description" content="만다린 전화화상중국어 관리자 모드" />
+		<meta property="fb:app_id" content="만다린 전화화상중국어" />
+		<meta property="og:type" content="website">
+		<meta property="og:title"  content="만다린 전화화상중국어" />
+		<meta property="og:description" content="만다린 전화화상중국어 관리자 모드">
+		<meta property="og:image"  content="../img/mandarin.svg" />
+		<meta property="og:url"    content="www.mandarin9.com" />
+		<meta property="al:web:url" content="www.mandarin9.com">
+		<link rel="canonical" href="www.mandarin9.com">
+		<meta name="twitter:card" content="mobile">
+		<meta name="twitter:url" content="www.mandarin9.com" />
+		<meta name="twitter:title"  content="만다린 전화화상중국어" />
+		<meta name="twitter:description" content="만다린 전화화상중국어 관리자 모드">
+		<meta name="twitter:image"  content="../img/mandarin.svg" />
+		<meta name="twitter:domain"    content="만다린 전화화상중국어" />
+
+		<!-- 절대 수정하지마세요. -->
+		<link href="../css/animate.min.css" rel="stylesheet">
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+		<link href="../css/common.css" rel="stylesheet">
+		<link href="../css/common.responsive.css" rel="stylesheet">
+		<link href="../css/c3.min.css" rel="stylesheet">
+		<link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="../css/themify.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/themify-icons/1.0.1/css/themify-icons.css" rel="stylesheet">
+		<link href="../css/NotoSansCJKkr.css" rel="stylesheet">
+		<link href="../css/NotoSansCJKjp.css" rel="stylesheet">
+		<link href="../css/NotoSansCJKsc.css" rel="stylesheet">
+		<link href="../css/NotoSansCJKtc.css" rel="stylesheet">
+		<!-- //절대 수정하지마세요. -->
+		<link href="././css/theme.css" rel="stylesheet">
+
+		<!--[if lt IE 9]>
+			<script src="../../js/html5shiv.min.js"></script>
+		<![endif]-->
+
+		<!--[if lt IE 10]>
+			<script src="../../js/media.match.min.js"></script>
+			<script src="../../js/respond.min.js"></script>
+		<![endif]-->
+
+		<!-- Scripts -->
+		<script src="/js/modernizr.min.js"></script>
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/moment.js"></script>
+	</head>
+	<body class="admin">
+
+		<!-- Admin Wrapper -->
+		<div id="ubhome-wrapper">
+			<!-- Sidebar Wrapper -->
+			
+	<div id="ubhome-sidebar-wrapper" >
+		<ul class="ubhome-sidebar">
+			<li class="ubhome-sidebar-main">
+				<a href="../dashboard.php" class="logo">
+					<img src="../img/mandarin-white.svg" alt="mandarin" />
+				</a>
+				<i class="menu-icon fa fa-exchange ubhome-toggle" id="ubhome-toggle"></i>
+				<i class="menu-icon fa fa-exchange ubhome-toggle-mobile" id="ubhome-toggle-mobile"></i>
+			</li>
+
+			<li class="ubhome-sidebar-user">
+				<div class="media">
+					<div class="media-left media-middle">
+						<img class="media-object" src="../data/admin-sample.jpg" alt="..." />
+					</div>
+					<div class="media-body media-middle">
+						<h6>환영합니다.</h6>
+						<h5>관리자님 <a href="javascript:void(0);"><i class="ti-power-off"></i></a></h5>
+					</div>
+				</div>
+			</li>
+
+			<!-- 환경설정 -->
+			<li class="ubhome-sidebar-list">
+				<a href="javascript:void(0);" class="ubhome-sidebar-title"><i class="menu-icon fa fa-cogs"></i> 환경설정</a>
+				<ul class="ubhome-sidebar-sub">
+					<li><a href="../code_manager_list.php">코드관리</a></li>
+					<li><a href="../base_config_edit.php">기초환경설정</a></li>
+					<li><a href="../policy_edit.php">회원정책</a></li>
+					<li><a href="../admin_list.php">관리자 관리</a></li>
+					<li><a href="../holiday_list.php">휴일관리</a></li>
+					<li><a href="../payment_edit.php">결제관리</a></li>
+					<li><a href="../category_list.php">강좌분류관리</a></li>
+					<li><a href="../level_grade_list.php">레벨분류관리</a></li>
+					<li><a href="../popup_list.php">팝업관리</a></li>
+					<li><a href="../menu_list.php">관리자메뉴관리</a></li>
+					<li><a href="javascript:void(0);">사이트메뉴관리</a></li>
+					<li><a href="javascript:void(0);">사이트페이지 관리</a></li>
+					<li><a href="javascript:void(0);">스킨관리</a></li>
+					<li><a href="../discount_config_edit.php">할인율 설정</a></li>
+					<li><a href="../board_list.php">게시판 관리</a></li>
+				</ul>
+			</li>
+			<!-- //환경설정 -->
+
+			<!-- 회원관리 -->
+			<li class="ubhome-sidebar-list">
+				<a href="javascript:void(0);" class="ubhome-sidebar-title"><i class="menu-icon fa fa-user-circle-o"></i> 회원관리</a>
+				<ul class="ubhome-sidebar-sub">
+					<li><a href="../member/company_list.php">기업정보관리</a></li>
+					<li><a href="../member/member_csv_upload.php">기업회원 일괄등록</a></li>
+					<li><a href="../member/member_list.php">회원종합관리</a></li>
+					<li><a href="../member/point_list.php">포인트 관리</a></li>
+					<li><a href="../member/coupon_list.php">쿠폰관리</a></li>
+					<li><a href="../member/coupon_detail_list.php">쿠폰사용내역</a></li>
+				</ul>
+			</li>
+			<!-- //회원관리 -->
+
+			<!-- 강사관리 -->
+			<li class="ubhome-sidebar-list">
+				<a href="javascript:void(0);" class="ubhome-sidebar-title"><i class="menu-icon fa fa-graduation-cap"></i> 강사관리</a>
+				<ul class="ubhome-sidebar-sub">
+					<li><a href="../teacher/teacher_list.php">강사관리</a></li>
+					<li><a href="../teacher/teacher_time_edit.php">강사시간관리</a></li>
+					<li><a href="../teacher/teachergroup_list.php">강사그룹설정</a></li>
+					<li><a href="../teacher/teachersurvey_list.php">강사평가</a></li>
+				</ul>
+			</li>
+			<!-- //강사관리 -->
+
+			<!-- 강좌관리 -->
+			<li class="ubhome-sidebar-list">
+				<a href="javascript:void(0);" class="ubhome-sidebar-title"><i class="menu-icon fa fa-university"></i> 강좌관리</a>
+				<ul class="ubhome-sidebar-sub">
+					<li><a href="../class/class_list.php">강좌관리</a></li>
+					<li><a href="../class/book_list.php">교재관리</a></li>
+					<li><a href="javascript:void(0);">중국어신문관리</a></li>
+				</ul>
+			</li>
+			<!-- //강좌관리 -->
+
+			<!-- 주문관리 -->
+			<li class="ubhome-sidebar-list">
+				<a href="javascript:void(0);" class="ubhome-sidebar-title"><i class="menu-icon fa fa-laptop"></i> 주문관리</a>
+				<ul class="ubhome-sidebar-sub">
+					<li><a href="../order/class_order_list.php">주문관리</a></li>
+					<li><a href="javascript:void(0);">레벨테스트관리</a></li>
+					<li><a href="javascript:void(0);">재주문관리</a></li>
+				</ul>
+			</li>
+			<!-- //주문관리 -->
+
+			<!-- 수업관리 -->
+			<li class="ubhome-sidebar-list">
+				<a href="javascript:void(0);" class="ubhome-sidebar-title"><i class="menu-icon fa fa-book"></i> 수업관리</a>
+				<ul class="ubhome-sidebar-sub">
+					<li><a href="../schedule/full_calendar.php">수업캘린더관리</a></li>
+					<li><a href="javascript:void(0);">수업관리</a></li>
+					<li><a href="javascript:void(0);">장기연기관리</a></li>
+					<li><a href="javascript:void(0);">결석관리</a></li>
+					<li><a href="javascript:void(0);">수업변경로그</a></li>
+					<li><a href="javascript:void(0);">영작교정</a></li>
+					<li><a href="javascript:void(0);">월평가설정</a></li>
+					<li><a href="javascript:void(0);">월평가관리</a></li>
+					<li><a href="javascript:void(0);">기간별 출석(기업)</a></li>
+				</ul>
+			</li>
+			<!-- //수업관리 -->
+
+			<!-- 고객센터 -->
+			<li class="ubhome-sidebar-list">
+				<a href="javascript:void(0);" class="ubhome-sidebar-title"><i class="menu-icon fa fa-comments-o"></i> 고객센터</a>
+				<ul class="ubhome-sidebar-sub">
+					<li><a href="../board/index.php?board_id=notice&action=list&page=1">공지사항</a></li>
+					<li><a href="javascript:void(0);">1:1 고객센터</a></li>
+					<li><a href="javascript:void(0);">강사 1:1 게시판</a></li>
+					<li><a href="../customer/company_proposal_list.php">기업제안신청</a></li>
+					<li><a href="javascript:void(0);">직원게시판</a></li>
+					<li><a href="javascript:void(0);">학습자료실</a></li>
+					<li><a href="javascript:void(0);">매일회화표현</a></li>
+					<li><a href="javascript:void(0);">FAQ</a></li>
+				</ul>
+			</li>
+			<!-- //고객센터 -->
+
+			<!-- 통계관리 -->
+			<li class="ubhome-sidebar-list">
+				<a href="javascript:void(0);" class="ubhome-sidebar-title"><i class="menu-icon fa fa-pie-chart"></i> 통계관리</a>
+				<ul class="ubhome-sidebar-sub">
+					<li><a href="javascript:void(0);">접속통계</a></li>
+					<li><a href="javascript:void(0);">회원가입통계</a></li>
+					<li><a href="javascript:void(0);">레벨테스트통계</a></li>
+					<li><a href="javascript:void(0);">수업신청통계</a></li>
+					<li><a href="javascript:void(0);">일별매출통계</a></li>
+					<li><a href="javascript:void(0);">월별매출통계</a></li>
+				</ul>
+			</li>
+			<!-- //통계관리 -->
+
+			<!-- 언어선택 -->
+			<li class="ubhome-sidebar-lang">
+				<a href="javascript:void(0);" class="btn btn-block btn-default" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">한국어 <span class="num-webfont">(KOR)</span> <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+					<li class="active"><a href="#">한국어 <span class="num-webfont">(KOR)</span></a></li>
+					<li><a href="#">영어 <span class="num-webfont">(ENG)</span></a></li>
+					<li><a href="#">중국어 <span class="num-webfont">(CHN)</span></a></li>
+					<li><a href="#">일본어 <span class="num-webfont">(JPN)</span></a></li>
+				</ul>
+			</li>
+			<!-- //언어선택 -->
+		</ul>
+
+		<!-- LMS 환경설정 -->
+		<div class="row ubhome-sidebar-footer">
+			<div class="col-xs-12">
+				<a href="javascript:void(0);">
+					<i class="fa fa-cog"></i> <span>LMS 환경설정</span>
+				</a>
+			</div>
+		</div>
+		<!-- //LMS 환경설정 -->
+	</div>
+	<div class="mask-win"></div>			<!-- //Sidebar Wrapper -->
+
+			<!-- Page Content -->
+			<div id="content-wrapper">
+				<!-- Quick Bar -->
+								<div class="contents-header">
+					<button type="button" id="meta-toggle" class="top-quick-left btn hidden-sm hidden-md hidden-lg">
+						<i class="fa fa-bars"></i>
+					</button>
+					<a href="../dashboard.php" class="logo hidden-sm hidden-md hidden-lg">
+						<img src="../img/mandarin-white.svg" alt="mandarin" class="mobile-logo" />
+					</a>
+					<button type="button" id="quick-toggle" class="top-quick-right btn hidden-sm hidden-md hidden-lg">
+						<i class="fa fa-sort-amount-desc"></i>
+					</button>
+					<div class="quick-navi-wrap">
+						<div class="quick-navi">
+							<div class="row">
+								<div class="col-xs-6 col-sm-4 col-lg-2 md-mb10 m-mb10 xs-mb10 add-col">
+									<a href="#"><img src="../img/quick-01.svg" class="img" alt="quick-01" />목록1</a>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-lg-2 md-mb10 m-mb10 xs-mb10 add-col last-col-xs">
+									<a href="#"><img src="../img/quick-02.svg" class="img" alt="quick-02" />목록2</a>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-lg-2 md-mb10 m-mb10 xs-mb10 last-col-sm add-col add-col-xs">
+									<a href="#"><img src="../img/quick-03.svg" class="img" alt="quick-03" />목록3</a>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-lg-2 xs-mb10 odd-col last-col-xs">
+									<a href="#"><img src="../img/quick-04.svg" class="img" alt="quick-04" />목록4</a>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-lg-2 odd-col">
+									<a href="#"><img src="../img/quick-05.svg" class="img" alt="quick-05" />목록5</a>
+								</div>
+								<div class="col-xs-6 col-sm-4 col-lg-2 last-col odd-col">
+									<a href="#"><img src="../img/quick-06.svg" class="img" alt="quick-06" />목록6</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>				
+				<!-- //Quick Bar -->
+				 
+				<!-- Main Content -->
+				<div class="main-content">
+					<!-- 콘테이너 -->
+					<div id="container">
+						<div class="dashboard">
+							<!-- 페이지 명 -->
+							<div class="row form-inline mb10">
+								<div class="col-xs-6">
+									<h3 class="text-info mt5">등록</h3>
+								</div>
+								<div class="col-xs-6 text-right">
+									<i class="fa fa-star text-danger nano-small" aria-hidden="true"></i> 필수항목
+								</div>
+							</div>
+							<!-- //페이지 명 -->
+
+							<!-- 게시판 정보 -->
+							<form class="form-horizontal">
+								<fieldset>
+									<!-- 기본사항 -->
+									<h4 class="text-info mb10">기본사항</h4>
+									<div class="well wh-bg">
+										<div class="form-group">
+											<label for="t_Status" class="col-sm-2 control-label"><i class="fa fa-star text-danger nano-small" aria-hidden="true"></i> 상태 <i class="fa fa-question-circle-o pointer large" data-container="body" data-toggle="popover" data-placement="right" data-content="- 강사의 사용여부를 설정.<br />- 사용 안함으로 설정하면 강사 로그인이 불가능, 홈페이지 표시안됨."></i></label>
+											<div class="col-sm-4">
+												<select id="t_Status" class="form-control">
+													<option value="Y" selected="selected">사용</option>
+													<option value="N">미사용</option>
+												</select>
+											</div>
+											<label for="t_MemGrade" class="col-sm-2 control-label xs-mt10"><i class="fa fa-star text-danger nano-small" aria-hidden="true"></i> 등급</label>
+											<div class="col-sm-4">
+												<select id="t_MemGrade" class="form-control">
+													<option value="200" selected="selected">Teacher[강사]</option>
+												</select>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="t_MemID" class="col-sm-2 control-label"><i class="fa fa-star text-danger nano-small" aria-hidden="true"></i> 아이디</label>
+											<div class="col-sm-4">
+												<input type="text" class="form-control" id="t_MemID" name="t_MemID" value="teacher3" readonly="readonly" />
+												<p class="form-control-static">
+													* 아이디는 변경불가
+												</p>
+											</div>
+											<label for="t_MemName" class="col-sm-2 control-label xs-mt10"><i class="fa fa-star text-danger nano-small" aria-hidden="true"></i> 이름</label>
+											<div class="col-sm-4">
+												<input type="text" class="form-control" id="t_MemName" name="t_MemName" value="Liah (Liah T. Tucker)" required />
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="t_MemPW" class="col-sm-2 control-label"><i class="fa fa-star text-danger nano-small" aria-hidden="true"></i> 비밀번호</label>
+											<div class="col-sm-4">
+												<input type="text" class="form-control" id="t_MemPW" name="t_MemPW" value="12345" required />
+												<p class="form-control-static">
+													영문또는 숫자, 5~10자리
+												</p>
+											</div>
+											<label for="t_rePW" class="col-sm-2 control-label xs-mt10"><i class="fa fa-star text-danger nano-small" aria-hidden="true"></i> 비밀번호 확인</label>
+											<div class="col-sm-4">
+												<input type="text" class="form-control" id="t_rePW" name="t_rePW" value="12345" required />
+												<p class="form-control-static">
+													영문또는 숫자, 5~10자리
+												</p>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="t_UnitCost" class="col-sm-2 control-label"><i class="fa fa-star text-danger nano-small" aria-hidden="true"></i> 수업단가</label>
+											<div class="col-sm-4">
+												<input type="text" class="form-control" id="t_UnitCost" name="t_UnitCost" value="30" required />
+												<p class="form-control-static">
+													[PHP] * 강사 Pay = 수업시간(Minute) * 수업단가
+												</p>
+											</div>
+											<label class="col-sm-2 control-label xs-mt10"><i class="fa fa-star text-danger nano-small" aria-hidden="true"></i> 성별</label>
+											<div class="col-sm-4">
+												<div class="checkbox-inline">
+													<label for="t_Gender1"><input type="checkbox" name="t_Gender" id="t_Gender1" value="M">남자</label>
+												</div>
+												<div class="checkbox-inline">
+													<label for="t_Gender2"><input type="checkbox" name="t_Gender" id="t_Gender2" value="F">여자</label>
+												</div>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="t_SkypeID" class="col-sm-2 control-label">스카이프 ID</label>
+											<div class="col-sm-4">
+												<input type="text" class="form-control" id="t_SkypeID" name="t_SkypeID" value="dkype" required />
+											</div>
+											<label for="t_Age" class="col-sm-2 control-label xs-mt10">나이</label>
+											<div class="col-sm-4">
+												<input type="text" class="form-control" id="t_Age" name="t_Age" value="30" required />
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="t_Email1" class="col-xs-12 col-sm-2 control-label">이메일</label>
+											<div class="col-xs-6 col-sm-2 xs-mb10">
+												<input type="text" class="form-control" id="t_Email1" name="t_Email1" value="teacher" required />
+											</div>
+											<div class="col-xs-6 col-sm-2 xs-mb10">
+												<input type="text" class="form-control" id="t_Email2" name="t_Email2" value="@nate.com" required />
+											</div>
+											<div class="col-xs-12 col-sm-3">
+												<select id="Select_Email" name="Select_Email" class="form-control">
+													<option>직접 입력</option>
+													<option value="@chol.com">@chol.com</option>
+													<option value="@dreamwiz.com">@dreamwiz.com</option>
+													<option value="@empal.com">@empal.com</option>
+													<option value="@freechal.com">@freechal.com</option>
+													<option value="@gmail.com">@gmail.com</option>
+													<option value="@hanafos.com">@hanafos.com</option>
+													<option value="@hanmail.net">@hanmail.net</option>
+													<option value="@hanmir.com">@hanmir.com</option>
+													<option value="@hitel.net">@hitel.net</option>
+													<option value="@hotmail.com">@hotmail.com</option>
+													<option value="@korea.com">@korea.com</option>
+													<option value="@lycos.co.kr">@lycos.co.kr</option>
+													<option value="@nate.com" selected="selected">@nate.com</option>
+													<option value="@naver.com">@naver.com</option>
+													<option value="@netian.com">@netian.com</option>
+													<option value="@paran.com">@paran.com</option>
+													<option value="@yahoo.com">@yahoo.com</option>
+													<option value="@yahoo.co.kr">@yahoo.co.kr</option>
+												</select>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="t_Memo" class="col-sm-2 control-label">메모</label>
+											<div class="col-sm-10">
+												<textarea id="t_Memo" name="t_Memo" rows="3" class="form-control">퀄리티가 높은 강사</textarea>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="t_LoginIP" class="col-sm-2 control-label">접근가능 IP</label>
+											<div class="col-sm-10">
+												<textarea id="t_LoginIP" name="t_LoginIP" rows="3" class="form-control"></textarea>
+												<p class="form-control-static">
+													* 콤마(,)로 구분 / 입력하지 않을경우 모든 곳에서 접근가능.
+												</p>
+											</div>
+										</div>
+									</div>
+									<!-- //기본사항 -->
+
+
+									<!-- 프로필(홈페이지) -->
+									<h4 class="text-info mt30 mb10">프로필(홈페이지)</h4>
+									<div class="well wh-bg">
+										<div class="form-group">
+											<label for="t_DisplayYN" class="col-sm-2 control-label"><i class="fa fa-star text-danger nano-small" aria-hidden="true"></i> 홈페이지 표시 <i class="fa fa-question-circle-o pointer large" data-container="body" data-toggle="popover" data-placement="right" data-content="홈페이지 표시 여부 설정."></i></label>
+											<div class="col-sm-4">
+												<select id="t_DisplayYN" class="form-control">
+													<option value="Y" selected="selected">표시</option>
+													<option value="N">표시안함</option>
+												</select>
+											</div>
+											<label for="t_Order" class="col-sm-2 control-label"><i class="fa fa-star text-danger nano-small" aria-hidden="true"></i> 표시 순서 <i class="fa fa-question-circle-o pointer large" data-container="body" data-toggle="popover" data-placement="right" data-content="- 홈페이지의 강사소개에서 보여지는 순서 지정<br />- 낮은 숫자의 순서가 위로 표시됨(내림차순으로 정렬)"></i></label>
+											<div class="col-sm-4">
+												<select id="t_Order" name="t_Order" class="form-control">
+													<option>선택</option>
+													<option value="3"  selected="selected">3</option>
+													<option value="4">4</option>
+													<option value="5">5</option>
+													<option value="6">6</option>
+													<option value="7">7</option>
+													<option value="8">8</option>
+													<option value="9">9</option>
+													<option value="10">10</option>
+													<option value="11">11</option>
+													<option value="12">12</option>
+													<option value="13">13</option>
+													<option value="14">14</option>
+													<option value="15">15</option>
+													<option value="16">16</option>
+													<option value="17">17</option>
+													<option value="18">18</option>
+													<option value="19">19</option>
+													<option value="20">20</option>
+													<option value="21">21</option>
+													<option value="22">22</option>
+													<option value="23">23</option>
+													<option value="24">24</option>
+													<option value="25">25</option>
+													<option value="26">26</option>
+													<option value="27">27</option>
+													<option value="28">28</option>
+													<option value="29">29</option>
+													<option value="30">30</option>
+													<option value="31">31</option>
+													<option value="32">32</option>
+													<option value="33">33</option>
+													<option value="34">34</option>
+													<option value="35">35</option>
+													<option value="36">36</option>
+													<option value="37">37</option>
+													<option value="38">38</option>
+													<option value="39">39</option>
+													<option value="40">40</option>
+													<option value="41">41</option>
+													<option value="42">42</option>
+													<option value="43">43</option>
+													<option value="44">44</option>
+													<option value="45">45</option>
+													<option value="46">46</option>
+													<option value="47">47</option>
+													<option value="48">48</option>
+													<option value="49">49</option>
+													<option value="50">50</option>
+													<option value="51">51</option>
+													<option value="52">52</option>
+													<option value="53">53</option>
+													<option value="54">54</option>
+													<option value="55">55</option>
+													<option value="56">56</option>
+													<option value="57">57</option>
+													<option value="58">58</option>
+													<option value="59">59</option>
+													<option value="60">60</option>
+													<option value="61">61</option>
+													<option value="62">62</option>
+													<option value="63">63</option>
+													<option value="64">64</option>
+													<option value="65">65</option>
+													<option value="66">66</option>
+													<option value="67">67</option>
+													<option value="68">68</option>
+													<option value="69">69</option>
+													<option value="70">70</option>
+													<option value="71">71</option>
+													<option value="72">72</option>
+													<option value="73">73</option>
+													<option value="74">74</option>
+													<option value="75">75</option>
+													<option value="76">76</option>
+													<option value="77">77</option>
+													<option value="78">78</option>
+													<option value="79">79</option>
+													<option value="80">80</option>
+													<option value="81">81</option>
+													<option value="82">82</option>
+													<option value="83">83</option>
+													<option value="84">84</option>
+													<option value="85">85</option>
+													<option value="86">86</option>
+													<option value="87">87</option>
+													<option value="88">88</option>
+													<option value="89">89</option>
+													<option value="90">90</option>
+													<option value="91">91</option>
+													<option value="92">92</option>
+													<option value="93">93</option>
+													<option value="94">94</option>
+													<option value="95">95</option>
+													<option value="96">96</option>
+													<option value="97">97</option>
+													<option value="98">98</option>
+													<option value="99">99</option>
+													<option value="100">100</option>
+													<option value="101">101</option>
+													<option value="102">102</option>
+													<option value="103">103</option>
+													<option value="104">104</option>
+													<option value="105">105</option>
+													<option value="106">106</option>
+													<option value="107">107</option>
+													<option value="108">108</option>
+													<option value="109">109</option>
+													<option value="110">110</option>
+													<option value="111">111</option>
+													<option value="112">112</option>
+													<option value="113">113</option>
+													<option value="114">114</option>
+													<option value="115">115</option>
+													<option value="116">116</option>
+													<option value="117">117</option>
+													<option value="118">118</option>
+													<option value="119">119</option>
+													<option value="120">120</option>
+													<option value="121">121</option>
+													<option value="122">122</option>
+													<option value="123">123</option>
+													<option value="124">124</option>
+													<option value="125">125</option>
+													<option value="126">126</option>
+													<option value="127">127</option>
+													<option value="128">128</option>
+													<option value="129">129</option>
+													<option value="130">130</option>
+													<option value="131">131</option>
+													<option value="132">132</option>
+													<option value="133">133</option>
+													<option value="134">134</option>
+													<option value="135">135</option>
+													<option value="136">136</option>
+													<option value="137">137</option>
+													<option value="138">138</option>
+													<option value="139">139</option>
+													<option value="140">140</option>
+													<option value="141">141</option>
+													<option value="142">142</option>
+													<option value="143">143</option>
+													<option value="144">144</option>
+													<option value="145">145</option>
+													<option value="146">146</option>
+													<option value="147">147</option>
+													<option value="148">148</option>
+													<option value="149">149</option>
+													<option value="150">150</option>
+													<option value="151">151</option>
+													<option value="152">152</option>
+													<option value="153">153</option>
+													<option value="154">154</option>
+													<option value="155">155</option>
+													<option value="156">156</option>
+													<option value="157">157</option>
+													<option value="158">158</option>
+													<option value="159">159</option>
+													<option value="160">160</option>
+													<option value="161">161</option>
+													<option value="162">162</option>
+													<option value="163">163</option>
+													<option value="164">164</option>
+													<option value="165">165</option>
+													<option value="166">166</option>
+													<option value="167">167</option>
+													<option value="168">168</option>
+													<option value="169">169</option>
+													<option value="170">170</option>
+													<option value="171">171</option>
+													<option value="172">172</option>
+													<option value="173">173</option>
+													<option value="174">174</option>
+													<option value="175">175</option>
+													<option value="176">176</option>
+													<option value="177">177</option>
+													<option value="178">178</option>
+													<option value="179">179</option>
+													<option value="180">180</option>
+													<option value="181">181</option>
+													<option value="182">182</option>
+													<option value="183">183</option>
+													<option value="184">184</option>
+													<option value="185">185</option>
+													<option value="186">186</option>
+													<option value="187">187</option>
+													<option value="188">188</option>
+													<option value="189">189</option>
+													<option value="190">190</option>
+													<option value="191">191</option>
+													<option value="192">192</option>
+													<option value="193">193</option>
+													<option value="194">194</option>
+													<option value="195">195</option>
+													<option value="196">196</option>
+													<option value="197">197</option>
+													<option value="198">198</option>
+													<option value="199">199</option>
+													<option value="200">200</option>
+												</select>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="upFile_Photo" class="col-sm-2 control-label">사진</label>
+											<div class="col-sm-10">
+												<input type="file" class="form-control" id="upFile_Photo" name="upFile_Photo" required />
+												<p class="form-control-static">
+													* 가로 150px 권장 / gif, jpg, jpeg, bmp, png 만 등록가능
+												</p>
+											</div>
+										</div>
+
+										<!-- 사진 등록 예 -->
+										<div class="form-group">
+											<label class="col-sm-2 control-label">사진</label>
+											<div class="col-sm-10">
+												<div class="clearfix">
+													<div class="pull-left">
+														<img src="../data/picture-sample02.png" class="img-responsive img-thumbnail" alt="thacher3" style="max-height:150px;" />
+													</div>
+													<div class="pull-left ml10">
+														<button type="button" class="btn btn-xs btn-black"><i class="fa fa-times" aria-hidden="true"></i></button>
+													</div>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</div>
+										<!-- //사진 등록 예 -->
+
+										<div class="form-group">
+											<label for="upFile_Vod" class="col-sm-2 control-label">동영상</label>
+											<div class="col-sm-10">
+												<input type="file" class="form-control" id="upFile_Vod" name="upFile_Vod" required />
+												<p class="form-control-static">
+													* avi, wmv, wma,  mpg, mpeg, asf, mp3, mp4 만 등록가능
+												</p>
+											</div>
+										</div>
+
+										<!-- 동영상 등록 예 -->
+										<div class="form-group">
+											<label class="col-sm-2 control-label">동영상</label>
+											<div class="col-sm-10">
+												<div class="clearfix mt5">
+													<div class="pull-left">
+														<a href="../data/teacher.mp4" target="_blank">teacher.mp4</a>
+													</div>
+													<div class="pull-left ml10">
+														<button type="button" class="btn btn-xs btn-black"><i class="fa fa-times" aria-hidden="true"></i></button>
+													</div>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</div>
+										<!-- //동영상 등록 예 -->
+
+										<div class="form-group">
+											<label for="t_Education" class="col-sm-2 control-label">교육</label>
+											<div class="col-sm-10">
+												<textarea id="t_Education" name="t_Education" rows="3" class="form-control">초등 교육 학사 ICCT College</textarea>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="t_Introduction" class="col-sm-2 control-label">소개</label>
+											<div class="col-sm-10">
+												<textarea id="t_Introduction" name="t_Introduction" rows="3" class="form-control"></textarea>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="t_More" class="col-sm-2 control-label">More</label>
+											<div class="col-sm-10">
+												<textarea id="t_More" name="t_More" rows="3" class="form-control"></textarea>
+											</div>
+										</div>
+									</div>
+									<!-- //프로필(홈페이지) -->
+
+									<div class="text-right">
+										<button type="submit" class="btn btn-primary">저장하기</button>
+										<a href="../teacher/teacher_list.php" class="btn btn-default">취소하기</a>
+									</div>
+								</fieldset>
+							</form>
+							<!-- //게시판 정보 -->
+						</div>
+					</div>
+					<!-- //콘테이너 -->
+				</div>
+				<!-- //Main Content -->
+			</div>
+			<!-- //Page Content -->
+		</div>
+		<!-- //Admin Wrapper -->
+
+		
+		<script src="../js/animate-plus.min.js"></script>
+		<script src="../js/jquery-ui.min.js" title="제이쿼리 UI"></script>
+		<script src="../js/jquery-migrate-git.min.js" title="제이쿼리 하위버전 호환 플로그인"></script>
+		<script src="../js/jquery.easing.js" title="이징"></script>
+		<script src="../js/bootstrap.min.js" title="부트스트랩"></script>
+		<script src="../js/bootstrap-switch.min.js" title="부트스트랩 switch"></script>
+		<script src="../js/bootstrap-datetimepicker.min.js" title="부트스트랩 DateTimePicker"></script>
+		<script src="././js/customer.script.js" title="사용자 선언"></script>		<script src="../js/c3.min.js" title="차트 api"></script>
+		</body>
+</html>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="standardhompage.admin.smsMng.mapper.SmsMngMapper">
+    <select id="getTemplateList" parameterType="smsTemplateReq" resultType="smsTemplateRes">
+        SELECT
+            *
+        FROM
+            edt_sms_template
+        ORDER BY
+            write_time
+        DESC
+    </select>
+
+    <insert id="insertTemplate" parameterType="smsTemplateReq">
+        INSERT
+        INTO
+            edt_sms_template
+        SET
+            title       = #{title},
+            content     = #{content},
+            write_time  = #{write_time},
+            company_seq = #{company_seq}
+    </insert>
+
+    <update id="updateTemplate" parameterType="smsTemplateReq">
+        UPDATE
+            edt_sms_template
+        SET
+            title       = #{title},
+            content     = #{content}
+        WHERE
+            sms_template_seq    = #{sms_template_seq}
+          AND
+            company_seq         = #{company_seq}
+    </update>
+
+    <delete id="deleteTemplate" parameterType="smsTemplateReq">
+        DELETE
+        FROM
+            edt_sms_template
+        WHERE
+            sms_template_seq    = #{sms_template_seq}
+        AND
+            company_seq         = #{company_seq}
+    </delete>
+
+
+</mapper>

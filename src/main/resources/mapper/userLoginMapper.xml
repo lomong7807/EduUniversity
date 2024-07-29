@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="standardhompage.user.login.mapper.UserLoginMapper">
+    <insert id="insertUser" parameterType="userReq">
+        INSERT
+        INTO
+            edt_user
+        SET
+            company_seq     = #{company_seq},
+            role_seq        = #{role_seq},
+            user_id         = #{user_id},
+            user_pw         = #{user_pw},
+            user_hp         = #{user_hp},
+            user_name       = #{user_name},
+            sex             = #{sex},
+            zip_code        = #{zip_code},
+            addr1           = #{addr1},
+            addr2           = #{addr2},
+            email           = #{email},
+            birth           = #{birth},
+            write_time      = #{write_time},
+            update_time     = #{update_time},
+            register_ip     = #{register_ip},
+            email_ok        = #{email_ok},
+            sms_ok          = #{sms_ok},
+            is_out          = #{is_out}
+    </insert>
+    <select id="getUserById" parameterType="customUserReq" resultType="userRes">
+        SELECT
+            a.*,
+            b.company_id,
+            b.company_name
+        FROM
+            edt_user AS a
+        JOIN
+            edt_company AS b
+        ON
+            a.company_seq = b.company_seq
+        WHERE
+            a.user_id     = #{id}
+    </select>
+    <select id="getUserCountById" parameterType="String" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            edt_user
+        WHERE
+            user_id = #{user_id}
+    </select>
+
+    <select id="getUserCountByHp" parameterType="String" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            edt_user
+        WHERE
+            user_hp = #{user_hp}
+    </select>
+
+
+</mapper>

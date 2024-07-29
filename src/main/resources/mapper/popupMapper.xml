@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="standardhompage.admin.popup.mapper.PopupMapper">
+	    <!-- SEARCH ADMIN SQL -->
+    <sql id="searchKeyword">
+        WHERE
+        <choose>
+            <when test="searchCate == 'title'">
+                title LIKE CONCAT('%', #{keyword}, '%')
+            </when>
+            <when test="searchCate == 'is_open'">
+                is_open = #{keyword}
+            </when>
+        </choose>
+    </sql>
+	
+	<insert id="insertPopupData" parameterType="popupReq">
+		/* popup insert */
+		INSERT INTO edt_popup(
+			title
+			, content
+			, sday
+			, eday
+			, x_pos
+			, y_pos
+			, width
+			, height
+			, is_open
+			, company_seq
+			, link_url
+		)
+		VALUES
+		(
+			#{title}
+			, #{content}
+			, #{sday}
+			, #{eday}
+			, #{x_pos}
+			, #{y_pos}
+			, #{width}
+			, #{height}
+			, #{is_open}
+			, #{company_seq}
+			, #{link_url}
+		)
+	</insert>
+	
+	<update id="updatePopupData" parameterType="map">
+	/* popup update */
+	UPDATE
+		edt_popup
+	SET
+		title = #{popupReq.title}
+		, content = #{popupReq.content}
+		, sday = #{popupReq.sday}
+		, eday = #{popupReq.eday}
+		, x_pos = #{popupReq.x_pos}
+		, y_pos = #{popupReq.y_pos}
+		, width = #{popupReq.width}
+		, height = #{popupReq.height}
+		, is_open = #{popupReq.is_open}
+		, company_seq = #{popupReq.company_seq}
+		, link_url = #{popupReq.link_url}
+	WHERE
+		popup_seq = #{popup_seq}		
+	
+	</update>
+
+	<select id="getPopupList" resultType="popupRes">
+		SELECT
+			*
+		FROM
+			edt_popup
+		<if test="popup_seq != null and popup_seq != ''">
+		WHERE
+        	popup_seq = #{popup_seq} 
+        </if>	
+		<if test="searchCate != '' and searchCate != null">
+            <include refid="searchKeyword"></include>
+        </if>
+		order by
+			popup_seq DESC
+		LIMIT
+			#{pageSize}
+		OFFSET
+			#{offset}
+	</select>
+
+	<select id="getPopupListCnt" resultType="int">
+		SELECT
+		COUNT(*)
+		FROM
+		edt_popup
+		<if test="searchCate != '' and searchCate != null">
+            <include refid="searchKeyword"></include>
+        </if>
+	</select>
+	
+	<delete id="deletePopupData" parameterType="int">
+        DELETE
+        FROM
+            edt_popup
+        WHERE
+            popup_seq = #{popup_seq};
+    </delete>
+
+
+</mapper>

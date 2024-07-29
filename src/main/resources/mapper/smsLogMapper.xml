@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="standardhompage.admin.smsMng.mapper.SmsMngMapper">
+    <select id="getSmsLogList" parameterType="smsLogReq" resultType="smsLogRes">
+        SELECT
+            a.*
+        FROM
+            edt_sms_log AS a
+        WHERE
+            1=1
+        <if test="resultCate != '' and resultCate != null">
+            <include refid="resultCate"></include>
+        </if>
+        <if test="sendTypeCate != '' and sendTypeCate != null">
+            <include refid="sendTypeCate"></include>
+        </if>
+        <if test="startDate != '' and endDate != ''">
+            <include refid="dateTypeCate"></include>
+        </if>
+        <if test="searchCate != '' and searchCate != null">
+            <include refid="searchKeyword"></include>
+        </if>
+        ORDER BY
+            a.write_time
+        DESC
+        LIMIT
+            #{pageSize}
+        OFFSET
+            #{offset}
+    </select>
+
+    <select id="getSmsLogListCount" parameterType="smsLogReq" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            edt_sms_log AS a
+        WHERE
+            1=1
+        <if test="resultCate != '' and resultCate != null">
+            <include refid="resultCate"></include>
+        </if>
+        <if test="sendTypeCate != '' and sendTypeCate != null">
+            <include refid="sendTypeCate"></include>
+        </if>
+        <if test="startDate != '' and endDate != ''">
+            <include refid="dateTypeCate"></include>
+        </if>
+        <if test="searchCate != '' and searchCate != null">
+            <include refid="searchKeyword"></include>
+        </if>
+    </select>
+
+    <insert id="insertSmsLog" parameterType="smsLogReq">
+        INSERT
+        INTO
+            edt_sms_log
+        SET
+            company_seq     = #{company_seq},
+            send_no         = #{send_no},
+            user_id         = #{user_id},
+            receive_no      = #{receive_no},
+            result          = #{result},
+            title           = #{title},
+            memo            = #{memo},
+            sms_id          = #{sms_id},
+            sms_key         = #{sms_key},
+            send_type       = #{send_type},
+            web_link        = #{web_link},
+            image_link      = #{image_link},
+            android_id      = #{android_id},
+            ios_id          = #{ios_id},
+            token           = #{token},
+            error_code      = #{error_code},
+            template_id     = #{template_id},
+            pf_id           = #{pf_id},
+            reserve_time    = #{reserve_time},
+            write_time      = #{write_time}
+    </insert>
+
+
+    <!-- SEARCH USER SQL -->
+    <sql id="searchKeyword">
+        AND
+        <choose>
+            <when test="searchCate == 'id'">
+                a.user_id LIKE CONCAT('%', #{keyword}, '%')
+            </when>
+            <when test="searchCate == 'hp'">
+                a.receive_no LIKE CONCAT('%', #{keyword}, '%')
+            </when>
+        </choose>
+    </sql>
+
+    <sql id="resultCate">
+        AND
+            a.result = #{resultCate}
+    </sql>
+
+    <sql id="sendTypeCate">
+        AND
+            a.send_type = #{sendTypeCate}
+    </sql>
+
+    <sql id="dateTypeCate">
+        AND
+        <choose>
+            <when test="dateTypeCate == 'write'">
+                <![CDATA[  #{startDate} <= a.write_time AND a.write_time <= #{endDate}  ]]>
+            </when>
+            <when test="dateTypeCate == 'reserve'">
+                <![CDATA[  #{startDate} <= a.reserve_time  AND a.reserve_time <= #{endDate}  ]]>
+            </when>
+        </choose>
+    </sql>
+
+
+</mapper>

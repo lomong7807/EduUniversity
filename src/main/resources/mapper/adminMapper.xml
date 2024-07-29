@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="standardhompage.admin.adminMng.mapper.AdminMngMapper">
+
+    <select id="getAdminList" parameterType="adminInfoReq" resultType="adminInfoRes">
+        SELECT
+            *
+        FROM
+            edt_admin
+        <if test="searchCate != '' and searchCate != null">
+            <include refid="searchKeyword"></include>
+        </if>
+        order by
+            write_time
+        desc
+        LIMIT
+            #{pageSize}
+        OFFSET
+            #{offset}
+    </select>
+
+    <select id="selectAdminBySeq" parameterType="adminInfoReq" resultType="adminInfoRes">
+        SELECT
+            *
+        FROM
+            edt_admin
+        WHERE
+            admin_seq = #{admin_seq}
+    </select>
+
+    <select id="getAdminListCount" parameterType="adminInfoReq" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            edt_admin
+        <if test="searchCate != '' and searchCate != null">
+            <include refid="searchKeyword"></include>
+        </if>
+    </select>
+
+    <select id="getAdminCountById" parameterType="String" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            edt_admin
+        WHERE
+            id = #{id}
+    </select>
+
+    <select id="getAdminCountByHp" parameterType="String" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            edt_admin
+        WHERE
+            hp = #{hp}
+        <if test="id != '' and id != null">
+            AND id != #{id}
+        </if>
+    </select>
+
+
+
+    <!-- SEARCH ADMIN SQL -->
+    <sql id="searchKeyword">
+        WHERE
+        <choose>
+            <when test="searchCate == 'name'">
+                name LIKE CONCAT('%', #{keyword}, '%')
+            </when>
+            <when test="searchCate == 'id'">
+                id LIKE CONCAT('%', #{keyword}, '%')
+            </when>
+        </choose>
+    </sql>
+
+    <insert id="insertAdmin" parameterType="adminInfoReq">
+        INSERT
+        INTO
+            edt_admin
+        SET
+            company_seq     = #{company_seq},
+            id              = #{id},
+            pw              = #{pw},
+            level           = #{level},
+            name            = #{name},
+            hp              = #{hp},
+            tel             = #{tel},
+            zip             = #{zip},
+            addr1           = #{addr1},
+            addr2           = #{addr2},
+            email           = #{email},
+            sex             = #{sex},
+            birth           = #{birth},
+            last_login      = #{last_login},
+            is_out          = #{is_out},
+            write_time      = #{write_time},
+            write_ip        = #{write_ip};
+    </insert>
+
+    <update id="updateAdmin" parameterType="adminInfoReq">
+        UPDATE
+            edt_admin
+        SET
+            company_seq     = #{company_seq},
+            pw              = #{pw},
+            level           = #{level},
+            name            = #{name},
+            hp              = #{hp},
+            tel             = #{tel},
+            zip             = #{zip},
+            addr1           = #{addr1},
+            addr2           = #{addr2},
+            email           = #{email},
+            sex             = #{sex},
+            birth           = #{birth},
+            is_out          = #{is_out}
+        WHERE
+            admin_seq       = #{admin_seq}
+    </update>
+
+    <delete id="deleteAdminBySeq" parameterType="int">
+        DELETE
+        FROM
+            edt_admin
+        WHERE
+            admin_seq = #{admin_seq};
+    </delete>
+
+</mapper>

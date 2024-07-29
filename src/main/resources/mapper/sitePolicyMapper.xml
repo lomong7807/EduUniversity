@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="standardhompage.admin.sitepolicy.mapper.SitePolicyMapper">
+	
+	<insert id="insertSitePolicy" parameterType="PolicyReq">
+		INSERT INTO 
+			edt_policy
+		(
+			policy
+			, service
+			, write_time
+			, company_id
+		)
+		VALUES
+		(
+			#{policy}
+			, #{service}
+			, CURRENT_TIME
+			, #{company_id}
+		)
+	</insert>
+	<update id="updateSitePolicy" parameterType="PolicyReq">
+		UPDATE
+			edt_policy
+		SET
+			policy = #{policy}
+			, service = #{service}
+			, write_time = CURRENT_TIME
+		WHERE
+			company_id = #{company_id}
+	
+	</update>
+	<select id="policyData" parameterType="String">
+		SELECT
+			* 
+		FROM	
+			edt_policy
+		WHERE
+			company_id = #{companyId}	
+	</select>
+	<select id="existData" parameterType="String">
+		SELECT
+			count(*)
+		FROM
+			edt_policy
+		WHERE
+			company_id = #{companyId}
+	</select>
+	
+</mapper>
