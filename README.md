@@ -12,7 +12,11 @@
 ![js](https://img.shields.io/badge/redis-%23DD0031.svg?&style=for-the-badge&logo=redis&logoColor=white)
 ![js](https://img.shields.io/badge/json%20web%20tokens-323330?style=for-the-badge&logo=json-web-tokens&logoColor=pink)
 
+<br>
 
+![EduUniversity](https://github.com/user-attachments/assets/21730fc2-9bba-400a-86ef-a8ed0c4e8d6f)
+
+<br>
 
 
 ## 프로젝트 소개
